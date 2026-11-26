@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="rtea_canvas">#FFFCF9F4</color>
+    <color name="rtea_primary">#FF2C628E</color>
+    <color name="rtea_secondary">#FF8E4D2B</color>
+    <color name="rtea_tertiary">#FF226A57</color>
+</resources>

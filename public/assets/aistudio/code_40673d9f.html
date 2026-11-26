@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;font-family:'Nunito Sans',sans-serif;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "secondary-fixed": "#ffdbcc",
+          "secondary": "#8e4d2b",
+          "surface-dim": "#dcdad5",
+          "on-surface": "#1c1c19",
+          "surface-bright": "#fcf9f4",
+          "tertiary-container": "#6db19b",
+          "on-surface-variant": "#41474e",
+          "on-primary-container": "#003d62",
+          "secondary-container": "#ffaa81",
+          "on-tertiary-fixed": "#002018",
+          "tertiary-fixed-dim": "#8fd4bd",
+          "inverse-surface": "#31302d",
+          "on-tertiary-fixed-variant": "#005140",
+          "tertiary-fixed": "#aaf1d9",
+          "on-primary": "#ffffff",
+          "outline-variant": "#c1c7d0",
+          "secondary-fixed-dim": "#ffb693",
+          "tertiary": "#226a57",
+          "surface-container-lowest": "#ffffff",
+          "primary": "#2c628e",
+          "surface-container": "#f0ede9",
+          "error-container": "#ffdad6",
+          "on-secondary-container": "#793c1b",
+          "on-primary-fixed-variant": "#074a75",
+          "background": "#fcf9f4",
+          "surface": "#fcf9f4",
+          "on-secondary-fixed-variant": "#713616",
+          "on-error": "#ffffff",
+          "primary-fixed-dim": "#99cbfd",
+          "surface-container-high": "#ebe8e3",
+          "on-secondary": "#ffffff",
+          "error": "#ba1a1a",
+          "outline": "#72787f",
+          "inverse-primary": "#99cbfd",
+          "surface-container-highest": "#e5e2dd",
+          "on-error-container": "#93000a",
+          "on-primary-fixed": "#001d33",
+          "surface-variant": "#e5e2dd",
+          "primary-container": "#76a8d8",
+          "on-tertiary-container": "#004334",
+          "primary-fixed": "#cee5ff",
+          "surface-tint": "#2c628e",
+          "inverse-on-surface": "#f3f0eb",
+          "on-tertiary": "#ffffff",
+          "on-background": "#1c1c19",
+          "on-secondary-fixed": "#351000",
+          "surface-container-low": "#f6f3ee"
+        },
+        "borderRadius": {
+          "DEFAULT": "1rem",
+          "lg": "2rem",
+          "xl": "3rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xl": "2.5rem",
+          "space-md": "1rem",
+          "margin-md": "2rem",
+          "space-xs": "0.25rem",
+          "margin": "1.25rem",
+          "gutter-lg": "1.5rem",
+          "gutter": "1rem",
+          "space-sm": "0.5rem",
+          "space-lg": "1.5rem",
+          "margin-lg": "3rem"
+        },
+        "fontFamily": {
+          "headline-md": ["Nunito Sans"],
+          "label-lg": ["Nunito Sans"],
+          "headline-lg": ["Nunito Sans"],
+          "body-md": ["Nunito Sans"],
+          "label-sm": ["Nunito Sans"],
+          "headline-sm": ["Nunito Sans"],
+          "body-lg": ["Nunito Sans"],
+          "display-lg-mobile": ["Nunito Sans"],
+          "body-sm": ["Nunito Sans"],
+          "display-lg": ["Nunito Sans"],
+          "label-md": ["Nunito Sans"]
+        },
+        "fontSize": {
+          "headline-md": ["22px", { lineHeight: "30px", fontWeight: "600" }],
+          "label-lg": ["15px", { lineHeight: "22px", fontWeight: "600" }],
+          "headline-lg": ["28px", { lineHeight: "38px", fontWeight: "700" }],
+          "body-md": ["15px", { lineHeight: "24px", fontWeight: "400" }],
+          "label-sm": ["11px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }],
+          "headline-sm": ["18px", { lineHeight: "26px", fontWeight: "600" }],
+          "body-lg": ["17px", { lineHeight: "28px", fontWeight: "400" }],
+          "display-lg-mobile": ["30px", { lineHeight: "40px", fontWeight: "700" }],
+          "body-sm": ["13px", { lineHeight: "20px", fontWeight: "400" }],
+          "display-lg": ["40px", { lineHeight: "52px", letterSpacing: "-0.01em", fontWeight: "700" }],
+          "label-md": ["13px", { lineHeight: "18px", fontWeight: "600" }]
+        }
+      }
+    }
+  };
+</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style></head><body class="bg-surface text-on-surface flex flex-col min-h-screen selection:bg-primary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl border-b border-surface-container shadow-[0_1px_10px_rgba(28,28,25,0.03)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center p-1.5 shadow-[0_2px_8px_-2px_rgba(44,98,142,0.12)] border border-surface-container"><img alt="R-TEA Logo" class="w-full h-full object-contain rounded-full" src="https://lh3.googleusercontent.com/aida/ALJJyrD1mYNH6b6XJgxZS7grgH15ivU6TN5KnX25V88gMmM3CJIglUFikemrzejeUy8ozCBBzcpbOgGuCk_fwh2WH6_Z4F7L3QpZX-TbIPUe3dOF1ggpd_wCUcPDGlFNz6TMrHab5lvu645CZMRCqFoub_TpUw4oibxbx9X-qe1irMohRLPc4LLIF_PlXi88KaZkFYKEjuUTGiv2IbThEVJdOGBxjYR-cTMVuSLjN30X2TD0yBRM4g1_XoGVg80"/></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-primary tracking-wide uppercase font-bold">R-TEA</span><span class="font-headline-sm text-headline-sm text-on-surface leading-tight truncate max-w-[200px]">Recursos R-Tea</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notificaciones" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all"><span class="material-symbols-outlined text-[24px]">notifications</span></button><div class="p-0.5 rounded-full bg-primary-fixed border border-primary-container/40"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/ALJJyrD1mYNH6b6XJgxZS7grgH15ivU6TN5KnX25V88gMmM3CJIglUFikemrzejeUy8ozCBBzcpbOgGuCk_fwh2WH6_Z4F7L3QpZX-TbIPUe3dOF1ggpd_wCUcPDGlFNz6TMrHab5lvu645CZMRCqFoub_TpUw4oibxbx9X-qe1irMohRLPc4LLIF_PlXi88KaZkFYKEjuUTGiv2IbThEVJdOGBxjYR-cTMVuSLjN30X2TD0yBRM4g1_XoGVg80"/></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-24"><div class="flex flex-col w-full">
+<!-- Top Banner & Welcoming Header -->
+<section class="px-margin pt-space-md pb-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings: 'FILL' 1;">local_library</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Repositorio Pedagógico</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold">Biblioteca R-TEA</h1>
+</div>
+<button class="flex items-center justify-center gap-1.5 px-4 h-11 bg-primary text-on-primary rounded-full shadow-[0_4px_0_0_#074a75] active:translate-y-1 active:shadow-none transition-all font-semibold" id="toggleFormBtn">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span class="font-label-md text-label-md">Nuevo Título</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+      Cuentos adaptados, literatura especializada y artículos científicos seleccionados para el aula y terapia neuroinclusiva con espectro armónico y calmado.
+    </p>
+</section>
+<!-- Search & Tactile Filter Chips (Serene Spectrum Pastel Theme) -->
+<section class="px-margin py-space-sm flex flex-col gap-space-sm">
+<!-- Search Bar -->
+<div class="relative w-full flex items-center">
+<span class="absolute left-4 material-symbols-outlined text-outline text-[22px] pointer-events-none">search</span>
+<input class="w-full h-12 pl-12 pr-4 bg-surface-container-lowest text-on-surface rounded-2xl border border-surface-container-high shadow-sm placeholder:text-outline font-body-md text-body-md focus:outline-none focus:border-primary-container focus:bg-surface-container-lowest transition-all" id="searchInput" placeholder="Buscar por título, autor o tema pedagógico..." type="search"/>
+</div>
+<!-- Category Chips (Serene Pastel Tones: Sky Blue, Menta/Salvia, Melocotón, Lavanda) -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 scrollbar-none">
+<button class="filter-chip active flex items-center gap-1.5 px-4 py-2 rounded-full font-label-md text-label-md whitespace-nowrap bg-primary text-on-primary shadow-sm transition-all" data-category="all">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span>Todos (28)</span>
+</button>
+<button class="filter-chip flex items-center gap-1.5 px-4 py-2 rounded-full font-label-md text-label-md whitespace-nowrap bg-primary-fixed/60 text-on-primary-fixed hover:bg-primary-fixed transition-all" data-category="cuento">
+<span class="material-symbols-outlined text-[16px] text-primary">child_care</span>
+<span>Cuentos TEA (14)</span>
+</button>
+<button class="filter-chip flex items-center gap-1.5 px-4 py-2 rounded-full font-label-md text-label-md whitespace-nowrap bg-secondary-fixed/60 text-on-secondary-fixed hover:bg-secondary-fixed transition-all" data-category="libro">
+<span class="material-symbols-outlined text-[16px] text-secondary">menu_book</span>
+<span>Libros Teóricos (8)</span>
+</button>
+<button class="filter-chip flex items-center gap-1.5 px-4 py-2 rounded-full font-label-md text-label-md whitespace-nowrap bg-tertiary-fixed/60 text-on-tertiary-fixed hover:bg-tertiary-fixed transition-all" data-category="paper">
+<span class="material-symbols-outlined text-[16px] text-tertiary">science</span>
+<span>Artículos (6)</span>
+</button>
+</div>
+</section>
+<!-- Expandable Form: Add New Book or Document -->
+<section class="px-margin mb-space-md hidden transition-all duration-300" id="addBookSection">
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-md border border-surface-container-high flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">library_add</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Añadir Recurso a Biblioteca</h2>
+</div>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container" id="closeFormBtn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="flex flex-col gap-space-md" id="newBookForm" onsubmit="event.preventDefault(); window.addNewResource();">
+<!-- Cover Upload Preview Box -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface">Portada o Documento Visual</label>
+<div class="relative w-full h-36 bg-surface-container-low border border-dashed border-outline-variant rounded-2xl flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-surface-container active:scale-[0.99] transition-all p-3 text-center">
+<div class="w-11 h-11 rounded-full bg-primary-fixed/70 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">add_photo_alternate</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Cargar foto de portada o PDF</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">PNG, JPG o portada escaneada (máx. 10MB)</span>
+</div>
+<input accept="image/*,.pdf" class="absolute inset-0 opacity-0 cursor-pointer" type="file"/>
+</div>
+</div>
+<!-- Title & Author -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Título del Libro o Paper</label>
+<input class="w-full h-12 px-4 bg-surface-container-low border border-surface-container text-on-surface rounded-xl font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:border-primary transition-all" id="formTitle" placeholder="Ej. Cuento: Los zapatos de Tomás" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Autor / Editorial / Revista</label>
+<input class="w-full h-12 px-4 bg-surface-container-low border border-surface-container text-on-surface rounded-xl font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:border-primary transition-all" id="formAuthor" placeholder="Ej. Peter Vermeulen / Equipo TEA" required="" type="text"/>
+</div>
+</div>
+<!-- Material Type Selection -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface">Tipo de Material</label>
+<div class="grid grid-cols-3 gap-2">
+<label class="flex flex-col items-center p-2.5 rounded-xl bg-surface-container-low border border-transparent cursor-pointer has-[:checked]:bg-primary-fixed has-[:checked]:text-on-primary-fixed has-[:checked]:border-primary/30 transition-all text-center">
+<input checked="" class="sr-only" name="materialType" type="radio" value="cuento"/>
+<span class="material-symbols-outlined text-[22px] mb-1">child_care</span>
+<span class="font-label-sm text-label-sm">Cuento TEA</span>
+</label>
+<label class="flex flex-col items-center p-2.5 rounded-xl bg-surface-container-low border border-transparent cursor-pointer has-[:checked]:bg-secondary-fixed has-[:checked]:text-on-secondary-fixed has-[:checked]:border-secondary/30 transition-all text-center">
+<input class="sr-only" name="materialType" type="radio" value="libro"/>
+<span class="material-symbols-outlined text-[22px] mb-1">menu_book</span>
+<span class="font-label-sm text-label-sm">Libro Teórico</span>
+</label>
+<label class="flex flex-col items-center p-2.5 rounded-xl bg-surface-container-low border border-transparent cursor-pointer has-[:checked]:bg-tertiary-fixed has-[:checked]:text-on-tertiary-fixed has-[:checked]:border-tertiary/30 transition-all text-center">
+<input class="sr-only" name="materialType" type="radio" value="paper"/>
+<span class="material-symbols-outlined text-[22px] mb-1">science</span>
+<span class="font-label-sm text-label-sm">Artículo / Paper</span>
+</label>
+</div>
+</div>
+<!-- Pedagogical Description -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Reseña Pedagógica &amp; Utilidad en Aula</label>
+<textarea class="w-full p-3 bg-surface-container-low border border-surface-container text-on-surface rounded-xl font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:border-primary transition-all resize-none" id="formDesc" placeholder="¿Por qué es útil? Nivel de comprensión, estructuración visual o apoyo conductual..." rows="3"></textarea>
+</div>
+<!-- Form Actions -->
+<div class="flex items-center gap-space-sm pt-2">
+<button class="flex-1 h-12 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-all" id="cancelFormBtn" type="button">
+            Cancelar
+          </button>
+<button class="flex-[2] h-12 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-[0_4px_0_0_#074a75] active:translate-y-1 active:shadow-none flex items-center justify-center gap-2 transition-all font-semibold" type="submit">
+<span class="material-symbols-outlined text-[20px]">cloud_upload</span>
+<span>Guardar en Biblioteca</span>
+</button>
+</div>
+</form>
+</div>
+</section>
+<!-- Library Catalog Section -->
+<section class="px-margin flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Materiales Disponibles</h2>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-primary-fixed/70 text-on-primary-fixed-variant font-bold" id="catalogCount">4 ítems</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant text-label-sm">
+<span class="material-symbols-outlined text-[16px]">sort</span>
+<span>Recientes</span>
+</div>
+</div>
+<!-- Cards Container -->
+<div class="flex flex-col gap-space-md" id="catalogList">
+<!-- Card 1: El monstruo de colores (Cuento Infantil TEA) -->
+<article class="resource-card bg-surface-container-lowest rounded-2xl p-4 shadow-sm border border-surface-container flex flex-col gap-space-sm relative transition-all" data-type="cuento">
+<div class="flex gap-space-md">
+<!-- Book Cover Thumbnail with Serene Pastel Badge -->
+<div class="relative w-24 h-32 rounded-xl overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Portada colorida de cuento infantil con un simpático monstruo de trazos suaves con tarros de colores simbolizando emociones primarias, estética tierna, estilo acuarela y papel artesanal para niños neurodivergentes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7DQULrhJF_3grVoH_xtBQlw2zPb-h42C7CDPaIDWSyaZ69WBe0Iar1gemoK5dOzh8kne1DSLOyOYyiNl4Vcd97eHono6Y-1MN5G5MAaaLmLZHAnsO70KEHRBhY2ETlEkXng_cUGGJ8qa9-3Wgn3yM9zZkpys7OUVHp7BrWweN7ailXsGc763Uqlo_86Xg_e70wssaYC-D_JtaV-gUZqEvBMkdNIDwcmrYFkwZEvU"/>
+<span class="absolute top-1.5 left-1.5 bg-primary/90 text-on-primary text-[10px] font-bold px-2 py-0.5 rounded-md flex items-center gap-0.5 shadow-sm backdrop-blur-xs">
+<span class="material-symbols-outlined text-[12px]">child_care</span> Cuento
+            </span>
+</div>
+<!-- Metadata & Tags -->
+<div class="flex flex-col flex-1 min-w-0 justify-between">
+<div>
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">El monstruo de colores</h3>
+<!-- Quick Delete Button -->
+<button aria-label="Eliminar material" class="w-8 h-8 rounded-full flex items-center justify-center text-outline hover:text-error hover:bg-error-container/40 active:scale-90 transition-all shrink-0" onclick="window.deleteResource(this)">
+<span class="material-symbols-outlined text-[20px]">delete_outline</span>
+</button>
+</div>
+<p class="font-label-md text-label-md text-primary font-bold">Anna Llenas</p>
+<div class="flex flex-wrap gap-1.5 mt-2">
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant">Emociones</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant">3-6 años</span>
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold px-2 py-0.5 rounded-md">Adaptado TEA</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant text-label-sm mt-1">
+<span class="material-symbols-outlined text-[14px] text-primary">auto_stories</span>
+<span>Edición con apoyos visuales</span>
+</div>
+</div>
+</div>
+<!-- Pedagogical Review Note (Serene Mint / Salvia Touch) -->
+<div class="bg-surface-container-low p-3 rounded-xl border border-surface-container flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">psychology_alt</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+<strong class="font-bold text-on-surface">Uso pedagógico:</strong> Cuento esencial para identificación de emociones con apoyos de tarros y códigos de color. Muy útil para autorregulación emocional en la asamblea matutina.
+          </p>
+</div>
+<!-- Bottom Action Row: Assigned Strip (Serene Spectrum) -->
+<div class="flex items-center justify-between bg-primary-fixed/40 px-3 py-2 rounded-xl border border-primary-fixed-dim/40 transition-all" id="assignedStrip-1"><div class="flex items-center gap-2"><div class="flex -space-x-2"><img alt="Mateo G." class="w-7 h-7 rounded-full object-cover ring-2 ring-surface-container-lowest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKoLT84M3p2xAn8UiEHvZq9qg1LvoOQDxZlKekkb7M049GKp1nFyPoy7GElqH3IeTqc81c0mQbqVe0A9BIO13g_GZIzEWRnH87W7xnpk4YfA0gi_fndZ5DAveYyI0t9XQJYZkCyXUcsTFrFAW-o0FpDamPhA5oEmeUHkOQb9uODkRa2AXDEMb9ClooptuQdN76NBCNNPlFZ6JyM4CLXE5Lh8SI0Sj3HjqX2IFeH5K4o-4N6YDcl3re"/><img alt="Sofía L." class="w-7 h-7 rounded-full object-cover ring-2 ring-surface-container-lowest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDLdfuOhX9Eet_ld-xTvvJ_6o3CTIilnFb4tS1zPvai8kcm1LL6wCn6xKCP-h4_JUYoUVWm8FgX3cPBUctZ2tYM5pAbRCMNvU-E7OxJe7HkO5J15PQ3uPSp0fugsDjYPqM0RuLYBMkBJQ8xL0FwQteAsAwSYK0BYwJVWEUjjPvhgK5vEZLmOU7lEgZaz_lJQOMfVO0My8VQe4K6Jya7jGvh8qmXQfBoqQV79GYdgyJqMG9Zpt1Z40q"/></div><div class="flex flex-col leading-none"><span class="font-label-sm text-[12px] text-on-surface font-bold">2 alumnos asignados</span><span class="font-body-sm text-[11px] text-primary font-semibold">Mateo G. · Sofía L. (Sincronizado)</span></div></div><button class="font-label-sm text-xs px-2.5 py-1 rounded-full bg-surface-container-lowest hover:bg-surface-container text-on-surface flex items-center gap-1 transition-all shadow-xs" onclick="window.openAssignModal('El monstruo de colores', 'https://lh3.googleusercontent.com/aida-public/AB6AXuB7DQULrhJF_3grVoH_xtBQlw2zPb-h42C7CDPaIDWSyaZ69WBe0Iar1gemoK5dOzh8kne1DSLOyOYyiNl4Vcd97eHono6Y-1MN5G5MAaaLmLZHAnsO70KEHRBhY2ETlEkXng_cUGGJ8qa9-3Wgn3yM9zZkpys7OUVHp7BrWweN7ailXsGc763Uqlo_86Xg_e70wssaYC-D_JtaV-gUZqEvBMkdNIDwcmrYFkwZEvU', 'Cuento Adaptado TEA')" type="button"><span class="material-symbols-outlined text-[14px]">edit</span><span>Gestionar</span></button></div><div class="flex items-center gap-2 pt-1">
+<button class="flex-1 h-10 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span>Ver Ficha</span>
+</button>
+<button class="flex-1 h-10 rounded-full bg-primary-container/30 text-on-primary-container hover:bg-primary-container/45 font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-all font-semibold" onclick="window.openAssignModal('El monstruo de colores', 'https://lh3.googleusercontent.com/aida-public/AB6AXuB7DQULrhJF_3grVoH_xtBQlw2zPb-h42C7CDPaIDWSyaZ69WBe0Iar1gemoK5dOzh8kne1DSLOyOYyiNl4Vcd97eHono6Y-1MN5G5MAaaLmLZHAnsO70KEHRBhY2ETlEkXng_cUGGJ8qa9-3Wgn3yM9zZkpys7OUVHp7BrWweN7ailXsGc763Uqlo_86Xg_e70wssaYC-D_JtaV-gUZqEvBMkdNIDwcmrYFkwZEvU', 'Cuento Adaptado TEA')"><span class="material-symbols-outlined text-[18px]">assignment_ind</span><span>Asignar Alumno</span></button>
+</div>
+</article>
+<!-- Card 2: Lucas tiene superpoderes (Historia Social) -->
+<article class="resource-card bg-surface-container-lowest rounded-2xl p-4 shadow-sm border border-surface-container flex flex-col gap-space-sm relative transition-all" data-type="cuento">
+<div class="flex gap-space-md">
+<!-- Book Cover Thumbnail -->
+<div class="relative w-24 h-32 rounded-xl overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Ilustración cálida de un niño pequeño sonriente con auriculares de cancelación de ruido de color azul en un patio escolar lleno de juegos infantiles, estilo libro infantil inclusivo y empático." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJsEPooyVC8hYum2e17XfojU0ythxjJrhTwGfLCg_cuu0_zDzXT9j2tyALvf7vuKt7qdIBJamtRL8s_CSYErchRphnV-FQZm221dnyoXzzo7KWHSl_TvtJuFtGa8yY2c226M0ZAax_MdRYJ8jAxVmCKLWZCsFIpIZ_spLx9w9biub2lj0eW1yTTNGLeGFqb34lDMHvgShtUk9oZNN17dR0NdzU8ynEWkaN62gnzoo"/>
+<span class="absolute top-1.5 left-1.5 bg-primary/90 text-on-primary text-[10px] font-bold px-2 py-0.5 rounded-md flex items-center gap-0.5 shadow-sm backdrop-blur-xs">
+<span class="material-symbols-outlined text-[12px]">child_care</span> Cuento
+            </span>
+</div>
+<!-- Metadata & Tags -->
+<div class="flex flex-col flex-1 min-w-0 justify-between">
+<div>
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">Lucas tiene superpoderes</h3>
+<button aria-label="Eliminar material" class="w-8 h-8 rounded-full flex items-center justify-center text-outline hover:text-error hover:bg-error-container/40 active:scale-90 transition-all shrink-0" onclick="window.deleteResource(this)">
+<span class="material-symbols-outlined text-[20px]">delete_outline</span>
+</button>
+</div>
+<p class="font-label-md text-label-md text-secondary font-bold">Equipo de Orientación TEA</p>
+<div class="flex flex-wrap gap-1.5 mt-2">
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant">Anticipación</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant">Historias Sociales</span>
+<span class="font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed px-2 py-0.5 rounded-md font-semibold">Sensorial</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant text-label-sm mt-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">volume_off</span>
+<span>Regulación auditiva en patio</span>
+</div>
+</div>
+</div>
+<!-- Pedagogical Review Note -->
+<div class="bg-surface-container-low p-3 rounded-xl border border-surface-container flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">tips_and_updates</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+<strong class="font-bold text-on-surface">Uso pedagógico:</strong> Historia social diseñada para anticipar el ruido del recreo y desmitificar el uso de auriculares de cancelación sonora entre los compañeros de clase.
+          </p>
+</div>
+<!-- Bottom Action Row -->
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 h-10 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+<span>Previsualizar</span>
+</button>
+<button class="flex-1 h-10 rounded-full bg-primary-container/30 text-on-primary-container hover:bg-primary-container/45 font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-all font-semibold" onclick="window.openAssignModal('Lucas tiene superpoderes', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAJsEPooyVC8hYum2e17XfojU0ythxjJrhTwGfLCg_cuu0_zDzXT9j2tyALvf7vuKt7qdIBJamtRL8s_CSYErchRphnV-FQZm221dnyoXzzo7KWHSl_TvtJuFtGa8yY2c226M0ZAax_MdRYJ8jAxVmCKLWZCsFIpIZ_spLx9w9biub2lj0eW1yTTNGLeGFqb34lDMHvgShtUk9oZNN17dR0NdzU8ynEWkaN62gnzoo', 'Historia Social - Sensorial')"><span class="material-symbols-outlined text-[18px]">assignment_ind</span><span>Asignar Alumno</span></button>
+</div>
+</article>
+<!-- Card 3: El autismo y las emociones (Libro Teórico / Especializado) -->
+<article class="resource-card bg-surface-container-lowest rounded-2xl p-4 shadow-sm border border-surface-container flex flex-col gap-space-sm relative transition-all" data-type="libro">
+<div class="flex gap-space-md">
+<!-- Book Cover Thumbnail -->
+<div class="relative w-24 h-32 rounded-xl overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Diseño editorial sobrio de libro pedagógico sobre neurodiversidad, portada minimalista con un símbolo del infinito arcoíris estilizado sobre fondo crema y tipografía contemporánea limpia." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAytvqV1OJ124_qmC465H4Z5K-j7oxvIo9_T4H-ue6YQU3IL-E3IoCwRPOzFJMxN26m-fsodsVMq5xJcyA5q6G8TS1cXIFdWsznB22BLYbWEH1CPC4qq3hVtnG5G-zDKq6bw_ETUv4NYtD2qgSyxYtpsFFwfH7X1U7VFIp-7c66XviX1O8sJdg3Bjx6L6qdjQ724U7_EUFF7_0vaxiTsDZoS3DRlU9awtM8ew7G_s8"/>
+<span class="absolute top-1.5 left-1.5 bg-secondary/90 text-on-secondary text-[10px] font-bold px-2 py-0.5 rounded-md flex items-center gap-0.5 shadow-sm backdrop-blur-xs">
+<span class="material-symbols-outlined text-[12px]">menu_book</span> Manual
+            </span>
+</div>
+<!-- Metadata & Tags -->
+<div class="flex flex-col flex-1 min-w-0 justify-between">
+<div>
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">El autismo y las emociones</h3>
+<button aria-label="Eliminar material" class="w-8 h-8 rounded-full flex items-center justify-center text-outline hover:text-error hover:bg-error-container/40 active:scale-90 transition-all shrink-0" onclick="window.deleteResource(this)">
+<span class="material-symbols-outlined text-[20px]">delete_outline</span>
+</button>
+</div>
+<p class="font-label-md text-label-md text-secondary font-bold">Peter Vermeulen</p>
+<div class="flex flex-wrap gap-1.5 mt-2">
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant">Docencia</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant">Método TEACCH</span>
+<span class="font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed px-2 py-0.5 rounded-md font-semibold">Guía Práctica</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant text-label-sm mt-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">bookmark</span>
+<span>320 páginas · Formato Físico / Digital</span>
+</div>
+</div>
+</div>
+<!-- Pedagogical Review Note -->
+<div class="bg-surface-container-low p-3 rounded-xl border border-surface-container flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">school</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+<strong class="font-bold text-on-surface">Puntos clave:</strong> Enfoque sobre la 'ceguera al contexto' en el espectro autista y cómo estructurar el aula sensorial para reducir la sobrecarga cognitiva y fomentar la comprensión predictiva.
+          </p>
+</div>
+<!-- Bottom Action Row -->
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 h-10 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">notes</span>
+<span>Notas Internas</span>
+</button>
+<button class="flex-1 h-10 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed-dim font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-all font-semibold">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Consultar PDF</span>
+</button>
+</div>
+</article>
+<!-- Card 4: Efectividad de apoyos visuales (Artículo Científico) -->
+<article class="resource-card bg-surface-container-lowest rounded-2xl p-4 shadow-sm border border-surface-container flex flex-col gap-space-sm relative transition-all" data-type="paper">
+<div class="flex gap-space-md">
+<!-- Book Cover Thumbnail -->
+<div class="relative w-24 h-32 rounded-xl overflow-hidden shrink-0 bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Documento científico y académico con gráficos de barras suaves y pictogramas esquemáticos en papel satinado, representando evidencia empírica en neuroeducación infantil." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAulTpTZ0gPJQsgqGk9bmzx40K3eJ2QxA0M4qjQUmgDnqp83TTdyTuRzUjSSPyr6MjWP32eatXw0kKE1z-T42pVYk932hoMUV9xM3uN0NxeShK4MRfdbhmzG40aSKeqFpHdHbVbceHYqnwtv3nomXgM49_wgwzAdXgtEJvaiVADX1Xw5RR9Qtn-TZNXIF0HANa6LkiD8H2ZpQIH6vcm2RaC_dklHSaLn9i8b5LztAY"/>
+<span class="absolute top-1.5 left-1.5 bg-tertiary/90 text-on-tertiary text-[10px] font-bold px-2 py-0.5 rounded-md flex items-center gap-0.5 shadow-sm backdrop-blur-xs">
+<span class="material-symbols-outlined text-[12px]">science</span> Paper
+            </span>
+</div>
+<!-- Metadata & Tags -->
+<div class="flex flex-col flex-1 min-w-0 justify-between">
+<div>
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">Efectividad de apoyos visuales en transiciones (2023)</h3>
+<button aria-label="Eliminar material" class="w-8 h-8 rounded-full flex items-center justify-center text-outline hover:text-error hover:bg-error-container/40 active:scale-90 transition-all shrink-0" onclick="window.deleteResource(this)">
+<span class="material-symbols-outlined text-[20px]">delete_outline</span>
+</button>
+</div>
+<p class="font-label-md text-label-md text-tertiary font-bold">Revista de Neuropsicología Infantil</p>
+<div class="flex flex-wrap gap-1.5 mt-2">
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant">Evidencia</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant">Transiciones</span>
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 rounded-md font-semibold">PDF 12 pág.</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant text-label-sm mt-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">verified</span>
+<span>Revisado por pares · DOI 10.1016</span>
+</div>
+</div>
+</div>
+<!-- Pedagogical Review Note -->
+<div class="bg-surface-container-low p-3 rounded-xl border border-surface-container flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[20px] shrink-0 mt-0.5">menu_book</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+<strong class="font-bold text-on-surface">Evidencia clínica:</strong> Estudio cuantitativo sobre la reducción del 64% de episodios de desregulación mediante paneles de anticipación táctiles durante el cambio de asignaturas en el aula.
+          </p>
+</div>
+<!-- Bottom Action Row -->
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 h-10 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">share</span>
+<span>Compartir</span>
+</button>
+<button class="flex-1 h-10 rounded-full bg-tertiary-container/80 text-on-tertiary-container hover:bg-tertiary-container font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-all font-semibold">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span>Descargar Paper</span>
+</button>
+</div>
+</article>
+</div>
+<!-- Empty State (Shown when search/filter has no match) -->
+<div class="hidden bg-surface-container-lowest rounded-2xl p-space-lg text-center flex-col items-center justify-center gap-3 shadow-sm border border-surface-container" id="emptyCatalogState">
+<div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[32px]">manage_search</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">No se encontraron lecturas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-[260px] mx-auto mt-1">
+          Prueba con otros términos o añade un nuevo recurso a la biblioteca.
+        </p>
+</div>
+<button class="px-5 h-11 bg-primary text-on-primary rounded-full font-label-md text-label-md shadow-sm font-semibold" onclick="window.resetCatalogFilters()">
+        Ver todos los títulos
+      </button>
+</div>
+<!-- Pedagogical Quick Tip Card (Serene Pastel Lavender/Peach Tone) -->
+<div class="bg-secondary-fixed/40 border border-secondary-fixed-dim/40 rounded-2xl p-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary shrink-0 shadow-xs">
+<span class="material-symbols-outlined text-[22px]">lightbulb</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-secondary-fixed font-bold">Consejo de Mediación Lectora TEA</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+          Usa anticipadores de lectura y permite tiempos de pausa sensorial antes de cada página con ilustraciones complejas.
+        </span>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // UI Interactions & Reactive Logic
+  (function initLibrary() {
+    const toggleFormBtn = document.getElementById('toggleFormBtn');
+    const closeFormBtn = document.getElementById('closeFormBtn');
+    const cancelFormBtn = document.getElementById('cancelFormBtn');
+    const addBookSection = document.getElementById('addBookSection');
+    const searchInput = document.getElementById('searchInput');
+    const filterChips = document.querySelectorAll('.filter-chip');
+    const catalogCards = document.querySelectorAll('.resource-card');
+    const catalogList = document.getElementById('catalogList');
+    const emptyCatalogState = document.getElementById('emptyCatalogState');
+    const catalogCount = document.getElementById('catalogCount');
+
+    // Toggle Form Accordion
+    function openForm() {
+      addBookSection.classList.remove('hidden');
+      addBookSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    function closeForm() {
+      addBookSection.classList.add('hidden');
+    }
+
+    if (toggleFormBtn) toggleFormBtn.addEventListener('click', openForm);
+    if (closeFormBtn) closeFormBtn.addEventListener('click', closeForm);
+    if (cancelFormBtn) cancelFormBtn.addEventListener('click', closeForm);
+
+    // Delete Resource Function
+    window.deleteResource = function(button) {
+      const card = button.closest('.resource-card');
+      if (card) {
+        card.style.opacity = '0';
+        card.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          card.remove();
+          updateCounts();
+        }, 200);
+      }
+    };
+
+    // Filter Logic
+    let currentFilter = 'all';
+
+    filterChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        filterChips.forEach(c => {
+          c.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm', 'active');
+          const cat = c.dataset.category;
+          if (cat === 'cuento') {
+            c.className = 'filter-chip flex items-center gap-1.5 px-4 py-2 rounded-full font-label-md text-label-md whitespace-nowrap bg-primary-fixed/60 text-on-primary-fixed hover:bg-primary-fixed transition-all';
+          } else if (cat === 'libro') {
+            c.className = 'filter-chip flex items-center gap-1.5 px-4 py-2 rounded-full font-label-md text-label-md whitespace-nowrap bg-secondary-fixed/60 text-on-secondary-fixed hover:bg-secondary-fixed transition-all';
+          } else if (cat === 'paper') {
+            c.className = 'filter-chip flex items-center gap-1.5 px-4 py-2 rounded-full font-label-md text-label-md whitespace-nowrap bg-tertiary-fixed/60 text-on-tertiary-fixed hover:bg-tertiary-fixed transition-all';
+          } else {
+            c.className = 'filter-chip flex items-center gap-1.5 px-4 py-2 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface hover:bg-surface-container transition-all';
+          }
+        });
+
+        chip.className = 'filter-chip active flex items-center gap-1.5 px-4 py-2 rounded-full font-label-md text-label-md whitespace-nowrap bg-primary text-on-primary shadow-sm transition-all';
+        currentFilter = chip.dataset.category;
+        applyFilters();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', applyFilters);
+    }
+
+    function applyFilters() {
+      const query = (searchInput ? searchInput.value : '').toLowerCase().trim();
+      const currentCards = document.querySelectorAll('.resource-card');
+      let visibleCount = 0;
+
+      currentCards.forEach(card => {
+        const type = card.dataset.type;
+        const text = card.innerText.toLowerCase();
+        const matchesCategory = (currentFilter === 'all' || type === currentFilter);
+        const matchesSearch = !query || text.includes(query);
+
+        if (matchesCategory && matchesSearch) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (catalogCount) {
+        catalogCount.innerText = visibleCount + (visibleCount === 1 ? ' ítem' : ' ítems');
+      }
+
+      if (emptyCatalogState) {
+        if (visibleCount === 0) {
+          emptyCatalogState.classList.remove('hidden');
+          emptyCatalogState.classList.add('flex');
+        } else {
+          emptyCatalogState.classList.add('hidden');
+          emptyCatalogState.classList.remove('flex');
+        }
+      }
+    }
+
+    function updateCounts() {
+      const remainingCards = document.querySelectorAll('.resource-card').length;
+      if (catalogCount) {
+        catalogCount.innerText = remainingCards + (remainingCards === 1 ? ' ítem' : ' ítems');
+      }
+      applyFilters();
+    }
+
+    window.resetCatalogFilters = function() {
+      if (searchInput) searchInput.value = '';
+      currentFilter = 'all';
+      filterChips.forEach((c, idx) => {
+        if (idx === 0) {
+          c.className = 'filter-chip active flex items-center gap-1.5 px-4 py-2 rounded-full font-label-md text-label-md whitespace-nowrap bg-primary text-on-primary shadow-sm transition-all';
+        } else {
+          const cat = c.dataset.category;
+          if (cat === 'cuento') {
+            c.className = 'filter-chip flex items-center gap-1.5 px-4 py-2 rounded-full font-label-md text-label-md whitespace-nowrap bg-primary-fixed/60 text-on-primary-fixed hover:bg-primary-fixed transition-all';
+          } else if (cat === 'libro') {
+            c.className = 'filter-chip flex items-center gap-1.5 px-4 py-2 rounded-full font-label-md text-label-md whitespace-nowrap bg-secondary-fixed/60 text-on-secondary-fixed hover:bg-secondary-fixed transition-all';
+          } else if (cat === 'paper') {
+            c.className = 'filter-chip flex items-center gap-1.5 px-4 py-2 rounded-full font-label-md text-label-md whitespace-nowrap bg-tertiary-fixed/60 text-on-tertiary-fixed hover:bg-tertiary-fixed transition-all';
+          }
+        }
+      });
+      applyFilters();
+    };
+
+    // Add New Resource Handler
+    window.addNewResource = function() {
+      const titleInput = document.getElementById('formTitle');
+      const authorInput = document.getElementById('formAuthor');
+      const descInput = document.getElementById('formDesc');
+      const typeRadio = document.querySelector('input[name="materialType"]:checked');
+
+      if (!titleInput.value.trim() || !authorInput.value.trim()) return;
+
+      const title = titleInput.value.trim();
+      const author = authorInput.value.trim();
+      const desc = descInput.value.trim() || 'Material incorporado al inventario pedagógico.';
+      const type = typeRadio ? typeRadio.value : 'cuento';
+
+      let badgeColor = 'bg-primary/90 text-on-primary';
+      let typeLabel = 'Cuento';
+      let iconName = 'child_care';
+
+      if (type === 'libro') {
+        badgeColor = 'bg-secondary/90 text-on-secondary';
+        typeLabel = 'Libro';
+        iconName = 'menu_book';
+      } else if (type === 'paper') {
+        badgeColor = 'bg-tertiary/90 text-on-tertiary';
+        typeLabel = 'Artículo';
+        iconName = 'science';
+      }
+
+      const newArticle = document.createElement('article');
+      newArticle.className = 'resource-card bg-surface-container-lowest rounded-2xl p-4 shadow-sm border border-surface-container flex flex-col gap-space-sm relative transition-all';
+      newArticle.dataset.type = type;
+
+      newArticle.innerHTML = `
+        <div class="flex gap-space-md">
+          <div class="relative w-24 h-32 rounded-xl overflow-hidden shrink-0 bg-surface-container shadow-inner">
+            <img 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7DQULrhJF_3grVoH_xtBQlw2zPb-h42C7CDPaIDWSyaZ69WBe0Iar1gemoK5dOzh8kne1DSLOyOYyiNl4Vcd97eHono6Y-1MN5G5MAaaLmLZHAnsO70KEHRBhY2ETlEkXng_cUGGJ8qa9-3Wgn3yM9zZkpys7OUVHp7BrWweN7ailXsGc763Uqlo_86Xg_e70wssaYC-D_JtaV-gUZqEvBMkdNIDwcmrYFkwZEvU" 
+              data-alt="Portada colorida y profesional para material educativo TEA titulado ${title}, estilo limpio y amigable para el aula."
+              class="w-full h-full object-cover"
+            />
+            <span class="absolute top-1.5 left-1.5 ${badgeColor} text-[10px] font-bold px-2 py-0.5 rounded-md flex items-center gap-0.5 shadow-sm">
+              <span class="material-symbols-outlined text-[12px]">${iconName}</span> ${typeLabel}
+            </span>
+          </div>
+
+          <div class="flex flex-col flex-1 min-w-0 justify-between">
+            <div>
+              <div class="flex items-start justify-between gap-1">
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">${title}</h3>
+                <button 
+                  onclick="window.deleteResource(this)"
+                  aria-label="Eliminar material" 
+                  class="w-8 h-8 rounded-full flex items-center justify-center text-outline hover:text-error hover:bg-error-container/40 active:scale-90 transition-all shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[20px]">delete_outline</span>
+                </button>
+              </div>
+              <p class="font-label-md text-label-md text-primary font-bold">${author}</p>
+              <div class="flex flex-wrap gap-1.5 mt-2">
+                <span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded-md text-on-surface-variant">Nuevo</span>
+                <span class="font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded-md font-semibold">Aula R-TEA</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-1 text-on-surface-variant text-label-sm mt-1">
+              <span class="material-symbols-outlined text-[14px]">calendar_today</span>
+              <span>Añadido hoy</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-low p-3 rounded-xl border border-surface-container flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">psychology_alt</span>
+          <p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+            <strong class="font-bold text-on-surface">Uso pedagógico:</strong> ${desc}
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2 pt-1">
+          <button class="flex-1 h-10 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 hover:bg-surface-container-high transition-colors">
+            <span class="material-symbols-outlined text-[18px]">visibility</span>
+            <span>Ver Ficha</span>
+          </button>
+          <button onclick="window.openAssignModal('${title}', 'https://lh3.googleusercontent.com/aida-public/AB6AXuB7DQULrhJF_3grVoH_xtBQlw2zPb-h42C7CDPaIDWSyaZ69WBe0Iar1gemoK5dOzh8kne1DSLOyOYyiNl4Vcd97eHono6Y-1MN5G5MAaaLmLZHAnsO70KEHRBhY2ETlEkXng_cUGGJ8qa9-3Wgn3yM9zZkpys7OUVHp7BrWweN7ailXsGc763Uqlo_86Xg_e70wssaYC-D_JtaV-gUZqEvBMkdNIDwcmrYFkwZEvU', 'Aula R-TEA')" class="flex-1 h-10 rounded-full bg-primary-container/30 text-on-primary-container font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-all font-semibold">
+            <span class="material-symbols-outlined text-[18px]">assignment_ind</span>
+            <span>Asignar Alumno</span>
+          </button>
+        </div>
+      `;
+
+      catalogList.prepend(newArticle);
+      titleInput.value = '';
+      authorInput.value = '';
+      descInput.value = '';
+      closeForm();
+      applyFilters();
+    };
+  })();
+</script></main><!-- Assignment Success Toast (Serene Spectrum Sage/Mint) -->
+<aside class="fixed top-20 left-4 right-4 z-50 flex items-center gap-3 p-3.5 bg-tertiary text-on-tertiary rounded-2xl shadow-xl transition-all duration-300 transform -translate-y-2 opacity-0 pointer-events-none" id="assignToast" role="status">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0 leading-tight">
+<span class="font-label-md text-label-md font-bold">Asignación sincronizada con éxito</span>
+<span class="font-body-sm text-[12px] opacity-90 truncate" id="assignToastText">Material vinculado a 2 alumnos en sus tablets de aula.</span>
+</div>
+<button class="w-7 h-7 rounded-full flex items-center justify-center text-on-tertiary/80 hover:text-on-tertiary hover:bg-on-tertiary/10" onclick="window.hideToast()" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</aside>
+<!-- Interactive Multi-Student Assignment Modal Dialog (Serene Spectrum Pastel Edition) -->
+<dialog class="fixed inset-0 z-50 w-full h-full bg-inverse-surface/40 backdrop-blur-sm p-0 m-0 border-0 flex items-end justify-center hidden opacity-0 transition-opacity duration-300" id="assignModal">
+<div class="w-full max-w-lg bg-surface-bright rounded-t-[2.2rem] shadow-2xl border-t border-surface-container flex flex-col max-h-[88vh] overflow-hidden animate-in slide-in-from-bottom duration-300">
+<!-- Drag handle indicator -->
+<div class="w-full flex justify-center pt-3 pb-1 shrink-0 cursor-pointer" onclick="window.closeAssignModal()">
+<div class="w-12 h-1.5 rounded-full bg-outline-variant"></div>
+</div>
+<!-- Modal Header -->
+<div class="px-5 pt-1 pb-3 flex items-start justify-between border-b border-surface-container shrink-0">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 text-primary font-bold font-label-sm uppercase tracking-wide">
+<span class="material-symbols-outlined text-[18px]">assignment_turned_in</span>
+<span>Vincular con Tablets</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-extrabold">Asignar Título a Alumnos</h2>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Selecciona los alumnos para sincronizar este material en sus perfiles.</p>
+</div>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-90 transition-all" onclick="window.closeAssignModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Scrollable Modal Content -->
+<div class="flex-1 overflow-y-auto px-5 py-3 flex flex-col gap-4">
+<!-- Selected Book Strip -->
+<div class="flex items-center gap-3 p-2.5 rounded-2xl bg-surface-container-low border border-surface-container">
+<img alt="Libro seleccionado" class="w-12 h-16 rounded-lg object-cover shrink-0 shadow-inner" id="modalBookImg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7DQULrhJF_3grVoH_xtBQlw2zPb-h42C7CDPaIDWSyaZ69WBe0Iar1gemoK5dOzh8kne1DSLOyOYyiNl4Vcd97eHono6Y-1MN5G5MAaaLmLZHAnsO70KEHRBhY2ETlEkXng_cUGGJ8qa9-3Wgn3yM9zZkpys7OUVHp7BrWweN7ailXsGc763Uqlo_86Xg_e70wssaYC-D_JtaV-gUZqEvBMkdNIDwcmrYFkwZEvU"/>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-sm text-[10px] uppercase font-bold text-primary tracking-wide" id="modalBookTag">Cuento Adaptado TEA</span>
+<h4 class="font-headline-sm text-[16px] text-on-surface font-bold truncate" id="modalBookTitle">El monstruo de colores</h4>
+<span class="font-body-sm text-[12px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-tertiary">sync_saved_locally</span>
+<span>Listo para distribución inmediata</span>
+</span>
+</div>
+</div>
+<!-- Quick Controls & Search -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-bold">Alumnado del Aula R-TEA</span>
+<div class="flex items-center gap-2">
+<button class="font-label-sm text-[11px] text-primary font-bold hover:underline" onclick="window.selectAllStudents(true)" type="button">Seleccionar Todos</button>
+<span class="text-outline-variant">·</span>
+<button class="font-label-sm text-[11px] text-on-surface-variant hover:underline" onclick="window.selectAllStudents(false)" type="button">Limpiar</button>
+</div>
+</div>
+<!-- Search Input -->
+<div class="relative w-full flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px] pointer-events-none">search</span>
+<input class="w-full h-10 pl-9 pr-3 rounded-xl bg-surface-container-low border border-surface-container text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container transition-all" id="studentSearchInput" oninput="window.filterStudentChecklist(this.value)" placeholder="Buscar alumno o número de tablet..." type="text"/>
+</div>
+</div>
+<!-- Student Checklist (Soft Pastel Tinting) -->
+<div class="flex flex-col gap-2" id="studentsChecklist">
+<!-- Student 1 (Mateo) -->
+<label class="student-item flex items-center justify-between p-3 rounded-2xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all border border-surface-container/60 has-[:checked]:border-primary-container has-[:checked]:bg-primary-fixed/40">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="Mateo García" class="w-11 h-11 rounded-full object-cover shrink-0 ring-2 ring-primary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKoLT84M3p2xAn8UiEHvZq9qg1LvoOQDxZlKekkb7M049GKp1nFyPoy7GElqH3IeTqc81c0mQbqVe0A9BIO13g_GZIzEWRnH87W7xnpk4YfA0gi_fndZ5DAveYyI0t9XQJYZkCyXUcsTFrFAW-o0FpDamPhA5oEmeUHkOQb9uODkRa2AXDEMb9ClooptuQdN76NBCNNPlFZ6JyM4CLXE5Lh8SI0Sj3HjqX2IFeH5K4o-4N6YDcl3re"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate student-name">Mateo García</span>
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded-md bg-primary-fixed text-on-primary-fixed font-semibold">Tablet 01</span>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px] text-primary">psychology</span>
+<span>Apoyo visual alto · Pictogramas</span>
+</span>
+</div>
+</div>
+<input checked="" class="w-5 h-5 rounded-md accent-primary text-on-primary cursor-pointer shrink-0 ml-3" name="assigned_student" onchange="window.updateAssignCount()" type="checkbox" value="Mateo G."/>
+</label>
+<!-- Student 2 (Sofía) -->
+<label class="student-item flex items-center justify-between p-3 rounded-2xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all border border-surface-container/60 has-[:checked]:border-secondary-container has-[:checked]:bg-secondary-fixed/40">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="Sofía López" class="w-11 h-11 rounded-full object-cover shrink-0 ring-2 ring-secondary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDLdfuOhX9Eet_ld-xTvvJ_6o3CTIilnFb4tS1zPvai8kcm1LL6wCn6xKCP-h4_JUYoUVWm8FgX3cPBUctZ2tYM5pAbRCMNvU-E7OxJe7HkO5J15PQ3uPSp0fugsDjYPqM0RuLYBMkBJQ8xL0FwQteAsAwSYK0BYwJVWEUjjPvhgK5vEZLmOU7lEgZaz_lJQOMfVO0My8VQe4K6Jya7jGvh8qmXQfBoqQV79GYdgyJqMG9Zpt1Z40q"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate student-name">Sofía López</span>
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-semibold">Tablet 03</span>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px] text-secondary">hearing</span>
+<span>Sensibilidad acústica · Pausas</span>
+</span>
+</div>
+</div>
+<input checked="" class="w-5 h-5 rounded-md accent-secondary text-on-secondary cursor-pointer shrink-0 ml-3" name="assigned_student" onchange="window.updateAssignCount()" type="checkbox" value="Sofía L."/>
+</label>
+<!-- Student 3 (Lucas) -->
+<label class="student-item flex items-center justify-between p-3 rounded-2xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all border border-surface-container/60 has-[:checked]:border-tertiary-container has-[:checked]:bg-tertiary-fixed/40">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="Lucas Morales" class="w-11 h-11 rounded-full object-cover shrink-0 ring-2 ring-tertiary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmoa_8X-SdOC_yaeeWNdXPLfqEuHwvXksc1al4NocAysG3xCMdWWpIfRd1UV5xGceU7Xyg9Oakfc2cJA8ltyqCOdZpn7v7ljRBiY_ACexfwso3P5TS_Yrrs2SgfZovN4_0h_k_z55Lt4QczQEPafFXACSwAio64fZXYb1GjvoGSI02lnlLXImp04a73CFvFfFhWrkLYeMIA2pQIXhy-knSAbsPfTNcpzwOKZVj2XrjsZlQ5VVKJ2Mq"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate student-name">Lucas Morales</span>
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-semibold">Tablet 04</span>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px] text-tertiary">auto_stories</span>
+<span>Lector incipiente · Historias sociales</span>
+</span>
+</div>
+</div>
+<input class="w-5 h-5 rounded-md accent-tertiary text-on-tertiary cursor-pointer shrink-0 ml-3" name="assigned_student" onchange="window.updateAssignCount()" type="checkbox" value="Lucas M."/>
+</label>
+<!-- Student 4 (Leo) -->
+<label class="student-item flex items-center justify-between p-3 rounded-2xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all border border-surface-container/60 has-[:checked]:border-primary-container has-[:checked]:bg-primary-fixed/40">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="Leo Benítez" class="w-11 h-11 rounded-full object-cover shrink-0 ring-2 ring-surface-container-highest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcQxgHmdqb7xMnEJgrkOSGfwXWZlg4kdRyZgLFBaLdDwN216wcNE5Xzmu21woyZRpf6KEkmifDOkjs9pMGhwn2ADYuvMWkOc5vJ6uKRffjQoud8Q2qRRPpwGgtcMtiPFZ9JaIs2bkqseBKPktqywAuctOtKJyESRYANmaaJJ9LP-QtLRmdi0FkvRFZT1E0bcHL_ZJOnRKiYsRSBfMOs2-dJlQ_VjqJgxHkUyFn5kruKvUBrouNyPjC"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate student-name">Leo Benítez</span>
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-semibold">Tablet 02</span>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px] text-secondary">spatial_audio_off</span>
+<span>Anticipación sensorial auditiva</span>
+</span>
+</div>
+</div>
+<input class="w-5 h-5 rounded-md accent-primary text-on-primary cursor-pointer shrink-0 ml-3" name="assigned_student" onchange="window.updateAssignCount()" type="checkbox" value="Leo B."/>
+</label>
+</div>
+<!-- Pedagogical Moment / Usage context pills (Serene Pastel Spectrum) -->
+<div class="flex flex-col gap-1.5 pt-1">
+<span class="font-label-md text-label-md text-on-surface font-bold">Momento Pedagógico de Uso</span>
+<div class="flex flex-wrap gap-1.5" id="usageMoments">
+<button class="usage-tag px-3 py-1.5 rounded-full font-label-sm text-[12px] bg-primary text-on-primary font-bold shadow-xs transition-all" onclick="window.toggleUsageTag(this)" type="button">Asamblea Matutina</button>
+<button class="usage-tag px-3 py-1.5 rounded-full font-label-sm text-[12px] bg-tertiary-fixed text-on-tertiary-fixed font-semibold hover:bg-tertiary-fixed-dim transition-all" onclick="window.toggleUsageTag(this)" type="button">Rincón de Calma</button>
+<button class="usage-tag px-3 py-1.5 rounded-full font-label-sm text-[12px] bg-secondary-fixed text-on-secondary-fixed font-semibold hover:bg-secondary-fixed-dim transition-all" onclick="window.toggleUsageTag(this)" type="button">Trabajo Autónomo 1:1</button>
+<button class="usage-tag px-3 py-1.5 rounded-full font-label-sm text-[12px] bg-primary-fixed text-on-primary-fixed font-semibold hover:bg-primary-fixed-dim transition-all" onclick="window.toggleUsageTag(this)" type="button">Biblioteca de Aula</button>
+</div>
+</div>
+</div>
+<!-- Modal Actions Footer -->
+<div class="p-4 bg-surface-container-low border-t border-surface-container flex items-center gap-3 shrink-0 pb-safe">
+<button class="flex-1 h-12 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-all" onclick="window.closeAssignModal()" type="button">
+        Cancelar
+      </button>
+<button class="flex-[2] h-12 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-[0_4px_0_0_#074a75] active:translate-y-1 active:shadow-none flex items-center justify-center gap-2 transition-all font-bold" id="confirmAssignBtn" onclick="window.confirmAssignment()" type="button">
+<span class="material-symbols-outlined text-[20px]">send_to_mobile</span>
+<span id="confirmAssignText">Confirmar Asignación (2 seleccionados)</span>
+</button>
+</div>
+</div>
+</dialog>
+<script>
+(function setupAssignModal() {
+  const modal = document.getElementById('assignModal');
+  const toast = document.getElementById('assignToast');
+  let currentSelectedTitle = 'El monstruo de colores';
+  let toastTimeout = null;
+
+  window.openAssignModal = function(title, imgSrc, tag) {
+    if (modal) {
+      if (title) {
+        currentSelectedTitle = title;
+        const titleEl = document.getElementById('modalBookTitle');
+        if (titleEl) titleEl.innerText = title;
+      }
+      if (imgSrc) {
+        const imgEl = document.getElementById('modalBookImg');
+        if (imgEl) imgEl.src = imgSrc;
+      }
+      if (tag) {
+        const tagEl = document.getElementById('modalBookTag');
+        if (tagEl) tagEl.innerText = tag;
+      }
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+      }, 10);
+      window.updateAssignCount();
+    }
+  };
+
+  window.closeAssignModal = function() {
+    if (modal) {
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 250);
+    }
+  };
+
+  window.selectAllStudents = function(select) {
+    const checkboxes = document.querySelectorAll('#studentsChecklist input[type="checkbox"]');
+    checkboxes.forEach(cb => { cb.checked = select; });
+    window.updateAssignCount();
+  };
+
+  window.filterStudentChecklist = function(val) {
+    const q = (val || '').toLowerCase().trim();
+    const items = document.querySelectorAll('#studentsChecklist .student-item');
+    items.forEach(item => {
+      const text = item.innerText.toLowerCase();
+      item.style.display = (!q || text.includes(q)) ? 'flex' : 'none';
+    });
+  };
+
+  window.toggleUsageTag = function(btn) {
+    btn.classList.toggle('bg-primary');
+    btn.classList.toggle('text-on-primary');
+    btn.classList.toggle('font-bold');
+    btn.classList.toggle('bg-surface-container-low');
+    btn.classList.toggle('text-on-surface');
+  };
+
+  window.updateAssignCount = function() {
+    const checked = document.querySelectorAll('#studentsChecklist input[type="checkbox"]:checked');
+    const confirmText = document.getElementById('confirmAssignText');
+    const confirmBtn = document.getElementById('confirmAssignBtn');
+    const count = checked.length;
+    if (confirmText) {
+      confirmText.innerText = count === 0 
+        ? 'Selecciona al menos un alumno'
+        : `Confirmar Asignación (${count} ${count === 1 ? 'seleccionado' : 'seleccionados'})`;
+    }
+    if (confirmBtn) {
+      confirmBtn.disabled = (count === 0);
+      confirmBtn.style.opacity = (count === 0) ? '0.6' : '1';
+    }
+  };
+
+  window.confirmAssignment = function() {
+    const checked = Array.from(document.querySelectorAll('#studentsChecklist input[type="checkbox"]:checked'));
+    if (checked.length === 0) return;
+
+    const names = checked.map(c => c.value);
+    window.closeAssignModal();
+
+    // Update card 1 badge strip
+    const strip = document.getElementById('assignedStrip-1');
+    if (strip) {
+      const countLabel = strip.querySelector('.font-label-sm');
+      const namesLabel = strip.querySelector('.font-body-sm');
+      if (countLabel) countLabel.innerText = `${checked.length} ${checked.length === 1 ? 'alumno asignado' : 'alumnos asignados'}`;
+      if (namesLabel) namesLabel.innerText = `${names.join(' · ')} (Sincronizado)`;
+    }
+
+    // Show feedback toast banner
+    window.showToast(`'${currentSelectedTitle}' asignado a ${checked.length} ${checked.length === 1 ? 'alumno' : 'alumnos'} (${names.join(', ')}). Sincronizado en sus tablets.`);
+  };
+
+  window.showToast = function(msg) {
+    if (!toast) return;
+    const toastText = document.getElementById('assignToastText');
+    if (toastText && msg) toastText.innerText = msg;
+
+    if (toastTimeout) clearTimeout(toastTimeout);
+    toast.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-2');
+    toast.classList.add('opacity-100', 'translate-y-0');
+
+    toastTimeout = setTimeout(() => {
+      window.hideToast();
+    }, 4500);
+  };
+
+  window.hideToast = function() {
+    if (toast) {
+      toast.classList.add('opacity-0', 'pointer-events-none', '-translate-y-2');
+      toast.classList.remove('opacity-100', 'translate-y-0');
+    }
+  };
+})();
+</script><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl border-t border-surface-container shadow-[0_-4px_16px_rgba(28,28,25,0.04)]" data-active-classes="text-primary font-bold"><div class="h-20 px-space-xs grid grid-cols-4 items-center"><a class="flex flex-col items-center justify-center gap-1 min-h-[48px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-[24px]">home</span><span class="font-label-sm text-label-sm">Inicio</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[48px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-path="clase" href="#"><span class="material-symbols-outlined text-[24px]">group</span><span class="font-label-sm text-label-sm">Clase</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[48px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-path="diario" href="#"><span class="material-symbols-outlined text-[24px]">calendar_month</span><span class="font-label-sm text-label-sm">Diario</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[48px] py-1 text-primary font-bold transition-colors" data-path="recursos" href="#"><span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">folder_copy</span><span class="font-label-sm text-label-sm">Recursos</span></a></div></nav>
+</body></html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;font-family:'Nunito Sans',sans-serif;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "outline": "#72787f",
+          "tertiary-fixed-dim": "#8fd4bd",
+          "secondary": "#8e4d2b",
+          "tertiary-container": "#6db19b",
+          "on-primary-fixed-variant": "#074a75",
+          "primary-fixed": "#cee5ff",
+          "on-secondary-fixed": "#351000",
+          "surface-container": "#f0ede9",
+          "on-surface-variant": "#5a5e65",
+          "inverse-on-surface": "#f3f0eb",
+          "on-secondary-container": "#793c1b",
+          "on-surface": "#1c1c19",
+          "tertiary": "#226a57",
+          "outline-variant": "#c1c7d0",
+          "error": "#ba1a1a",
+          "surface-container-low": "#f6f3ee",
+          "secondary-fixed-dim": "#ffb693",
+          "surface-container-highest": "#e5e2dd",
+          "error-container": "#ffdad6",
+          "primary-container": "#76a8d8",
+          "surface-tint": "#2c628e",
+          "on-primary-container": "#003d62",
+          "on-primary-fixed": "#001d33",
+          "surface-dim": "#dcdad5",
+          "inverse-surface": "#31302d",
+          "on-error-container": "#93000a",
+          "surface-container-high": "#ebe8e3",
+          "on-tertiary-fixed-variant": "#005140",
+          "tertiary-fixed": "#aaf1d9",
+          "primary": "#2c628e",
+          "background": "#fcf9f4",
+          "surface-variant": "#e5e2dd",
+          "on-error": "#ffffff",
+          "surface-bright": "#fcf9f4",
+          "on-primary": "#ffffff",
+          "secondary-container": "#ffaa81",
+          "on-secondary": "#ffffff",
+          "on-tertiary": "#ffffff",
+          "inverse-primary": "#99cbfd",
+          "on-background": "#1c1c19",
+          "surface": "#fcf9f4",
+          "on-tertiary-fixed": "#002018",
+          "surface-container-lowest": "#ffffff",
+          "secondary-fixed": "#ffdbcc",
+          "on-secondary-fixed-variant": "#713616",
+          "on-tertiary-container": "#004334",
+          "primary-fixed-dim": "#99cbfd",
+          /* Paleta pastel extendida del logo R-TEA */
+          "rtea-orange-soft": "#ff8a5c",
+          "rtea-peach-pastel": "#ffe5d4",
+          "rtea-peach-dark": "#b44c1a",
+          "rtea-blue-pastel": "#d8eafd",
+          "rtea-blue-soft": "#3f82b8",
+          "rtea-blue-dark": "#1d4c72",
+          "rtea-mint-pastel": "#d2f3e5",
+          "rtea-mint-soft": "#2fa37a",
+          "rtea-mint-dark": "#176348",
+          "rtea-yellow-pastel": "#fff2cc",
+          "rtea-yellow-soft": "#d69a23",
+          "rtea-lavender-pastel": "#ebe3fc",
+          "rtea-lavender-soft": "#7c5cc7",
+          "rtea-lavender-dark": "#4a2c91"
+        },
+        "borderRadius": {
+          "DEFAULT": "1rem",
+          "lg": "2rem",
+          "xl": "3rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "space-sm": "0.5rem",
+          "gutter-lg": "1.5rem",
+          "space-md": "1rem",
+          "margin-md": "2rem",
+          "space-lg": "1.5rem",
+          "gutter": "1rem",
+          "margin-lg": "3rem",
+          "space-xl": "2.5rem",
+          "margin": "1.25rem"
+        },
+        "fontFamily": {
+          "label-sm": ["Nunito Sans"],
+          "headline-lg": ["Nunito Sans"],
+          "label-md": ["Nunito Sans"],
+          "label-lg": ["Nunito Sans"],
+          "body-sm": ["Nunito Sans"],
+          "body-lg": ["Nunito Sans"],
+          "display-lg-mobile": ["Nunito Sans"],
+          "body-md": ["Nunito Sans"],
+          "headline-sm": ["Nunito Sans"],
+          "headline-md": ["Nunito Sans"],
+          "display-lg": ["Nunito Sans"]
+        },
+        "fontSize": {
+          "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+          "headline-lg": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+          "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "600" }],
+          "label-lg": ["15px", { "lineHeight": "22px", "fontWeight": "600" }],
+          "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+          "body-lg": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+          "display-lg-mobile": ["30px", { "lineHeight": "40px", "fontWeight": "700" }],
+          "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+          "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+          "headline-md": ["22px", { "lineHeight": "30px", "fontWeight": "600" }],
+          "display-lg": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+        }
+      }
+    }
+  };
+</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface text-on-surface flex flex-col min-h-screen selection:bg-rtea-peach-pastel"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl border-b border-surface-container"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-full bg-white flex items-center justify-center p-1.5 shadow-[0_2px_8px_-2px_rgba(44,98,142,0.12)] border border-surface-container"><img alt="R-TEA Logo" class="w-full h-full object-contain rounded-full" src="https://lh3.googleusercontent.com/aida/ALJJyrD1mYNH6b6XJgxZS7grgH15ivU6TN5KnX25V88gMmM3CJIglUFikemrzejeUy8ozCBBzcpbOgGuCk_fwh2WH6_Z4F7L3QpZX-TbIPUe3dOF1ggpd_wCUcPDGlFNz6TMrHab5lvu645CZMRCqFoub_TpUw4oibxbx9X-qe1irMohRLPc4LLIF_PlXi88KaZkFYKEjuUTGiv2IbThEVJdOGBxjYR-cTMVuSLjN30X2TD0yBRM4g1_XoGVg80"/></div><div class="flex flex-col"><div class="flex items-center font-bold tracking-tight"><span class="text-[#e26938]">R-</span><span class="text-[#3b82c4]">TEA</span></div><span class="font-headline-sm text-headline-sm text-on-surface text-[17px]">Clase</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notificaciones" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-high active:scale-95 transition-all"><span class="material-symbols-outlined text-[24px]">notifications</span></button><div class="p-0.5 rounded-full bg-surface-container-high"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/ALJJyrD1mYNH6b6XJgxZS7grgH15ivU6TN5KnX25V88gMmM3CJIglUFikemrzejeUy8ozCBBzcpbOgGuCk_fwh2WH6_Z4F7L3QpZX-TbIPUe3dOF1ggpd_wCUcPDGlFNz6TMrHab5lvu645CZMRCqFoub_TpUw4oibxbx9X-qe1irMohRLPc4LLIF_PlXi88KaZkFYKEjuUTGiv2IbThEVJdOGBxjYR-cTMVuSLjN30X2TD0yBRM4g1_XoGVg80"/></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-24"><div class="flex flex-col w-full px-margin pb-space-xl gap-space-lg">
+<!-- CABECERA CONTEXTUAL DEL ALUMNO -->
+<section class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm border border-surface-container flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<img alt="Avatar de Mateo García" class="w-14 h-14 rounded-full object-cover shadow-sm bg-surface-container-low ring-2 ring-rtea-blue-pastel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3JY6ydSsU3OGx0wjOQLleZaoL7zNyvfkzOVhfuT1MGxKFjNlZvlc0mnOg3w5GZC11kPCn_pOFBmAr-gScO13TxB6TyD-OPLFgbI6weNxAavD8nMfrNk3Eb2TZbe0f8tOMXsgXZFU2UGBYLvU4CIDGAZmkiQCFZSvKh4E_-r-bPr1XvK54uznc7KOdVt855fmDDyCKyymYIYeFcMdnxWQlmCOUgBcd2XBR_djqAgjFprRfEf_B498b"/>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-rtea-mint-pastel text-rtea-mint-dark flex items-center justify-center text-[12px] shadow-sm border border-white">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Mateo García</h1>
+<span class="px-2.5 py-0.5 rounded-full bg-rtea-blue-pastel/80 text-rtea-blue-dark font-label-sm text-label-sm">Aula 3-B</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-rtea-blue-soft">calendar_today</span>
+            Hoy, 24 de Octubre • Turno Mañana
+          </p>
+</div>
+</div>
+<button aria-label="Perfil del alumno" class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition-all border border-surface-container">
+<span class="material-symbols-outlined text-[20px]">person_search</span>
+</button>
+</div>
+<!-- Pestañas de momento -->
+<div class="grid grid-cols-3 gap-space-xs bg-surface-container-low p-1 rounded-full text-center border border-surface-container">
+<button class="py-2 rounded-full bg-surface-container-lowest shadow-sm text-rtea-blue-dark font-label-md text-label-md font-bold transition-all">
+        Sesión Actual
+      </button>
+<button class="py-2 rounded-full text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all">
+        Semanal
+      </button>
+<button class="py-2 rounded-full text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all">
+        Historial
+      </button>
+</div>
+</section>
+<!-- SECCIÓN PRINCIPAL: SISTEMA DE RECONOCIMIENTO Y MEDALLAS -->
+<section class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm border border-surface-container flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-rtea-peach-pastel flex items-center justify-center text-rtea-peach-dark">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Logro y Reconocimiento</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Celebra el esfuerzo y la autorregulación de hoy</p>
+</div>
+</div>
+<span class="w-8 h-8 rounded-full bg-rtea-blue-pastel flex items-center justify-center text-rtea-blue-dark">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</span>
+</div>
+<!-- Grid de 3 Medallas Interactivas -->
+<div class="grid grid-cols-3 gap-space-sm" id="medals-container">
+<!-- Medalla Bronce Pastel -->
+<button class="flex flex-col items-center p-space-sm rounded-DEFAULT bg-surface-container-low hover:bg-surface-container transition-all active:scale-95 text-center relative group border border-transparent hover:border-surface-container" id="medal-bronze" onclick="selectMedal('bronze')" type="button">
+<div class="w-14 h-14 rounded-full bg-gradient-to-b from-[#ffd7be] to-[#f4b693] p-1 flex items-center justify-center shadow-sm mb-2 relative">
+<div class="w-full h-full rounded-full bg-[#faecd6] flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[26px]">emoji_events</span>
+</div>
+<span class="absolute -top-1 -right-1 text-secondary text-[16px] material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Buen Esfuerzo</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant line-clamp-1 mt-0.5">Iniciativa</span>
+</button>
+<!-- Medalla Plata Celeste Pastel -->
+<button class="flex flex-col items-center p-space-sm rounded-DEFAULT bg-surface-container-low hover:bg-surface-container transition-all active:scale-95 text-center relative group border border-transparent hover:border-surface-container" id="medal-silver" onclick="selectMedal('silver')" type="button">
+<div class="w-14 h-14 rounded-full bg-gradient-to-b from-[#e3edf7] to-[#bdd5ec] p-1 flex items-center justify-center shadow-sm mb-2 relative">
+<div class="w-full h-full rounded-full bg-[#edf3fa] flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">workspace_premium</span>
+</div>
+<span class="absolute -top-1 -right-1 text-primary-container text-[16px] material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Gran Progreso</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant line-clamp-1 mt-0.5">Autonomía</span>
+</button>
+<!-- Medalla Oro Cálido Pastel (Seleccionada por defecto) -->
+<button class="flex flex-col items-center p-space-sm rounded-DEFAULT bg-rtea-yellow-pastel/60 border border-rtea-yellow-soft/50 transition-all active:scale-95 text-center relative shadow-sm" id="medal-gold" onclick="selectMedal('gold')" type="button">
+<span class="absolute top-1 right-1 w-5 h-5 rounded-full bg-rtea-orange-soft text-white flex items-center justify-center text-[12px] shadow-sm">
+<span class="material-symbols-outlined text-[13px]">check</span>
+</span>
+<div class="w-14 h-14 rounded-full bg-gradient-to-b from-[#fff3b8] to-[#fde188] p-1 flex items-center justify-center shadow-sm mb-2 relative">
+<div class="w-full h-full rounded-full bg-[#fcedbe] flex items-center justify-center text-[#9c6a12]">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<span class="absolute -top-1 -right-1 text-[#b57a17] text-[18px] material-symbols-outlined animate-pulse" style="font-variation-settings: 'FILL' 1;">celebration</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold">¡Misión Hecha!</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant line-clamp-1 mt-0.5">Calma total</span>
+</button>
+</div>
+<!-- Mensaje de motivación y refuerzo visual positivo con tonos pastel suaves -->
+<div class="p-space-sm bg-rtea-peach-pastel/50 border border-rtea-peach-pastel rounded-DEFAULT flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-rtea-peach-pastel text-rtea-peach-dark flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+<span class="font-bold text-rtea-peach-dark">Refuerzo hoy:</span> "¡Mateo logró la transición de aula sin angustia y con gran calma!"
+      </p>
+</div>
+</section>
+<!-- ESCALA VISUAL DE EVALUACIÓN DEL 1 AL 5 (NEURO-INCLUSIVA EN TONOS PASTEL DEL LOGO) -->
+<section class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm border border-surface-container flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Nivel de Bienestar y Logro</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Escala respetuosa y adaptada para la sesión</p>
+</div>
+<span class="w-8 h-8 rounded-full bg-rtea-mint-pastel text-rtea-mint-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">sentiment_satisfied</span>
+</span>
+</div>
+<!-- Selector interactivo de 1 a 5 con colores pastel armónicos -->
+<div class="grid grid-cols-5 gap-space-xs" id="score-scale">
+<!-- Nivel 1 (Lavanda pastel suave) -->
+<button class="score-card flex flex-col items-center justify-between p-2 rounded-DEFAULT bg-surface-container-low hover:bg-rtea-lavender-pastel/50 transition-all active:scale-95 text-center min-h-[96px] border border-transparent" id="score-btn-1" onclick="setScore(1)" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">1</span>
+<span class="material-symbols-outlined text-[26px] text-rtea-lavender-soft">self_improvement</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Pausa</span>
+</button>
+<!-- Nivel 2 (Melocotón pastel suave) -->
+<button class="score-card flex flex-col items-center justify-between p-2 rounded-DEFAULT bg-surface-container-low hover:bg-rtea-peach-pastel/50 transition-all active:scale-95 text-center min-h-[96px] border border-transparent" id="score-btn-2" onclick="setScore(2)" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">2</span>
+<span class="material-symbols-outlined text-[26px] text-rtea-peach-dark">support</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Guiado</span>
+</button>
+<!-- Nivel 3 (Amarillo cálido pastel) -->
+<button class="score-card flex flex-col items-center justify-between p-2 rounded-DEFAULT bg-surface-container-low hover:bg-rtea-yellow-pastel/50 transition-all active:scale-95 text-center min-h-[96px] border border-transparent" id="score-btn-3" onclick="setScore(3)" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">3</span>
+<span class="material-symbols-outlined text-[26px] text-[#b07d1e]">lightbulb</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Pistas</span>
+</button>
+<!-- Nivel 4 (Azul cielo pastel - Activo por defecto) -->
+<button class="score-card flex flex-col items-center justify-between p-2 rounded-DEFAULT bg-rtea-blue-pastel text-rtea-blue-dark transition-all active:scale-95 text-center min-h-[96px] shadow-sm ring-2 ring-rtea-blue-soft/60" id="score-btn-4" onclick="setScore(4)" type="button">
+<span class="font-headline-sm text-headline-sm font-bold text-rtea-blue-dark">4</span>
+<span class="material-symbols-outlined text-[26px] text-rtea-blue-dark" style="font-variation-settings: 'FILL' 1;">thumb_up</span>
+<span class="font-label-sm text-label-sm font-bold text-rtea-blue-dark leading-tight">Autónomo</span>
+</button>
+<!-- Nivel 5 (Verde menta pastel) -->
+<button class="score-card flex flex-col items-center justify-between p-2 rounded-DEFAULT bg-surface-container-low hover:bg-rtea-mint-pastel/50 transition-all active:scale-95 text-center min-h-[96px] border border-transparent" id="score-btn-5" onclick="setScore(5)" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">5</span>
+<span class="material-symbols-outlined text-[26px] text-rtea-mint-soft">celebration</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Excelente</span>
+</button>
+</div>
+<!-- Indicador de descripción ampliada según nivel con fondo pastel tenue -->
+<div class="p-space-sm bg-surface-container-low border border-surface-container rounded-DEFAULT flex items-center gap-space-sm" id="score-description">
+<span class="material-symbols-outlined text-[20px] text-rtea-blue-soft">psychology_alt</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<span class="font-bold">Nivel 4:</span> Muy buena autonomía, iniciativa y participación positiva en las actividades propuestas.
+      </p>
+</div>
+</section>
+<!-- ÁREAS Y HABILIDADES EVALUADAS HOY (PALETA PASTEL DEL INFINITO MULTICOLOR) -->
+<section class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm border border-surface-container flex flex-col gap-space-md" id="skills-section"><div class="p-space-sm bg-surface-container-low rounded-DEFAULT flex items-center justify-between border border-surface-container/60"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-rtea-blue-pastel flex items-center justify-center text-rtea-blue-dark"><span class="material-symbols-outlined text-[18px]">folder_shared</span></div><div><p class="font-label-md text-label-md text-on-surface">Registrar en Historial del Alumno</p><p class="font-body-sm text-body-sm text-on-surface-variant">Sincronizar con expediente escolar</p></div></div><label class="relative inline-flex items-center cursor-pointer"><input checked="" class="sr-only peer" id="record-toggle" type="checkbox"/><div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-rtea-blue-soft"></div></label></div><div class="flex items-center gap-space-xs overflow-x-auto pb-1"><span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">Plantillas:</span><button class="px-3.5 py-1 rounded-full bg-rtea-blue-soft text-white font-label-sm text-label-sm shrink-0 active:scale-95 transition-all shadow-sm" type="button">Sensorial</button><button class="px-3.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm shrink-0 active:scale-95 transition-all border border-surface-container" type="button">Social / Juego</button><button class="px-3.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm shrink-0 active:scale-95 transition-all border border-surface-container" type="button">Académico</button><button class="px-3.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm shrink-0 active:scale-95 transition-all border border-surface-container" type="button">Conductual</button></div><div class="flex flex-col gap-space-sm" id="dimensions-list">
+<!-- 1. Atención y Enfoque (Azul cielo pastel) -->
+<div class="p-space-sm bg-surface-container-low rounded-DEFAULT flex flex-col gap-2 transition-all hover:bg-surface-container/60 border border-surface-container/70"><div class="flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-rtea-blue-pastel flex items-center justify-center text-rtea-blue-dark shrink-0"><span class="material-symbols-outlined text-[18px]">center_focus_strong</span></div><div><p class="font-label-lg text-label-lg text-on-surface">Atención y Enfoque</p><p class="font-body-sm text-body-sm text-on-surface-variant">Sostuvo 18 minutos en puzzle</p></div></div><button aria-label="Quitar dimensión Atención y Enfoque" class="w-7 h-7 rounded-full flex items-center justify-center text-outline hover:text-error hover:bg-surface-container active:scale-95 transition-all" onclick="this.closest('.p-space-sm').remove()" title="Quitar dimensión de hoy" type="button"><span class="material-symbols-outlined text-[18px]">close</span></button></div><div class="flex items-center justify-between pt-1 border-t border-surface-container"><span class="font-label-sm text-label-sm text-on-surface-variant">Puntaje observado:</span><div class="flex items-center gap-1"><button class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">1</button><button class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">2</button><button class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">3</button><button class="w-7 h-7 rounded-full bg-rtea-blue-soft text-white font-label-md text-label-md font-bold flex items-center justify-center shadow-sm active:scale-95 transition-all" type="button">4</button><button class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">5</button></div></div></div>
+<!-- 2. Regulación Sensorial (Verde menta pastel) -->
+<div class="p-space-sm bg-surface-container-low rounded-DEFAULT flex flex-col gap-2 transition-all hover:bg-surface-container/60 border border-surface-container/70"><div class="flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-rtea-mint-pastel flex items-center justify-center text-rtea-mint-dark shrink-0"><span class="material-symbols-outlined text-[18px]">spa</span></div><div><p class="font-label-lg text-label-lg text-on-surface">Regulación Sensorial</p><p class="font-body-sm text-body-sm text-on-surface-variant">Autorregulación óptima con cascos</p></div></div><button aria-label="Quitar dimensión Regulación Sensorial" class="w-7 h-7 rounded-full flex items-center justify-center text-outline hover:text-error hover:bg-surface-container active:scale-95 transition-all" onclick="this.closest('.p-space-sm').remove()" title="Quitar dimensión de hoy" type="button"><span class="material-symbols-outlined text-[18px]">close</span></button></div><div class="flex items-center justify-between pt-1 border-t border-surface-container"><span class="font-label-sm text-label-sm text-on-surface-variant">Puntaje observado:</span><div class="flex items-center gap-1"><button class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">1</button><button class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">2</button><button class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">3</button><button class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">4</button><button class="w-7 h-7 rounded-full bg-rtea-mint-soft text-white font-label-md text-label-md font-bold flex items-center justify-center shadow-sm active:scale-95 transition-all" type="button">5</button></div></div></div>
+<!-- 3. Interacción y Turno (Melocotón/Naranja suave pastel) -->
+<div class="p-space-sm bg-surface-container-low rounded-DEFAULT flex flex-col gap-2 transition-all hover:bg-surface-container/60 border border-surface-container/70"><div class="flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-rtea-peach-pastel flex items-center justify-center text-rtea-peach-dark shrink-0"><span class="material-symbols-outlined text-[18px]">diversity_3</span></div><div><p class="font-label-lg text-label-lg text-on-surface">Interacción y Turno</p><p class="font-body-sm text-body-sm text-on-surface-variant">Compartió piezas amablemente</p></div></div><button aria-label="Quitar dimensión Interacción y Turno" class="w-7 h-7 rounded-full flex items-center justify-center text-outline hover:text-error hover:bg-surface-container active:scale-95 transition-all" onclick="this.closest('.p-space-sm').remove()" title="Quitar dimensión de hoy" type="button"><span class="material-symbols-outlined text-[18px]">close</span></button></div><div class="flex items-center justify-between pt-1 border-t border-surface-container"><span class="font-label-sm text-label-sm text-on-surface-variant">Puntaje observado:</span><div class="flex items-center gap-1"><button class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">1</button><button class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">2</button><button class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">3</button><button class="w-7 h-7 rounded-full bg-rtea-orange-soft text-white font-label-md text-label-md font-bold flex items-center justify-center shadow-sm active:scale-95 transition-all" type="button">4</button><button class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">5</button></div></div></div>
+<!-- 4. Flexibilidad ante Cambios (Lila / Morado pastel suave) -->
+<div class="p-space-sm bg-surface-container-low rounded-DEFAULT flex flex-col gap-2 transition-all hover:bg-surface-container/60 border border-surface-container/70"><div class="flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-rtea-lavender-pastel flex items-center justify-center text-rtea-lavender-dark shrink-0"><span class="material-symbols-outlined text-[18px]">sync_alt</span></div><div><p class="font-label-lg text-label-lg text-on-surface">Flexibilidad ante Cambios</p><p class="font-body-sm text-body-sm text-on-surface-variant">Aceptó el cambio con apoyo visual</p></div></div><button aria-label="Quitar dimensión Flexibilidad ante Cambios" class="w-7 h-7 rounded-full flex items-center justify-center text-outline hover:text-error hover:bg-surface-container active:scale-95 transition-all" onclick="this.closest('.p-space-sm').remove()" title="Quitar dimensión de hoy" type="button"><span class="material-symbols-outlined text-[18px]">close</span></button></div><div class="flex items-center justify-between pt-1 border-t border-surface-container"><span class="font-label-sm text-label-sm text-on-surface-variant">Puntaje observado:</span><div class="flex items-center gap-1"><button class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">1</button><button class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">2</button><button class="w-7 h-7 rounded-full bg-rtea-lavender-soft text-white font-label-md text-label-md font-bold flex items-center justify-center shadow-sm active:scale-95 transition-all" type="button">3</button><button class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">4</button><button class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">5</button></div></div></div></div><button class="w-full py-3 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container text-rtea-blue-dark font-label-lg text-label-lg flex items-center justify-center gap-space-sm border border-dashed border-rtea-blue-soft/40 active:scale-98 transition-all" type="button"><span class="material-symbols-outlined text-[20px] text-rtea-blue-soft">add_circle</span><span>Añadir Nueva Dimensión / Objetivo</span></button></section>
+<!-- NOTAS DEL DOCENTE / TERAPEUTA -->
+<section class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm border border-surface-container flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-rtea-blue-pastel flex items-center justify-center text-rtea-blue-dark">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Observaciones Terapéuticas</h2>
+</div>
+<button aria-label="Dictado por voz" class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-rtea-blue-dark active:scale-95 transition-all border border-surface-container">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+</div>
+<div class="relative">
+<textarea class="w-full bg-surface-container-low rounded-DEFAULT p-space-sm font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container border border-surface-container transition-all resize-none placeholder:text-outline" placeholder="Añade notas breves sobre reguladores utilizados, apoyos o conductas observables..." rows="3">Usó plastilina sensorial a los 20 min y retomó la actividad con gran sonrisa y motivación.</textarea>
+</div>
+<!-- Toggle compartir con familia -->
+<div class="p-space-sm bg-surface-container-low rounded-DEFAULT flex items-center justify-between border border-surface-container/60">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-rtea-mint-pastel flex items-center justify-center text-rtea-mint-dark">
+<span class="material-symbols-outlined text-[18px]">family_restroom</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Compartir con Familia</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Se enviará al Diario de Mateo</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="family-toggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-rtea-mint-soft"></div>
+</label>
+</div>
+</section>
+<!-- BOTONES DE ACCIÓN PRINCIPALES -->
+<section class="flex flex-col gap-space-sm mt-space-xs">
+<!-- Botón Primario Redondeado en Naranja/Coral Pastel Suave sin estridencia -->
+<button class="w-full py-4 rounded-full bg-gradient-to-r from-[#ff9b71] to-[#ff7d52] hover:opacity-95 text-white font-headline-sm text-headline-sm flex items-center justify-center gap-space-sm shadow-[0_4px_14px_rgba(255,125,82,0.28)] active:translate-y-0.5 active:shadow-sm transition-all" onclick="celebrateEvaluation()" type="button">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+      Registrar y Entregar Medalla
+    </button>
+<!-- Botón Secundario Suave -->
+<button class="w-full py-3.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg flex items-center justify-center gap-space-xs active:scale-98 transition-all border border-surface-container" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+      Guardar como borrador
+    </button>
+</section>
+</div>
+<!-- Microinteracción interactiva sencilla en JavaScript vainilla con colores pastel suaves -->
+<script>
+  function selectMedal(type) {
+    const medals = ['bronze', 'silver', 'gold'];
+    medals.forEach(m => {
+      const btn = document.getElementById('medal-' + m);
+      if (btn) {
+        if (m === type) {
+          btn.className = "flex flex-col items-center p-space-sm rounded-DEFAULT bg-rtea-yellow-pastel/60 border border-rtea-yellow-soft/50 transition-all active:scale-95 text-center relative shadow-sm";
+          if (!btn.querySelector('.bg-rtea-orange-soft')) {
+            const check = document.createElement('span');
+            check.className = "absolute top-1 right-1 w-5 h-5 rounded-full bg-rtea-orange-soft text-white flex items-center justify-center text-[12px] shadow-sm";
+            check.innerHTML = '<span class="material-symbols-outlined text-[13px]">check</span>';
+            btn.appendChild(check);
+          }
+        } else {
+          btn.className = "flex flex-col items-center p-space-sm rounded-DEFAULT bg-surface-container-low hover:bg-surface-container transition-all active:scale-95 text-center relative group border border-transparent hover:border-surface-container";
+          const check = btn.querySelector('.bg-rtea-orange-soft');
+          if (check) check.remove();
+        }
+      }
+    });
+  }
+
+  function setScore(score) {
+    const descriptions = {
+      1: "<strong>Nivel 1:</strong> Necesitó pausa reparadora y acompañamiento cercano continuo.",
+      2: "<strong>Nivel 2:</strong> Proceso realizado con apoyo guiado y modelado frecuente.",
+      3: "<strong>Nivel 3:</strong> Progreso positivo y receptivo ante apoyos y pistas visuales.",
+      4: "<strong>Nivel 4:</strong> Muy buena autonomía, iniciativa y participación positiva en las actividades.",
+      5: "<strong>Nivel 5:</strong> ¡Excelente desempeño, autorregulación y alegría plena durante la sesión!"
+    };
+
+    const activeClasses = {
+      1: "score-card flex flex-col items-center justify-between p-2 rounded-DEFAULT bg-rtea-lavender-pastel text-rtea-lavender-dark transition-all active:scale-95 text-center min-h-[96px] shadow-sm ring-2 ring-rtea-lavender-soft/60",
+      2: "score-card flex flex-col items-center justify-between p-2 rounded-DEFAULT bg-rtea-peach-pastel text-rtea-peach-dark transition-all active:scale-95 text-center min-h-[96px] shadow-sm ring-2 ring-rtea-orange-soft/60",
+      3: "score-card flex flex-col items-center justify-between p-2 rounded-DEFAULT bg-rtea-yellow-pastel text-[#8d6211] transition-all active:scale-95 text-center min-h-[96px] shadow-sm ring-2 ring-rtea-yellow-soft/60",
+      4: "score-card flex flex-col items-center justify-between p-2 rounded-DEFAULT bg-rtea-blue-pastel text-rtea-blue-dark transition-all active:scale-95 text-center min-h-[96px] shadow-sm ring-2 ring-rtea-blue-soft/60",
+      5: "score-card flex flex-col items-center justify-between p-2 rounded-DEFAULT bg-rtea-mint-pastel text-rtea-mint-dark transition-all active:scale-95 text-center min-h-[96px] shadow-sm ring-2 ring-rtea-mint-soft/60"
+    };
+
+    for (let i = 1; i <= 5; i++) {
+      const btn = document.getElementById('score-btn-' + i);
+      if (btn) {
+        if (i === score) {
+          btn.className = activeClasses[score];
+          const title = btn.querySelector('span:first-child');
+          if (title) title.className = "font-headline-sm text-headline-sm font-bold";
+        } else {
+          btn.className = "score-card flex flex-col items-center justify-between p-2 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container transition-all active:scale-95 text-center min-h-[96px] border border-transparent";
+          const title = btn.querySelector('span:first-child');
+          if (title) title.className = "font-headline-sm text-headline-sm text-on-surface-variant";
+        }
+      }
+    }
+
+    const descEl = document.getElementById('score-description');
+    if (descEl && descriptions[score]) {
+      descEl.innerHTML = `
+        <span class="material-symbols-outlined text-[20px] text-rtea-blue-soft">psychology_alt</span>
+        <p class="font-body-sm text-body-sm text-on-surface">${descriptions[score]}</p>
+      `;
+    }
+  }
+
+  function celebrateEvaluation() {
+    const banner = document.createElement('div');
+    banner.className = 'fixed top-20 left-4 right-4 z-50 p-4 rounded-lg bg-rtea-mint-pastel text-rtea-mint-dark border border-rtea-mint-soft/40 shadow-lg flex items-center justify-between transition-all duration-300 transform translate-y-0';
+    banner.innerHTML = `
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-[28px] text-rtea-mint-soft animate-bounce">military_tech</span>
+        <div>
+          <p class="font-headline-sm text-headline-sm text-rtea-mint-dark">¡Evaluación Guardada!</p>
+          <p class="font-body-sm text-body-sm opacity-90">Medalla y reporte entregados a Mateo</p>
+        </div>
+      </div>
+      <span class="material-symbols-outlined text-[20px] text-rtea-mint-soft">check_circle</span>
+    `;
+    document.body.appendChild(banner);
+    setTimeout(() => {
+      banner.style.opacity = '0';
+      banner.style.transform = 'translateY(-10px)';
+      setTimeout(() => banner.remove(), 400);
+    }, 2500);
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl border-t border-surface-container shadow-[0_-4px_16px_rgba(28,28,25,0.03)]" data-active-classes="text-rtea-blue-dark font-bold"><div class="h-20 px-space-xs grid grid-cols-4 items-center"><a class="flex flex-col items-center justify-center gap-1 min-h-[48px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-[24px]">home</span><span class="font-label-sm text-label-sm">Inicio</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[48px] py-1 text-rtea-blue-dark font-bold transition-colors" data-path="clase" href="#"><span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">group</span><span class="font-label-sm text-label-sm">Clase</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[48px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="diario" href="#"><span class="material-symbols-outlined text-[24px]">calendar_month</span><span class="font-label-sm text-label-sm">Diario</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[48px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="recursos" href="#"><span class="material-symbols-outlined text-[24px]">local_library</span><span class="font-label-sm text-label-sm">Recursos</span></a></div></nav>
+</body></html>

@@ -1,0 +1,6 @@
+{
+  "name": "R-TEA",
+  "description": "Plataforma neuroinclusiva de seguimiento escolar, evaluación, diario, recursos terapéuticos y biblioteca para alumnado TEA con sincronización en tiempo real e IA.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

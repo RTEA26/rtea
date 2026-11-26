@@ -1,0 +1,186 @@
+{
+  "entities": {
+    "Student": {
+      "title": "Student",
+      "description": "Expediente inclusivo del alumno TEA con áreas de progreso, documentación y recursos activos.",
+      "type": "object",
+      "properties": {
+        "fullName": { "type": "string" },
+        "preferredName": { "type": "string" },
+        "classroom": { "type": "string" },
+        "avatarIndex": { "type": "integer" },
+        "customAvatarUri": { "type": "string" },
+        "supportLevel": { "type": "integer" },
+        "interests": { "type": "array", "items": { "type": "string" } },
+        "commSystem": { "type": "string" },
+        "sensoryNotes": { "type": "string" },
+        "lastSessionLabel": { "type": "string" },
+        "progressAreas": { "type": "array" },
+        "mainReportDocsCount": { "type": "integer" },
+        "programDocsCount": { "type": "integer" },
+        "aiReportSummary": { "type": "string" },
+        "activeResourceIds": { "type": "array", "items": { "type": "string" } },
+        "evalTemplate": { "type": "string" },
+        "evalReinforcement": { "type": "string" },
+        "evalMedal": { "type": "string" },
+        "evalScore": { "type": "integer" },
+        "evalDimensions": { "type": "array" },
+        "evalNotes": { "type": "string" },
+        "evalShareFamily": { "type": "boolean" },
+        "evalRecordHistory": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["fullName", "classroom", "avatarIndex", "supportLevel", "createdAt", "updatedAt"]
+    },
+    "QuickNote": {
+      "title": "QuickNote",
+      "description": "Nota rápida fijada en el tablón de Inicio.",
+      "type": "object",
+      "properties": {
+        "category": { "type": "string" },
+        "tagLabel": { "type": "string" },
+        "timeLabel": { "type": "string" },
+        "content": { "type": "string" },
+        "studentName": { "type": "string" },
+        "contextLabel": { "type": "string" },
+        "completed": { "type": "boolean" },
+        "replyText": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["category", "tagLabel", "content", "completed", "createdAt", "updatedAt"]
+    },
+    "Evaluation": {
+      "title": "Evaluation",
+      "description": "Evaluación de sesión con medalla, escala respetuosa 1-5 y dimensiones.",
+      "type": "object",
+      "properties": {
+        "studentId": { "type": "string" },
+        "studentName": { "type": "string" },
+        "medalType": { "type": "string" },
+        "overallScore": { "type": "integer" },
+        "dimensionScores": { "type": "array" },
+        "templateCategory": { "type": "string" },
+        "notes": { "type": "string" },
+        "shareWithFamily": { "type": "boolean" },
+        "recordInHistory": { "type": "boolean" },
+        "draft": { "type": "boolean" },
+        "dateLabel": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["studentId", "studentName", "medalType", "overallScore", "createdAt", "updatedAt"]
+    },
+    "DiaryEntry": {
+      "title": "DiaryEntry",
+      "description": "Entrada diaria escolar y terapéutica por alumno y fecha.",
+      "type": "object",
+      "properties": {
+        "studentId": { "type": "string" },
+        "studentName": { "type": "string" },
+        "dateKey": { "type": "string" },
+        "dayLabel": { "type": "string" },
+        "emotionalState": { "type": "string" },
+        "emotionalSubtitle": { "type": "string" },
+        "medalLabel": { "type": "string" },
+        "dayIndicator": { "type": "string" },
+        "anticipationTitle": { "type": "string" },
+        "anticipationTime": { "type": "string" },
+        "anticipationText": { "type": "string" },
+        "areas": { "type": "array" },
+        "internalNotes": { "type": "array" },
+        "afternoonRoutine": { "type": "array" },
+        "syncedLabel": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["studentId", "studentName", "dateKey", "emotionalState", "createdAt", "updatedAt"]
+    },
+    "ResourceFolder": {
+      "title": "ResourceFolder",
+      "description": "Carpeta temática de apoyos visuales y materiales terapéuticos.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "accentKey": { "type": "string" },
+        "iconKey": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "accentKey", "createdAt", "updatedAt"]
+    },
+    "ResourceItem": {
+      "title": "ResourceItem",
+      "description": "Material visual, PDF o audio guía asignable a alumnos.",
+      "type": "object",
+      "properties": {
+        "folderId": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "fileType": { "type": "string" },
+        "sizeLabel": { "type": "string" },
+        "dateLabel": { "type": "string" },
+        "statusBadge": { "type": "string" },
+        "locationBadge": { "type": "string" },
+        "assignedStudentIds": { "type": "array", "items": { "type": "string" } },
+        "localUri": { "type": "string" },
+        "previewSummary": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["folderId", "title", "fileType", "createdAt", "updatedAt"]
+    },
+    "LibraryItem": {
+      "title": "LibraryItem",
+      "description": "Título de la Biblioteca R-TEA (cuentos adaptados, manuales o artículos).",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "author": { "type": "string" },
+        "materialType": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "metaInfo": { "type": "string" },
+        "pedagogicalTitle": { "type": "string" },
+        "reviewNote": { "type": "string" },
+        "assignedStudentIds": { "type": "array", "items": { "type": "string" } },
+        "usageMoments": { "type": "array", "items": { "type": "string" } },
+        "accentKey": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "author", "materialType", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/students/{studentId}": {
+      "schema": { "$ref": "#/entities/Student" },
+      "description": "Expedientes de alumnos TEA del docente."
+    },
+    "/users/{userId}/notes/{noteId}": {
+      "schema": { "$ref": "#/entities/QuickNote" },
+      "description": "Notas rápidas del tablón."
+    },
+    "/users/{userId}/evaluations/{evaluationId}": {
+      "schema": { "$ref": "#/entities/Evaluation" },
+      "description": "Evaluaciones de sesión y logros."
+    },
+    "/users/{userId}/diaryEntries/{entryId}": {
+      "schema": { "$ref": "#/entities/DiaryEntry" },
+      "description": "Diario escolar y observaciones internas."
+    },
+    "/users/{userId}/resourceFolders/{folderId}": {
+      "schema": { "$ref": "#/entities/ResourceFolder" },
+      "description": "Carpetas temáticas de recursos."
+    },
+    "/users/{userId}/resources/{resourceId}": {
+      "schema": { "$ref": "#/entities/ResourceItem" },
+      "description": "Recursos terapéuticos y pictogramas."
+    },
+    "/users/{userId}/libraryItems/{itemId}": {
+      "schema": { "$ref": "#/entities/LibraryItem" },
+      "description": "Cuentos TEA, manuales y artículos científicos."
+    }
+  }
+}

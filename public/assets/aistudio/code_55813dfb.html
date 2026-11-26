@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;font-family:'Nunito Sans',sans-serif;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}.ring-progress{transition:stroke-dashoffset 0.4s cubic-bezier(0.4, 0, 0.2, 1);}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "secondary-fixed": "#ffdbcc",
+          "secondary": "#8e4d2b",
+          "surface-dim": "#dcdad5",
+          "on-surface": "#1c1c19",
+          "surface-bright": "#fcf9f4",
+          "tertiary-container": "#6db19b",
+          "on-surface-variant": "#41474e",
+          "on-primary-container": "#003d62",
+          "secondary-container": "#ffaa81",
+          "on-tertiary-fixed": "#002018",
+          "tertiary-fixed-dim": "#8fd4bd",
+          "inverse-surface": "#31302d",
+          "on-tertiary-fixed-variant": "#005140",
+          "tertiary-fixed": "#aaf1d9",
+          "on-primary": "#ffffff",
+          "outline-variant": "#c1c7d0",
+          "secondary-fixed-dim": "#ffb693",
+          "tertiary": "#226a57",
+          "surface-container-lowest": "#ffffff",
+          "primary": "#2c628e",
+          "surface-container": "#f0ede9",
+          "error-container": "#ffdad6",
+          "on-secondary-container": "#793c1b",
+          "on-primary-fixed-variant": "#074a75",
+          "background": "#fcf9f4",
+          "surface": "#fcf9f4",
+          "on-secondary-fixed-variant": "#713616",
+          "on-error": "#ffffff",
+          "primary-fixed-dim": "#99cbfd",
+          "surface-container-high": "#ebe8e3",
+          "on-secondary": "#ffffff",
+          "error": "#ba1a1a",
+          "outline": "#72787f",
+          "inverse-primary": "#99cbfd",
+          "surface-container-highest": "#e5e2dd",
+          "on-error-container": "#93000a",
+          "on-primary-fixed": "#001d33",
+          "surface-variant": "#e5e2dd",
+          "primary-container": "#76a8d8",
+          "on-tertiary-container": "#004334",
+          "primary-fixed": "#cee5ff",
+          "surface-tint": "#2c628e",
+          "inverse-on-surface": "#f3f0eb",
+          "on-tertiary": "#ffffff",
+          "on-background": "#1c1c19",
+          "on-secondary-fixed": "#351000",
+          "surface-container-low": "#f6f3ee",
+          /* Serene Spectrum Pastel Accents */
+          "pastel-blue": "#d4e6f7",
+          "pastel-peach": "#ffe5d6",
+          "pastel-yellow": "#fef3c7",
+          "pastel-mint": "#d1fae5",
+          "pastel-lavender": "#ede9fe"
+        },
+        "borderRadius": {
+          "DEFAULT": "1rem",
+          "lg": "2rem",
+          "xl": "3rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xl": "2.5rem",
+          "space-md": "1rem",
+          "margin-md": "2rem",
+          "space-xs": "0.25rem",
+          "margin": "1.25rem",
+          "gutter-lg": "1.5rem",
+          "gutter": "1rem",
+          "space-sm": "0.5rem",
+          "space-lg": "1.5rem",
+          "margin-lg": "3rem"
+        },
+        "fontFamily": {
+          "headline-md": ["Nunito Sans"],
+          "label-lg": ["Nunito Sans"],
+          "headline-lg": ["Nunito Sans"],
+          "body-md": ["Nunito Sans"],
+          "label-sm": ["Nunito Sans"],
+          "headline-sm": ["Nunito Sans"],
+          "body-lg": ["Nunito Sans"],
+          "display-lg-mobile": ["Nunito Sans"],
+          "body-sm": ["Nunito Sans"],
+          "display-lg": ["Nunito Sans"],
+          "label-md": ["Nunito Sans"]
+        },
+        "fontSize": {
+          "headline-md": ["22px", { lineHeight: "30px", fontWeight: "600" }],
+          "label-lg": ["15px", { lineHeight: "22px", fontWeight: "600" }],
+          "headline-lg": ["28px", { lineHeight: "38px", fontWeight: "700" }],
+          "body-md": ["15px", { lineHeight: "24px", fontWeight: "400" }],
+          "label-sm": ["11px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }],
+          "headline-sm": ["18px", { lineHeight: "26px", fontWeight: "600" }],
+          "body-lg": ["17px", { lineHeight: "28px", fontWeight: "400" }],
+          "display-lg-mobile": ["30px", { lineHeight: "40px", fontWeight: "700" }],
+          "body-sm": ["13px", { lineHeight: "20px", fontWeight: "400" }],
+          "display-lg": ["40px", { lineHeight: "52px", letterSpacing: "-0.01em", fontWeight: "700" }],
+          "label-md": ["13px", { lineHeight: "18px", fontWeight: "600" }]
+        }
+      }
+    }
+  };
+</script></head><body class="bg-surface text-on-surface flex flex-col min-h-screen selection:bg-pastel-blue"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl border-b border-surface-container"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-full bg-pastel-blue flex items-center justify-center p-1.5 shadow-sm border border-primary-container/30"><img alt="R-TEA Logo" class="w-full h-full object-contain rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8aSczzFEvUfhqCfY_dm4mya3WErWNha9kZOXQe8J22us87NnWvDKrRfnYYFH58tbpvqumc5AnGY8cy9NjsdCUHjdEb4OvJ0RYKsm23ancgJOlm20XjaidOh9WxADGPKTFX7Eq82IGTLWzdWuxmsVsGm9SDryoMgHAnW3DgLZ29bjAdH9kl5--MeWbjprHSw8T5sREQFswaC6OY0XnbX_JWM9jyAR2pIi0vVwHeBBj4kzQiQzzF2Jk"/></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-primary tracking-wide uppercase font-bold">R-TEA</span><span class="font-headline-sm text-headline-sm text-on-surface font-bold">Clase</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notificaciones" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-high active:scale-95 transition-all"><span class="material-symbols-outlined text-[24px]">notifications</span></button><div class="p-0.5 rounded-full bg-surface-container-high border border-outline-variant/40"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8aSczzFEvUfhqCfY_dm4mya3WErWNha9kZOXQe8J22us87NnWvDKrRfnYYFH58tbpvqumc5AnGY8cy9NjsdCUHjdEb4OvJ0RYKsm23ancgJOlm20XjaidOh9WxADGPKTFX7Eq82IGTLWzdWuxmsVsGm9SDryoMgHAnW3DgLZ29bjAdH9kl5--MeWbjprHSw8T5sREQFswaC6OY0XnbX_JWM9jyAR2pIi0vVwHeBBj4kzQiQzzF2Jk"/></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-24"><div class="flex flex-col w-full px-margin pb-space-xl space-y-space-lg">
+<!-- Sensory Safe Rest / Calm Anchor Quick-Access -->
+<div class="flex items-center justify-between bg-pastel-mint/70 border border-tertiary-fixed-dim/50 px-space-md py-space-sm rounded-lg shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[22px]">spa</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Modo Tranquilidad Activo</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold bg-pastel-blue px-3 py-1 rounded-full border border-primary-container/40">Aula 3-B · Primaria</span>
+</div>
+<!-- Search & Classroom Filter Bar -->
+<div class="flex flex-col gap-space-sm">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[22px]">search</span>
+<input class="w-full h-13 pl-12 pr-10 py-3 bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline/80 shadow-sm border border-surface-container-highest focus:outline-none focus:border-primary-container focus:bg-surface-container-low transition-colors" id="studentSearchInput" placeholder="Buscar alumno por nombre o apoyo..." type="text"/>
+<button aria-label="Limpiar búsqueda" class="hidden absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" id="clearSearchBtn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Classroom Filters & Action Button Row -->
+<div class="flex items-center gap-space-sm overflow-x-auto pb-1 no-scrollbar">
+<button class="filter-pill active h-10 px-4 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1.5 shrink-0 shadow-sm transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px]">done</span>
+<span>Todos (3)</span>
+</button>
+<button class="filter-pill h-10 px-4 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center gap-1.5 shrink-0 shadow-sm border border-surface-container-high hover:bg-surface-container transition-transform active:scale-95">
+<span>Nivel 1 (Apoyo Leve)</span>
+</button>
+<button class="filter-pill h-10 px-4 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md flex items-center gap-1.5 shrink-0 shadow-sm border border-surface-container-high hover:bg-surface-container transition-transform active:scale-95">
+<span>Nivel 2 (Sustancial)</span>
+</button>
+</div>
+</div>
+<!-- Primary Tactile Register Button -->
+<div>
+<button class="w-full h-14 bg-secondary text-on-secondary font-label-lg text-label-lg rounded-full flex items-center justify-center gap-2 shadow-[0_4px_0_0_#713616] active:translate-y-1 active:shadow-none transition-all" id="openRegisterModalBtn">
+<span class="material-symbols-outlined text-[24px]">person_add</span>
+<span>+ Registrar Alumno</span>
+</button>
+</div>
+<!-- Students List -->
+<div class="flex flex-col gap-space-lg" id="studentsList">
+<!-- Card 1: Mateo García -->
+<article class="student-card relative bg-surface-container-lowest border border-surface-container-high/60 rounded-lg p-space-md shadow-sm transition-all duration-300" data-level="1" data-name="mateo garcía" data-student-id="mateo">
+<!-- Card Top: Avatar, Info & Options Menu -->
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="relative w-16 h-16 rounded-full bg-pastel-blue flex items-center justify-center shrink-0 border border-primary-container/40 overflow-hidden">
+<img alt="Mateo García" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8aSczzFEvUfhqCfY_dm4mya3WErWNha9kZOXQe8J22us87NnWvDKrRfnYYFH58tbpvqumc5AnGY8cy9NjsdCUHjdEb4OvJ0RYKsm23ancgJOlm20XjaidOh9WxADGPKTFX7Eq82IGTLWzdWuxmsVsGm9SDryoMgHAnW3DgLZ29bjAdH9kl5--MeWbjprHSw8T5sREQFswaC6OY0XnbX_JWM9jyAR2pIi0vVwHeBBj4kzQiQzzF2Jk"/>
+<span class="absolute bottom-0 right-0 w-5 h-5 rounded-full bg-tertiary flex items-center justify-center text-on-tertiary">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Mateo García</h2>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-label-sm text-tertiary bg-pastel-mint border border-tertiary-fixed-dim px-2.5 py-0.5 rounded-full font-semibold">Nivel 1 · Apoyo Leve</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">event</span>
+<span>Última sesión: Hoy, 10:30 h</span>
+</p>
+</div>
+</div>
+<!-- Context Menu Button -->
+<div class="relative">
+<button aria-label="Opciones de alumno" class="w-10 h-10 rounded-full flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container active:scale-95 transition-all" onclick="toggleMenu('menu-mateo')">
+<span class="material-symbols-outlined text-[22px]">more_vert</span>
+</button>
+<!-- Context Dropdown -->
+<div class="hidden absolute right-0 top-12 z-30 w-48 bg-surface-container-lowest rounded-DEFAULT border border-surface-container-high shadow-lg py-1 flex flex-col" id="menu-mateo">
+<button class="w-full px-4 py-2.5 text-left font-label-md text-label-md text-on-surface hover:bg-surface-container flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">edit</span> Editar Ficha
+            </button>
+<button class="w-full px-4 py-2.5 text-left font-label-md text-label-md text-on-surface hover:bg-surface-container flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">history</span> Ver Historial
+            </button>
+<div class="h-px bg-surface-container my-1"></div>
+<button class="w-full px-4 py-2.5 text-left font-label-md text-label-md text-error hover:bg-error-container/30 flex items-center gap-2" onclick="confirmDeleteStudent('Mateo García', this)">
+<span class="material-symbols-outlined text-[18px]">delete</span> Eliminar Alumno
+            </button>
+</div>
+</div>
+</div>
+<!-- Dynamic Concentric Ring Progress & Goal Controls Section -->
+<div class="mt-space-md p-3.5 bg-surface-container-low rounded-DEFAULT border border-surface-container space-y-3" id="progress-section-mateo">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-[18px] text-primary">donut_large</span>
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Anillos de Progreso por Áreas</span>
+</div>
+<span class="font-label-sm text-label-sm bg-pastel-blue text-primary border border-primary-container/40 px-2 py-0.5 rounded-full font-semibold" id="global-badge-mateo">70% Global</span>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-3.5">
+<div class="relative w-28 h-28 shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90 transform" id="rings-svg-mateo" viewbox="0 0 120 120">
+<!-- Dynamic rings rendered via JS -->
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<span class="font-headline-sm text-[16px] text-on-surface font-extrabold leading-none" id="global-percent-mateo">70%</span>
+<span class="font-label-sm text-[9px] text-outline uppercase tracking-wider font-semibold mt-0.5">Logro</span>
+</div>
+</div>
+<div class="flex-1 w-full flex flex-col gap-1.5" id="areas-container-mateo">
+<!-- Area items rendered dynamically -->
+</div>
+</div>
+<!-- Add Custom Area Action Button -->
+<button class="w-full py-2 px-3 rounded-full bg-surface-container-lowest hover:bg-surface-container border border-dashed border-primary-container/70 text-primary font-label-sm text-label-sm flex items-center justify-center gap-1.5 transition-all active:scale-[0.99] shadow-sm" onclick="openAddAreaModal('mateo', 'Mateo García')">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span class="font-bold">+ Añadir Área de Trabajo</span>
+</button>
+</div>
+<!-- 3 Required PDF Folders Section -->
+<div class="mt-space-md grid grid-cols-1 gap-2.5">
+<!-- 1. Informe Principal -->
+<div class="flex items-center justify-between p-3 bg-pastel-blue/40 border border-pastel-blue rounded-DEFAULT">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-9 h-9 rounded-full bg-pastel-blue flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">folder</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate font-semibold">1. Informe Principal</span>
+<span class="font-body-sm text-body-sm text-outline">Diagnóstico neurológico</span>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-sm text-label-sm bg-primary text-on-primary px-2.5 py-0.5 rounded-full font-semibold">2 PDFs</span>
+<button aria-label="Subir PDF" class="w-8 h-8 rounded-full bg-surface-container-lowest hover:bg-surface-container text-primary flex items-center justify-center transition-colors border border-primary-container/30" onclick="triggerToast('Subir nuevo PDF de Informe Principal')">
+<span class="material-symbols-outlined text-[16px]">upload_file</span>
+</button>
+<button aria-label="Eliminar archivo" class="w-8 h-8 rounded-full bg-surface-container-lowest hover:bg-error-container text-error flex items-center justify-center transition-colors border border-outline-variant/30" onclick="triggerToast('Eliminar archivo seleccionado')">
+<span class="material-symbols-outlined text-[16px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- 2. Programación -->
+<div class="flex items-center justify-between p-3 bg-pastel-peach/40 border border-pastel-peach rounded-DEFAULT">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-9 h-9 rounded-full bg-pastel-peach flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate font-semibold">2. Programación</span>
+<span class="font-body-sm text-body-sm text-outline">Plan individualizado TEA</span>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-sm text-label-sm bg-secondary text-on-secondary px-2.5 py-0.5 rounded-full font-semibold">1 PDF</span>
+<button aria-label="Subir PDF" class="w-8 h-8 rounded-full bg-surface-container-lowest hover:bg-surface-container text-secondary flex items-center justify-center transition-colors border border-secondary-container/40" onclick="triggerToast('Subir nueva Programación de intervención')">
+<span class="material-symbols-outlined text-[16px]">upload_file</span>
+</button>
+<button aria-label="Eliminar archivo" class="w-8 h-8 rounded-full bg-surface-container-lowest hover:bg-error-container text-error flex items-center justify-center transition-colors border border-outline-variant/30" onclick="triggerToast('Eliminar PDF de Programación')">
+<span class="material-symbols-outlined text-[16px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- 3. Informe Final IA -->
+<div class="flex items-center justify-between p-3 bg-pastel-mint/40 border border-pastel-mint rounded-DEFAULT">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-9 h-9 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-tertiary truncate flex items-center gap-1 font-semibold">
+<span>3. Informe Final IA</span>
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+</span>
+<span class="font-body-sm text-body-sm text-outline">Recopila progreso y atascos</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<button class="h-8 px-3 rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm flex items-center gap-1 shadow-sm active:scale-95 transition-transform" onclick="openAiViewer('Mateo García', 'Avances excelentes en contacto visual y regulación sensorial. Atascos leves en transición al comedor escolar.')">
+<span class="material-symbols-outlined text-[15px]">visibility</span>
+<span>Visor</span>
+</button>
+<button class="h-8 px-3 rounded-full bg-surface-container-lowest text-tertiary border border-tertiary-fixed-dim font-label-sm text-label-sm flex items-center gap-1 shadow-sm hover:bg-surface-container active:scale-95 transition-all" onclick="generateAiReport(this)">
+<span class="material-symbols-outlined text-[15px]">refresh</span>
+<span>Generar</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Active Classroom Supports / Resources -->
+<div class="mt-space-md p-3 bg-pastel-yellow/30 border border-pastel-yellow/80 rounded-DEFAULT space-y-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-[18px] text-secondary">category</span>
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Recursos y Apoyos Activos en el Aula</span>
+</div>
+<span class="font-label-sm text-label-sm bg-secondary text-on-secondary px-2.5 py-0.5 rounded-full shrink-0 font-semibold">2 activos hoy</span>
+</div>
+<div class="grid grid-cols-1 gap-1.5">
+<div class="flex items-center justify-between p-2 rounded-DEFAULT bg-surface-container-lowest border border-surface-container-high/50 shadow-sm">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-7 h-7 rounded-full bg-pastel-peach text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface truncate font-semibold">Secuencia Lavado de Manos (3 Pasos)</span>
+<span class="font-body-sm text-[11px] text-outline truncate">PDF Autonomía · Activo en Tablet</span>
+</div>
+</div>
+<span class="font-label-sm text-[10px] text-tertiary bg-pastel-mint px-2 py-0.5 rounded-full shrink-0 border border-tertiary-fixed-dim/60 font-semibold">En uso</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-DEFAULT bg-surface-container-lowest border border-surface-container-high/50 shadow-sm">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-7 h-7 rounded-full bg-pastel-blue text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">image</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface truncate font-semibold">Menú Comedor Pictos</span>
+<span class="font-body-sm text-[11px] text-outline truncate">PNG Pictograma · Activo en Mesa</span>
+</div>
+</div>
+<span class="font-label-sm text-[10px] text-primary bg-pastel-blue px-2 py-0.5 rounded-full shrink-0 border border-primary-container/40 font-semibold">Mesa 3</span>
+</div>
+</div>
+<button class="w-full py-1.5 px-3 rounded-full bg-surface-container hover:bg-surface-container-high text-secondary font-label-sm text-label-sm flex items-center justify-center gap-1.5 transition-colors" onclick="triggerToast('Abriendo selector de recursos para Mateo García...')">
+<span class="material-symbols-outlined text-[15px]">add_circle</span>
+<span>+ Asignar más recursos</span>
+</button>
+</div><div class="mt-space-md pt-2">
+<button class="w-full h-12 bg-primary text-on-primary rounded-full font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-[0_3px_0_0_#074a75] active:translate-y-0.5 active:shadow-none transition-all" onclick="openEvaluationModal('Mateo García', 'leoncito')">
+<span class="material-symbols-outlined text-[20px] text-pastel-yellow">star</span>
+<span>⭐ Realizar Evaluación</span>
+</button>
+</div>
+</article>
+<!-- Card 2: Sofía López -->
+<article class="student-card relative bg-surface-container-lowest border border-surface-container-high/60 rounded-lg p-space-md shadow-sm transition-all duration-300" data-level="2" data-name="sofía lópez" data-student-id="sofia">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="relative w-16 h-16 rounded-full bg-pastel-peach flex items-center justify-center shrink-0 border border-secondary-container/40 overflow-hidden">
+<img alt="Sofía López" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKGeOfPTHHSm4lm0IAsWWjvEDTi8oBgWp3AvBGJ9btLa6wFtv4r9Leeti871ikch1-9tmQA76As7wvp3uBmcSmLu2ZTrX11lpBSx284QkiqJjYcg7Dt5zNUx_FuQxBAy7sEvDJEjOiQc2Th5RP3CSJlk5K-xkwm9qjY984ImCLJONakmQo6iX0mPK2SvZoVq1DGi134nVyq4JAUJR54V76t3dgNTKlVG2V6ZY_KJ08rXZUGIMGGqdO"/>
+<span class="absolute bottom-0 right-0 w-5 h-5 rounded-full bg-secondary flex items-center justify-center text-on-secondary">
+<span class="material-symbols-outlined text-[13px]">bolt</span>
+</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Sofía López</h2>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-label-sm text-secondary bg-pastel-peach border border-secondary-fixed-dim px-2.5 py-0.5 rounded-full font-semibold">Nivel 2 · Apoyo Sustancial</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">event</span>
+<span>Última sesión: Ayer, 16:00 h</span>
+</p>
+</div>
+</div>
+<div class="relative">
+<button aria-label="Opciones de alumno" class="w-10 h-10 rounded-full flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container active:scale-95 transition-all" onclick="toggleMenu('menu-sofia')">
+<span class="material-symbols-outlined text-[22px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 top-12 z-30 w-48 bg-surface-container-lowest rounded-DEFAULT border border-surface-container-high shadow-lg py-1 flex flex-col" id="menu-sofia">
+<button class="w-full px-4 py-2.5 text-left font-label-md text-label-md text-on-surface hover:bg-surface-container flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">edit</span> Editar Ficha
+            </button>
+<button class="w-full px-4 py-2.5 text-left font-label-md text-label-md text-on-surface hover:bg-surface-container flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">history</span> Ver Historial
+            </button>
+<div class="h-px bg-surface-container my-1"></div>
+<button class="w-full px-4 py-2.5 text-left font-label-md text-label-md text-error hover:bg-error-container/30 flex items-center gap-2" onclick="confirmDeleteStudent('Sofía López', this)">
+<span class="material-symbols-outlined text-[18px]">delete</span> Eliminar Alumno
+            </button>
+</div>
+</div>
+</div>
+<!-- Dynamic Concentric Ring Progress & Goal Controls Section (Features Attention & Focus Preset) -->
+<div class="mt-space-md p-3.5 bg-surface-container-low rounded-DEFAULT border border-surface-container space-y-3" id="progress-section-sofia">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-[18px] text-secondary">donut_large</span>
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Anillos de Progreso por Áreas</span>
+</div>
+<span class="font-label-sm text-label-sm bg-pastel-peach text-secondary border border-secondary-container/40 px-2 py-0.5 rounded-full font-semibold" id="global-badge-sofia">68% Global</span>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-3.5">
+<div class="relative w-28 h-28 shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90 transform" id="rings-svg-sofia" viewbox="0 0 120 120">
+<!-- Dynamic rings rendered via JS -->
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<span class="font-headline-sm text-[16px] text-on-surface font-extrabold leading-none" id="global-percent-sofia">68%</span>
+<span class="font-label-sm text-[9px] text-outline uppercase tracking-wider font-semibold mt-0.5">Logro</span>
+</div>
+</div>
+<div class="flex-1 w-full flex flex-col gap-1.5" id="areas-container-sofia">
+<!-- Dynamic areas list with +/- interactive buttons -->
+</div>
+</div>
+<button class="w-full py-2 px-3 rounded-full bg-surface-container-lowest hover:bg-surface-container border border-dashed border-secondary-container/70 text-secondary font-label-sm text-label-sm flex items-center justify-center gap-1.5 transition-all active:scale-[0.99] shadow-sm" onclick="openAddAreaModal('sofia', 'Sofía López')">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span class="font-bold">+ Añadir Área de Trabajo</span>
+</button>
+</div>
+<!-- 3 Required PDF Folders Section -->
+<div class="mt-space-md grid grid-cols-1 gap-2.5">
+<!-- 1. Informe Principal -->
+<div class="flex items-center justify-between p-3 bg-pastel-blue/40 border border-pastel-blue rounded-DEFAULT">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-9 h-9 rounded-full bg-pastel-blue flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">folder</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate font-semibold">1. Informe Principal</span>
+<span class="font-body-sm text-body-sm text-outline">Informe Psicopedagógico</span>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-sm text-label-sm bg-primary text-on-primary px-2.5 py-0.5 rounded-full font-semibold">3 PDFs</span>
+<button aria-label="Subir PDF" class="w-8 h-8 rounded-full bg-surface-container-lowest hover:bg-surface-container text-primary flex items-center justify-center transition-colors border border-primary-container/30" onclick="triggerToast('Subir nuevo PDF de Informe')">
+<span class="material-symbols-outlined text-[16px]">upload_file</span>
+</button>
+<button aria-label="Eliminar archivo" class="w-8 h-8 rounded-full bg-surface-container-lowest hover:bg-error-container text-error flex items-center justify-center transition-colors border border-outline-variant/30" onclick="triggerToast('Eliminar archivo')">
+<span class="material-symbols-outlined text-[16px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- 2. Programación -->
+<div class="flex items-center justify-between p-3 bg-pastel-peach/40 border border-pastel-peach rounded-DEFAULT">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-9 h-9 rounded-full bg-pastel-peach flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate font-semibold">2. Programación</span>
+<span class="font-body-sm text-body-sm text-outline">PEI y apoyos visuales</span>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-sm text-label-sm bg-secondary text-on-secondary px-2.5 py-0.5 rounded-full font-semibold">1 PDF</span>
+<button aria-label="Subir PDF" class="w-8 h-8 rounded-full bg-surface-container-lowest hover:bg-surface-container text-secondary flex items-center justify-center transition-colors border border-secondary-container/40" onclick="triggerToast('Subir nueva Programación')">
+<span class="material-symbols-outlined text-[16px]">upload_file</span>
+</button>
+<button aria-label="Eliminar archivo" class="w-8 h-8 rounded-full bg-surface-container-lowest hover:bg-error-container text-error flex items-center justify-center transition-colors border border-outline-variant/30" onclick="triggerToast('Eliminar Programación')">
+<span class="material-symbols-outlined text-[16px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- 3. Informe Final IA -->
+<div class="flex items-center justify-between p-3 bg-pastel-mint/40 border border-pastel-mint rounded-DEFAULT">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-9 h-9 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-tertiary truncate flex items-center gap-1 font-semibold">
+<span>3. Informe Final IA</span>
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+</span>
+<span class="font-body-sm text-body-sm text-outline">Síntesis dinámica de sesión</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<button class="h-8 px-3 rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm flex items-center gap-1 shadow-sm active:scale-95 transition-transform" onclick="openAiViewer('Sofía López', 'Notable avance en anticipación mediante pictogramas. Se recomienda pausas de descompresión tras 20 min.')">
+<span class="material-symbols-outlined text-[15px]">visibility</span>
+<span>Visor</span>
+</button>
+<button class="h-8 px-3 rounded-full bg-surface-container-lowest text-tertiary border border-tertiary-fixed-dim font-label-sm text-label-sm flex items-center gap-1 shadow-sm hover:bg-surface-container active:scale-95 transition-all" onclick="generateAiReport(this)">
+<span class="material-symbols-outlined text-[15px]">refresh</span>
+<span>Generar</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<div class="mt-space-md p-3 bg-pastel-yellow/30 border border-pastel-yellow/80 rounded-DEFAULT space-y-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-[18px] text-secondary">category</span>
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Recursos y Apoyos Activos en el Aula</span>
+</div>
+<span class="font-label-sm text-label-sm bg-secondary text-on-secondary px-2.5 py-0.5 rounded-full shrink-0 font-semibold">2 activos hoy</span>
+</div>
+<div class="grid grid-cols-1 gap-1.5">
+<div class="flex items-center justify-between p-2 rounded-DEFAULT bg-surface-container-lowest border border-surface-container-high/50 shadow-sm">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-7 h-7 rounded-full bg-pastel-blue text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">image</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface truncate font-semibold">Menú Comedor Pictos</span>
+<span class="font-body-sm text-[11px] text-outline truncate">PNG Pictograma · Rincón Sensorial</span>
+</div>
+</div>
+<span class="font-label-sm text-[10px] text-primary bg-pastel-blue px-2 py-0.5 rounded-full shrink-0 border border-primary-container/40 font-semibold">Mesa 2</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-DEFAULT bg-surface-container-lowest border border-surface-container-high/50 shadow-sm">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-7 h-7 rounded-full bg-pastel-lavender text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">graphic_eq</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface truncate font-semibold">Audio Canción Cepillado 2 min</span>
+<span class="font-body-sm text-[11px] text-outline truncate">MP3 Sensorial · Auriculares</span>
+</div>
+</div>
+<span class="font-label-sm text-[10px] text-tertiary bg-pastel-mint px-2 py-0.5 rounded-full shrink-0 border border-tertiary-fixed-dim/60 font-semibold">En uso</span>
+</div>
+</div>
+<button class="w-full py-1.5 px-3 rounded-full bg-surface-container hover:bg-surface-container-high text-secondary font-label-sm text-label-sm flex items-center justify-center gap-1.5 transition-colors" onclick="triggerToast('Abriendo selector de recursos para Sofía López...')">
+<span class="material-symbols-outlined text-[15px]">add_circle</span>
+<span>+ Asignar más recursos</span>
+</button>
+</div><div class="mt-space-md pt-2">
+<button class="w-full h-12 bg-primary text-on-primary rounded-full font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-[0_3px_0_0_#074a75] active:translate-y-0.5 active:shadow-none transition-all" onclick="openEvaluationModal('Sofía López', 'búho')">
+<span class="material-symbols-outlined text-[20px] text-pastel-yellow">star</span>
+<span>⭐ Realizar Evaluación</span>
+</button>
+</div>
+</article>
+<!-- Card 3: Lucas Morales -->
+<article class="student-card relative bg-surface-container-lowest border border-surface-container-high/60 rounded-lg p-space-md shadow-sm transition-all duration-300" data-level="1" data-name="lucas morales" data-student-id="lucas">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="relative w-16 h-16 rounded-full bg-pastel-lavender flex items-center justify-center shrink-0 border border-outline-variant/40 overflow-hidden">
+<img alt="Lucas Morales" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcPePZoFdxYwaBfOfnXp-o_fk0kFipJh1V8CSWMUGPDW7eba3pieQiq7vgBfNA90_IHU1lkPeQ1WnRgEnRib-Rg_M7sB5Adb9l08mYpo4scvTKRldd_l2klF_nXCzwh7Qsq958HbqYPNpNEy4QvZGuRJLlUBcWgWm96ry2jyQzrRXrxRWn-PAqjY4zjg-08szjqv6xBqHOpISyhpx5Z5rLv8OgIP-fPjvr55dSrjX8eXVnqP8WIEFC"/>
+<span class="absolute bottom-0 right-0 w-5 h-5 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[13px]">rocket_launch</span>
+</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Lucas Morales</h2>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-label-sm text-tertiary bg-pastel-mint border border-tertiary-fixed-dim px-2.5 py-0.5 rounded-full font-semibold">Nivel 1 · Apoyo Leve</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">event</span>
+<span>Última sesión: 12 Mayo, 09:15 h</span>
+</p>
+</div>
+</div>
+<div class="relative">
+<button aria-label="Opciones de alumno" class="w-10 h-10 rounded-full flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container active:scale-95 transition-all" onclick="toggleMenu('menu-lucas')">
+<span class="material-symbols-outlined text-[22px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 top-12 z-30 w-48 bg-surface-container-lowest rounded-DEFAULT border border-surface-container-high shadow-lg py-1 flex flex-col" id="menu-lucas">
+<button class="w-full px-4 py-2.5 text-left font-label-md text-label-md text-on-surface hover:bg-surface-container flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">edit</span> Editar Ficha
+            </button>
+<button class="w-full px-4 py-2.5 text-left font-label-md text-label-md text-on-surface hover:bg-surface-container flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">history</span> Ver Historial
+            </button>
+<div class="h-px bg-surface-container my-1"></div>
+<button class="w-full px-4 py-2.5 text-left font-label-md text-label-md text-error hover:bg-error-container/30 flex items-center gap-2" onclick="confirmDeleteStudent('Lucas Morales', this)">
+<span class="material-symbols-outlined text-[18px]">delete</span> Eliminar Alumno
+            </button>
+</div>
+</div>
+</div>
+<!-- Dynamic Concentric Ring Progress & Goal Controls Section (Features Motricidad Fina Preset) -->
+<div class="mt-space-md p-3.5 bg-surface-container-low rounded-DEFAULT border border-surface-container space-y-3" id="progress-section-lucas">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-[18px] text-tertiary">donut_large</span>
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Anillos de Progreso por Áreas</span>
+</div>
+<span class="font-label-sm text-label-sm bg-pastel-mint text-tertiary border border-tertiary-fixed-dim/60 px-2 py-0.5 rounded-full font-semibold" id="global-badge-lucas">74% Global</span>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-3.5">
+<div class="relative w-28 h-28 shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90 transform" id="rings-svg-lucas" viewbox="0 0 120 120">
+<!-- Dynamic rings rendered via JS -->
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<span class="font-headline-sm text-[16px] text-on-surface font-extrabold leading-none" id="global-percent-lucas">74%</span>
+<span class="font-label-sm text-[9px] text-outline uppercase tracking-wider font-semibold mt-0.5">Logro</span>
+</div>
+</div>
+<div class="flex-1 w-full flex flex-col gap-1.5" id="areas-container-lucas">
+<!-- Dynamic areas list with +/- interactive buttons -->
+</div>
+</div>
+<button class="w-full py-2 px-3 rounded-full bg-surface-container-lowest hover:bg-surface-container border border-dashed border-tertiary-fixed-dim text-tertiary font-label-sm text-label-sm flex items-center justify-center gap-1.5 transition-all active:scale-[0.99] shadow-sm" onclick="openAddAreaModal('lucas', 'Lucas Morales')">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span class="font-bold">+ Añadir Área de Trabajo</span>
+</button>
+</div>
+<!-- 3 Required PDF Folders Section -->
+<div class="mt-space-md grid grid-cols-1 gap-2.5">
+<!-- 1. Informe Principal -->
+<div class="flex items-center justify-between p-3 bg-pastel-blue/40 border border-pastel-blue rounded-DEFAULT">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-9 h-9 rounded-full bg-pastel-blue flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">folder</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate font-semibold">1. Informe Principal</span>
+<span class="font-body-sm text-body-sm text-outline">Dictamen de escolarización</span>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-sm text-label-sm bg-primary text-on-primary px-2.5 py-0.5 rounded-full font-semibold">1 PDF</span>
+<button aria-label="Subir PDF" class="w-8 h-8 rounded-full bg-surface-container-lowest hover:bg-surface-container text-primary flex items-center justify-center transition-colors border border-primary-container/30" onclick="triggerToast('Subir nuevo PDF de Informe')">
+<span class="material-symbols-outlined text-[16px]">upload_file</span>
+</button>
+<button aria-label="Eliminar archivo" class="w-8 h-8 rounded-full bg-surface-container-lowest hover:bg-error-container text-error flex items-center justify-center transition-colors border border-outline-variant/30" onclick="triggerToast('Eliminar archivo')">
+<span class="material-symbols-outlined text-[16px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- 2. Programación -->
+<div class="flex items-center justify-between p-3 bg-pastel-peach/40 border border-pastel-peach rounded-DEFAULT">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-9 h-9 rounded-full bg-pastel-peach flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate font-semibold">2. Programación</span>
+<span class="font-body-sm text-body-sm text-outline">Objetivos trimestrales</span>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-sm text-label-sm bg-secondary text-on-secondary px-2.5 py-0.5 rounded-full font-semibold">2 PDFs</span>
+<button aria-label="Subir PDF" class="w-8 h-8 rounded-full bg-surface-container-lowest hover:bg-surface-container text-secondary flex items-center justify-center transition-colors border border-secondary-container/40" onclick="triggerToast('Subir nueva Programación')">
+<span class="material-symbols-outlined text-[16px]">upload_file</span>
+</button>
+<button aria-label="Eliminar archivo" class="w-8 h-8 rounded-full bg-surface-container-lowest hover:bg-error-container text-error flex items-center justify-center transition-colors border border-outline-variant/30" onclick="triggerToast('Eliminar Programación')">
+<span class="material-symbols-outlined text-[16px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- 3. Informe Final IA -->
+<div class="flex items-center justify-between p-3 bg-pastel-mint/40 border border-pastel-mint rounded-DEFAULT">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-9 h-9 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-tertiary truncate flex items-center gap-1 font-semibold">
+<span>3. Informe Final IA</span>
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+</span>
+<span class="font-body-sm text-body-sm text-outline">Progreso motriz fino consolidado</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<button class="h-8 px-3 rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm flex items-center gap-1 shadow-sm active:scale-95 transition-transform" onclick="openAiViewer('Lucas Morales', 'Resolución positiva en juegos de secuencias. Mantener apoyo auditivo ante ruidos de recreo.')">
+<span class="material-symbols-outlined text-[15px]">visibility</span>
+<span>Visor</span>
+</button>
+<button class="h-8 px-3 rounded-full bg-surface-container-lowest text-tertiary border border-tertiary-fixed-dim font-label-sm text-label-sm flex items-center gap-1 shadow-sm hover:bg-surface-container active:scale-95 transition-all" onclick="generateAiReport(this)">
+<span class="material-symbols-outlined text-[15px]">refresh</span>
+<span>Generar</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<div class="mt-space-md p-3 bg-pastel-yellow/30 border border-pastel-yellow/80 rounded-DEFAULT space-y-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-[18px] text-secondary">category</span>
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Recursos y Apoyos Activos en el Aula</span>
+</div>
+<span class="font-label-sm text-label-sm bg-secondary text-on-secondary px-2.5 py-0.5 rounded-full shrink-0 font-semibold">1 activo hoy</span>
+</div>
+<div class="grid grid-cols-1 gap-1.5">
+<div class="flex items-center justify-between p-2 rounded-DEFAULT bg-surface-container-lowest border border-surface-container-high/50 shadow-sm">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-7 h-7 rounded-full bg-pastel-peach text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface truncate font-semibold">Secuencia Lavado de Manos (3 Pasos)</span>
+<span class="font-body-sm text-[11px] text-outline truncate">PDF Autonomía · Baño / Lavabo</span>
+</div>
+</div>
+<span class="font-label-sm text-[10px] text-tertiary bg-pastel-mint px-2 py-0.5 rounded-full shrink-0 border border-tertiary-fixed-dim/60 font-semibold">En uso</span>
+</div>
+</div>
+<button class="w-full py-1.5 px-3 rounded-full bg-surface-container hover:bg-surface-container-high text-secondary font-label-sm text-label-sm flex items-center justify-center gap-1.5 transition-colors" onclick="triggerToast('Abriendo selector de recursos para Lucas Morales...')">
+<span class="material-symbols-outlined text-[15px]">add_circle</span>
+<span>+ Asignar más recursos</span>
+</button>
+</div><div class="mt-space-md pt-2">
+<button class="w-full h-12 bg-primary text-on-primary rounded-full font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-[0_3px_0_0_#074a75] active:translate-y-0.5 active:shadow-none transition-all" onclick="openEvaluationModal('Lucas Morales', 'astronauta')">
+<span class="material-symbols-outlined text-[20px] text-pastel-yellow">star</span>
+<span>⭐ Realizar Evaluación</span>
+</button>
+</div>
+</article>
+</div>
+<!-- Interactive Modal: Registrar Alumno con Avatar Selector -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-inverse-surface/60 backdrop-blur-sm" id="registerModal">
+<div class="w-full max-w-md bg-surface-container-lowest rounded-lg p-space-lg shadow-xl max-h-[90vh] overflow-y-auto flex flex-col space-y-space-md border border-surface-container-high">
+<!-- Modal Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-full bg-pastel-blue flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Nuevo Alumno</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="closeRegisterModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Avatar Preview & Selector -->
+<div class="flex flex-col items-center bg-surface-container-low p-space-md rounded-DEFAULT space-y-space-sm border border-surface-container">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Avatar Seleccionado</span>
+<div class="w-20 h-20 rounded-full bg-pastel-yellow flex items-center justify-center shadow-inner overflow-hidden text-secondary" id="avatarSelectedPreview">
+<span class="material-symbols-outlined text-[44px]">pets</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold" id="avatarLabel">Leoncito Cálido</span>
+</div>
+<!-- Avatar Picker Grid -->
+<div class="flex flex-col space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface font-bold">Elige un avatar amigable:</label>
+<div class="grid grid-cols-5 gap-2" id="avatarGrid">
+<!-- Leoncito -->
+<button class="avatar-option p-2 rounded-DEFAULT bg-pastel-yellow/60 border border-pastel-yellow text-secondary flex flex-col items-center justify-center hover:scale-105 transition-all shadow-sm" onclick="selectAvatar('pets', 'Leoncito Cálido', this)" type="button">
+<span class="material-symbols-outlined text-[28px]">pets</span>
+<span class="font-label-sm text-[10px] mt-1 text-on-surface truncate">León</span>
+</button>
+<!-- Cohete -->
+<button class="avatar-option p-2 rounded-DEFAULT bg-pastel-peach/60 border border-pastel-peach text-secondary flex flex-col items-center justify-center hover:scale-105 transition-all" onclick="selectAvatar('rocket_launch', 'Cohete Aventurero', this)" type="button">
+<span class="material-symbols-outlined text-[28px]">rocket_launch</span>
+<span class="font-label-sm text-[10px] mt-1 text-on-surface truncate">Cohete</span>
+</button>
+<!-- Estrella -->
+<button class="avatar-option p-2 rounded-DEFAULT bg-pastel-yellow/60 border border-pastel-yellow text-primary flex flex-col items-center justify-center hover:scale-105 transition-all" onclick="selectAvatar('star', 'Estrella Brillante', this)" type="button">
+<span class="material-symbols-outlined text-[28px]">star</span>
+<span class="font-label-sm text-[10px] mt-1 text-on-surface truncate">Estrella</span>
+</button>
+<!-- Búho -->
+<button class="avatar-option p-2 rounded-DEFAULT bg-pastel-mint/60 border border-pastel-mint text-tertiary flex flex-col items-center justify-center hover:scale-105 transition-all" onclick="selectAvatar('emoji_nature', 'Búho Sabio', this)" type="button">
+<span class="material-symbols-outlined text-[28px]">emoji_nature</span>
+<span class="font-label-sm text-[10px] mt-1 text-on-surface truncate">Búho</span>
+</button>
+<!-- Astronauta -->
+<button class="avatar-option p-2 rounded-DEFAULT bg-pastel-lavender/60 border border-pastel-lavender text-primary flex flex-col items-center justify-center hover:scale-105 transition-all" onclick="selectAvatar('explore', 'Astronauta Curioso', this)" type="button">
+<span class="material-symbols-outlined text-[28px]">explore</span>
+<span class="font-label-sm text-[10px] mt-1 text-on-surface truncate">Explorador</span>
+</button>
+</div>
+</div>
+<!-- Inputs Form -->
+<form class="flex flex-col space-y-3" id="newStudentForm" onsubmit="handleCreateStudent(event)">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface block mb-1">Nombre Completo</label>
+<input class="w-full h-12 px-4 bg-surface-container-low border border-surface-container-high rounded-DEFAULT font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container transition-colors" id="newStudentName" placeholder="Ej. Martín Soler" required="" type="text"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface block mb-1">Nivel de Apoyo (TEA)</label>
+<select class="w-full h-12 px-4 bg-surface-container-low border border-surface-container-high rounded-DEFAULT font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container transition-colors" id="newStudentLevel">
+<option value="1">Nivel 1 · Necesita Apoyo Leve</option>
+<option value="2">Nivel 2 · Necesita Apoyo Sustancial</option>
+<option value="3">Nivel 3 · Necesita Apoyo Muy Sustancial</option>
+</select>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface block mb-1">Aula / Grupo</label>
+<input class="w-full h-12 px-4 bg-surface-container-low border border-surface-container-high rounded-DEFAULT font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container transition-colors" type="text" value="Aula 3-B · Primaria"/>
+</div>
+<!-- Submit Button -->
+<button class="w-full h-13 mt-2 bg-secondary text-on-secondary font-label-lg text-label-lg rounded-full flex items-center justify-center gap-2 shadow-[0_4px_0_0_#713616] active:translate-y-1 active:shadow-none transition-all" type="submit">
+<span class="material-symbols-outlined text-[22px]">save</span>
+<span>Guardar Alumno</span>
+</button>
+</form>
+</div>
+</div>
+<!-- Modal: Añadir Área de Trabajo Personalizada -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-inverse-surface/60 backdrop-blur-sm" id="addAreaModal">
+<div class="w-full max-w-md bg-surface-container-lowest rounded-lg p-space-lg shadow-xl max-h-[90vh] overflow-y-auto flex flex-col space-y-space-md border border-surface-container-high">
+<!-- Modal Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-full bg-pastel-mint text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Añadir Área de Trabajo</h3>
+<span class="font-label-sm text-label-sm text-outline" id="addAreaTargetStudentName">Mateo García</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="closeAddAreaModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Quick Presets -->
+<div class="space-y-1.5">
+<label class="font-label-sm text-label-sm text-on-surface font-bold block">Dimensiones Recomendadas (Presets TEA):</label>
+<div class="flex flex-wrap gap-1.5">
+<button class="px-2.5 py-1 rounded-full bg-pastel-blue text-primary border border-primary-container/40 text-[12px] font-semibold hover:bg-primary-container/20 transition-colors" onclick="applyAreaPreset('Motricidad Fina &amp; Grafía', '#76a8d8', 8, 12)" type="button">
++ Motricidad Fina
+</button>
+<button class="px-2.5 py-1 rounded-full bg-pastel-yellow text-secondary border border-secondary-container/40 text-[12px] font-semibold hover:bg-secondary-container/20 transition-colors" onclick="applyAreaPreset('Atención Sostenida &amp; Enfoque', '#f59e0b', 7, 10)" type="button">
++ Atención Sostenida
+</button>
+<button class="px-2.5 py-1 rounded-full bg-pastel-peach text-secondary border border-secondary-container/40 text-[12px] font-semibold hover:bg-secondary-container/20 transition-colors" onclick="applyAreaPreset('Socialización en Recreo', '#ffaa81', 6, 12)" type="button">
++ Socialización en Recreo
+</button>
+<button class="px-2.5 py-1 rounded-full bg-pastel-mint text-tertiary border border-tertiary-fixed-dim/60 text-[12px] font-semibold hover:bg-tertiary-fixed-dim/20 transition-colors" onclick="applyAreaPreset('Tolerancia a la Frustración', '#6db19b', 5, 10)" type="button">
++ Tolerancia Frustración
+</button>
+<button class="px-2.5 py-1 rounded-full bg-pastel-lavender text-primary border border-outline-variant text-[12px] font-semibold hover:bg-pastel-lavender/60 transition-colors" onclick="applyAreaPreset('Motricidad Gruesa &amp; Esquema Corporal', '#a78bfa', 9, 14)" type="button">
++ Motricidad Gruesa
+</button>
+</div>
+</div>
+<!-- Form -->
+<form class="space-y-3" id="addAreaForm" onsubmit="handleSaveCustomArea(event)">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface block mb-1">Nombre del Área</label>
+<input class="w-full h-12 px-4 bg-surface-container-low border border-surface-container-high rounded-DEFAULT font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container transition-colors" id="newAreaNameInput" placeholder="Ej. Atención Sostenida &amp; Enfoque" required="" type="text"/>
+</div>
+<!-- Palette Selector -->
+<div>
+<label class="font-label-sm text-label-sm text-on-surface block mb-1.5 font-bold">Color del Anillo (Paleta Pastel):</label>
+<div class="grid grid-cols-5 gap-2" id="colorPalettePicker">
+<label class="flex flex-col items-center gap-1 cursor-pointer">
+<input checked="" class="sr-only peer" name="areaColor" type="radio" value="#76a8d8"/>
+<span class="w-9 h-9 rounded-full bg-[#76a8d8] ring-offset-2 ring-primary peer-checked:ring-2 flex items-center justify-center text-white text-[16px]"><span class="material-symbols-outlined text-[16px] hidden peer-checked:block">check</span></span>
+<span class="font-label-sm text-[10px] text-outline">Celeste</span>
+</label>
+<label class="flex flex-col items-center gap-1 cursor-pointer">
+<input class="sr-only peer" name="areaColor" type="radio" value="#6db19b"/>
+<span class="w-9 h-9 rounded-full bg-[#6db19b] ring-offset-2 ring-tertiary peer-checked:ring-2 flex items-center justify-center text-white text-[16px]"><span class="material-symbols-outlined text-[16px] hidden peer-checked:block">check</span></span>
+<span class="font-label-sm text-[10px] text-outline">Menta</span>
+</label>
+<label class="flex flex-col items-center gap-1 cursor-pointer">
+<input class="sr-only peer" name="areaColor" type="radio" value="#ffaa81"/>
+<span class="w-9 h-9 rounded-full bg-[#ffaa81] ring-offset-2 ring-secondary peer-checked:ring-2 flex items-center justify-center text-white text-[16px]"><span class="material-symbols-outlined text-[16px] hidden peer-checked:block">check</span></span>
+<span class="font-label-sm text-[10px] text-outline">Melocotón</span>
+</label>
+<label class="flex flex-col items-center gap-1 cursor-pointer">
+<input class="sr-only peer" name="areaColor" type="radio" value="#a78bfa"/>
+<span class="w-9 h-9 rounded-full bg-[#a78bfa] ring-offset-2 ring-primary peer-checked:ring-2 flex items-center justify-center text-white text-[16px]"><span class="material-symbols-outlined text-[16px] hidden peer-checked:block">check</span></span>
+<span class="font-label-sm text-[10px] text-outline">Lavanda</span>
+</label>
+<label class="flex flex-col items-center gap-1 cursor-pointer">
+<input class="sr-only peer" name="areaColor" type="radio" value="#f59e0b"/>
+<span class="w-9 h-9 rounded-full bg-[#f59e0b] ring-offset-2 ring-secondary peer-checked:ring-2 flex items-center justify-center text-white text-[16px]"><span class="material-symbols-outlined text-[16px] hidden peer-checked:block">check</span></span>
+<span class="font-label-sm text-[10px] text-outline">Amarillo</span>
+</label>
+</div>
+</div>
+<!-- Initial goals inputs -->
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface block mb-1">Obj. Conseguidos</label>
+<input class="w-full h-11 px-3 bg-surface-container-low border border-surface-container-high rounded-DEFAULT font-body-md text-on-surface text-center focus:outline-none" id="newAreaDoneInput" max="50" min="0" required="" type="number" value="7"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface block mb-1">Total Objetivos</label>
+<input class="w-full h-11 px-3 bg-surface-container-low border border-surface-container-high rounded-DEFAULT font-body-md text-on-surface text-center focus:outline-none" id="newAreaTotalInput" max="50" min="1" required="" type="number" value="10"/>
+</div>
+</div>
+<button class="w-full h-13 mt-3 bg-primary text-on-primary font-label-lg text-label-lg rounded-full flex items-center justify-center gap-2 shadow-[0_4px_0_0_#074a75] active:translate-y-1 active:shadow-none transition-all" type="submit">
+<span class="material-symbols-outlined text-[20px]">add_task</span>
+<span>Incorporar al Alumno</span>
+</button>
+</form>
+</div>
+</div>
+<!-- Interactive Modal: Evaluación con Escala 1 al 5 y Medallas/Confeti -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-inverse-surface/60 backdrop-blur-sm" id="evaluationModal">
+<div class="relative w-full max-w-md bg-surface-container-lowest rounded-lg p-space-lg shadow-xl flex flex-col space-y-space-md text-center overflow-hidden border border-surface-container-high">
+<!-- Close button -->
+<button class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="closeEvaluationModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+<!-- Student Banner -->
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">Sesión en Curso</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-0.5" id="evalStudentName">Mateo García</h3>
+<p class="font-body-sm text-body-sm text-outline mt-1">Registra el nivel de logro y autorregulación de hoy</p>
+</div>
+<!-- Rating Scale (1 to 5) -->
+<div class="flex flex-col space-y-3">
+<span class="font-label-md text-label-md text-on-surface">Escala de Desarrollo y Motivación:</span>
+<div class="grid grid-cols-5 gap-2" id="scoreButtons">
+<button class="score-btn h-14 rounded-DEFAULT bg-surface-container-low border border-surface-container-high font-headline-sm text-headline-sm text-on-surface flex flex-col items-center justify-center hover:bg-surface-container transition-all" onclick="selectScore(1)">
+<span>1</span>
+<span class="font-label-sm text-[10px] text-outline">Inicio</span>
+</button>
+<button class="score-btn h-14 rounded-DEFAULT bg-surface-container-low border border-surface-container-high font-headline-sm text-headline-sm text-on-surface flex flex-col items-center justify-center hover:bg-surface-container transition-all" onclick="selectScore(2)">
+<span>2</span>
+<span class="font-label-sm text-[10px] text-outline">Proceso</span>
+</button>
+<button class="score-btn h-14 rounded-DEFAULT bg-surface-container-low border border-surface-container-high font-headline-sm text-headline-sm text-on-surface flex flex-col items-center justify-center hover:bg-surface-container transition-all" onclick="selectScore(3)">
+<span>3</span>
+<span class="font-label-sm text-[10px] text-outline">🥉 Bronce</span>
+</button>
+<button class="score-btn h-14 rounded-DEFAULT bg-surface-container-low border border-surface-container-high font-headline-sm text-headline-sm text-on-surface flex flex-col items-center justify-center hover:bg-surface-container transition-all" onclick="selectScore(4)">
+<span>4</span>
+<span class="font-label-sm text-[10px] text-outline">🥈 Plata</span>
+</button>
+<button class="score-btn h-14 rounded-DEFAULT bg-surface-container-low border border-surface-container-high font-headline-sm text-headline-sm text-on-surface flex flex-col items-center justify-center hover:bg-surface-container transition-all" onclick="selectScore(5)">
+<span>5</span>
+<span class="font-label-sm text-[10px] text-outline">🥇 Oro</span>
+</button>
+</div>
+</div>
+<!-- Reward Celebration Animation Box -->
+<div class="min-h-[140px] flex flex-col items-center justify-center p-3 rounded-DEFAULT bg-pastel-blue/30 border border-pastel-blue transition-all" id="rewardBox">
+<span class="material-symbols-outlined text-[36px] text-outline opacity-40">hotel_class</span>
+<span class="font-body-sm text-body-sm text-outline mt-1">Selecciona una puntuación para registrar</span>
+</div>
+<!-- Note Input -->
+<div class="text-left">
+<label class="font-label-sm text-label-sm text-on-surface block mb-1">Observación cualitativa (Opcional):</label>
+<textarea class="w-full p-3 bg-surface-container-low border border-surface-container-high rounded-DEFAULT font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container resize-none" id="evalNotes" placeholder="Ej. Muy buena respuesta a la agenda visual en el descanso..." rows="2"></textarea>
+</div>
+<!-- Action Confirmation Button -->
+<button class="w-full h-12 bg-surface-container text-outline rounded-full font-label-lg text-label-lg flex items-center justify-center gap-2 transition-all cursor-not-allowed" disabled="" id="saveEvaluationBtn" onclick="finishEvaluation()">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Guardar Registro</span>
+</button>
+<!-- Canvas for celebration confetti -->
+<canvas class="pointer-events-none absolute inset-0 w-full h-full hidden z-20" id="confettiCanvas"></canvas>
+</div>
+</div>
+<!-- Interactive Modal: Visor de Informe Final IA -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-inverse-surface/60 backdrop-blur-sm" id="aiViewerModal">
+<div class="w-full max-w-md bg-surface-container-lowest rounded-lg p-space-lg shadow-xl flex flex-col space-y-space-md max-h-[85vh] overflow-y-auto border border-surface-container-high">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-full bg-pastel-mint text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Informe Final IA</h3>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold" id="aiViewerStudent">Mateo García</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="closeAiViewer()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Summary Badges -->
+<div class="grid grid-cols-2 gap-2">
+<div class="p-3 bg-pastel-mint/50 border border-pastel-mint rounded-DEFAULT">
+<span class="font-label-sm text-label-sm text-tertiary block font-semibold">Logros detectados</span>
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold">+8 hitos</span>
+</div>
+<div class="p-3 bg-pastel-peach/50 border border-pastel-peach rounded-DEFAULT">
+<span class="font-label-sm text-label-sm text-secondary block font-semibold">Atascos / Regulación</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">2 puntos</span>
+</div>
+</div>
+<!-- AI Content Body -->
+<div class="bg-surface-container-low p-space-md rounded-DEFAULT space-y-2 border border-surface-container">
+<div class="flex items-center gap-1.5 text-tertiary font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[18px]">analytics</span>
+<span>Análisis en Tiempo Real:</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed" id="aiViewerBodyText">
+          Cargando datos...
+        </p>
+</div>
+<!-- Recommendation -->
+<div class="p-3 bg-pastel-yellow/30 border border-pastel-yellow rounded-DEFAULT">
+<span class="font-label-md text-label-md text-on-surface font-bold block mb-1">Estrategia sugerida para el aula:</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mantener apoyos hápticos antes de transiciones espaciales y reforzar positivamente con el panel de recompensas de estrellas.</p>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 pt-2">
+<button class="flex-1 h-12 bg-primary text-on-primary rounded-full font-label-md text-label-md flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-all" onclick="triggerToast('Descargando Informe IA en formato PDF...')">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Exportar PDF</span>
+</button>
+<button class="h-12 px-5 bg-surface-container text-on-surface rounded-full font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="closeAiViewer()">
+          Cerrar
+        </button>
+</div>
+</div>
+</div>
+<!-- Interactive Modal: Confirmación Eliminar Alumno -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-inverse-surface/60 backdrop-blur-sm" id="deleteConfirmModal">
+<div class="w-full max-w-sm bg-surface-container-lowest rounded-lg p-space-lg shadow-xl text-center space-y-space-md border border-surface-container-high">
+<div class="w-14 h-14 mx-auto rounded-full bg-error-container text-error flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]">warning</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">¿Eliminar Alumno?</h3>
+<p class="font-body-sm text-body-sm text-outline mt-1.5">
+          Esta acción eliminará la ficha de <strong class="text-on-surface" id="deleteTargetName"></strong> y sus carpetas de documentos asociados.
+        </p>
+</div>
+<div class="flex items-center gap-2 pt-2">
+<button class="flex-1 h-12 bg-surface-container text-on-surface rounded-full font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="closeDeleteConfirmModal()">
+          Cancelar
+        </button>
+<button class="flex-1 h-12 bg-error text-on-error rounded-full font-label-md text-label-md shadow-sm active:scale-95 transition-all" id="confirmDeleteExecuteBtn">
+          Sí, Eliminar
+        </button>
+</div>
+</div>
+</div>
+<!-- Sensory-Safe Toast Notification -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 hidden bg-inverse-surface text-inverse-on-surface px-5 py-3 rounded-full font-label-md text-label-md shadow-lg flex items-center gap-2 transition-all border border-surface-dim" id="toastNotification">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed">info</span>
+<span id="toastMessage">Acción completada</span>
+</div>
+</div>
+<!-- Dynamic Ring Progress & Dimension Store -->
+<script>
+  // Central student areas state
+  const studentAreasState = {
+    mateo: [
+      { id: 'm1', name: 'Autonomía & Vida Diaria', done: 14, total: 18, color: '#76a8d8', bgBadge: 'bg-pastel-blue text-primary' },
+      { id: 'm2', name: 'Regulación Sensorial', done: 13, total: 20, color: '#6db19b', bgBadge: 'bg-pastel-mint text-tertiary' },
+      { id: 'm3', name: 'Comunicación & Habla', done: 16, total: 19, color: '#ffaa81', bgBadge: 'bg-pastel-peach text-secondary' },
+      { id: 'm4', name: 'Flexibilidad Social', done: 8, total: 15, color: '#a78bfa', bgBadge: 'bg-pastel-lavender text-primary' }
+    ],
+    sofia: [
+      { id: 's1', name: 'Autonomía & Vida Diaria', done: 11, total: 18, color: '#76a8d8', bgBadge: 'bg-pastel-blue text-primary' },
+      { id: 's2', name: 'Regulación Sensorial', done: 15, total: 20, color: '#6db19b', bgBadge: 'bg-pastel-mint text-tertiary' },
+      { id: 's3', name: 'Comunicación & Habla', done: 11, total: 19, color: '#ffaa81', bgBadge: 'bg-pastel-peach text-secondary' },
+      { id: 's4', name: 'Atención Sostenida & Enfoque', done: 9, total: 12, color: '#f59e0b', bgBadge: 'bg-pastel-yellow text-secondary' },
+      { id: 's5', name: 'Flexibilidad Social', done: 9, total: 15, color: '#a78bfa', bgBadge: 'bg-pastel-lavender text-primary' }
+    ],
+    lucas: [
+      { id: 'l1', name: 'Autonomía & Vida Diaria', done: 15, total: 18, color: '#76a8d8', bgBadge: 'bg-pastel-blue text-primary' },
+      { id: 'l2', name: 'Regulación Sensorial', done: 14, total: 20, color: '#6db19b', bgBadge: 'bg-pastel-mint text-tertiary' },
+      { id: 'l3', name: 'Motricidad Fina & Grafía', done: 12, total: 14, color: '#76a8d8', bgBadge: 'bg-pastel-blue text-primary' },
+      { id: 'l4', name: 'Comunicación & Habla', done: 14, total: 19, color: '#ffaa81', bgBadge: 'bg-pastel-peach text-secondary' },
+      { id: 'l5', name: 'Flexibilidad Social', done: 10, total: 15, color: '#a78bfa', bgBadge: 'bg-pastel-lavender text-primary' }
+    ]
+  };
+
+  let activeAddAreaStudentId = 'mateo';
+
+  // Render Concentric SVG Rings & Areas list for a student
+  function renderStudentProgress(studentId) {
+    const areas = studentAreasState[studentId];
+    if (!areas) return;
+
+    const areasContainer = document.getElementById(`areas-container-${studentId}`);
+    const ringsSvg = document.getElementById(`rings-svg-${studentId}`);
+    const globalPercentEl = document.getElementById(`global-percent-${studentId}`);
+    const globalBadgeEl = document.getElementById(`global-badge-${studentId}`);
+
+    if (!areasContainer || !ringsSvg) return;
+
+    // Calculate Global Achievement
+    let totalDone = 0;
+    let totalMax = 0;
+    areas.forEach(a => {
+      totalDone += a.done;
+      totalMax += a.total;
+    });
+    const globalPercent = totalMax > 0 ? Math.round((totalDone / totalMax) * 100) : 0;
+    if (globalPercentEl) globalPercentEl.textContent = `${globalPercent}%`;
+    if (globalBadgeEl) globalBadgeEl.textContent = `${globalPercent}% Global`;
+
+    // Render Areas List with accessible +/- Goal Steppers
+    areasContainer.innerHTML = '';
+    areas.forEach((area, index) => {
+      const pct = Math.round((area.done / area.total) * 100);
+      const row = document.createElement('div');
+      row.className = "flex items-center justify-between text-body-sm text-[12px] p-1.5 rounded-DEFAULT bg-surface-container-lowest border border-surface-container-high/60 shadow-[0_1px_2px_rgba(0,0,0,0.03)] hover:border-primary-container/40 transition-colors";
+      row.innerHTML = `
+        <div class="flex items-center gap-1.5 min-w-0 pr-1">
+          <span class="w-2.5 h-2.5 rounded-full shrink-0 shadow-sm" style="background-color: ${area.color};"></span>
+          <span class="text-on-surface font-semibold truncate leading-tight">${area.name}</span>
+        </div>
+        <div class="flex items-center gap-1.5 shrink-0">
+          <!-- Stepper Buttons -->
+          <div class="flex items-center bg-surface-container-low rounded-full px-1 py-0.5 border border-surface-container">
+            <button onclick="adjustAreaGoal('${studentId}', '${area.id}', -1)" aria-label="Reducir objetivo" class="w-5 h-5 rounded-full flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container active:scale-90 font-bold transition-transform">
+              <span class="material-symbols-outlined text-[13px]">remove</span>
+            </button>
+            <span class="text-on-surface text-[11px] font-bold px-1 min-w-[34px] text-center">${area.done}/${area.total}</span>
+            <button onclick="adjustAreaGoal('${studentId}', '${area.id}', 1)" aria-label="Aumentar objetivo conseguido" class="w-5 h-5 rounded-full flex items-center justify-center text-primary hover:bg-pastel-blue/80 active:scale-90 font-bold transition-transform">
+              <span class="material-symbols-outlined text-[13px]">add</span>
+            </button>
+          </div>
+          <!-- Percentage Pill -->
+          <span class="px-1.5 py-0.5 rounded-full font-bold text-[10px] ${area.bgBadge || 'bg-pastel-blue text-primary'} min-w-[34px] text-center">${pct}%</span>
+          <!-- Area options (Delete / Remove area) -->
+          <button onclick="deleteArea('${studentId}', '${area.id}')" title="Eliminar área" class="text-outline hover:text-error w-5 h-5 rounded-full flex items-center justify-center transition-colors">
+            <span class="material-symbols-outlined text-[14px]">close</span>
+          </button>
+        </div>
+      `;
+      areasContainer.appendChild(row);
+    });
+
+    // Render Concentric SVG Circles dynamically
+    // Center at 60,60; Radius decreases with ring index; Stroke adjusted
+    const maxRadius = 52;
+    const ringCount = areas.length;
+    const strokeWidth = ringCount > 4 ? 4.5 : 6;
+    const radiusStep = ringCount > 4 ? (34 / Math.max(ringCount - 1, 1)) : 10;
+
+    let svgHtml = '';
+    areas.forEach((area, i) => {
+      const r = Math.max(16, maxRadius - (i * radiusStep));
+      const circumference = 2 * Math.PI * r;
+      const pct = Math.min(100, Math.max(0, (area.done / area.total) * 100));
+      const offset = circumference - (circumference * pct / 100);
+
+      // Track circle (background)
+      svgHtml += `
+        <circle cx="60" cy="60" r="${r}" fill="none" stroke="${area.color}" opacity="0.22" stroke-width="${strokeWidth}"></circle>
+      `;
+      // Animated Progress Arc
+      svgHtml += `
+        <circle class="ring-progress" cx="60" cy="60" r="${r}" fill="none" stroke="${area.color}" stroke-width="${strokeWidth}"
+          stroke-dasharray="${circumference.toFixed(1)}" stroke-dashoffset="${offset.toFixed(1)}" stroke-linecap="round"></circle>
+      `;
+    });
+    ringsSvg.innerHTML = svgHtml;
+  }
+
+  // Adjust goal count interactively
+  function adjustAreaGoal(studentId, areaId, delta) {
+    const list = studentAreasState[studentId];
+    if (!list) return;
+    const item = list.find(a => a.id === areaId);
+    if (!item) return;
+
+    const newDone = item.done + delta;
+    if (newDone < 0 || newDone > item.total) {
+      triggerToast(newDone > item.total ? `¡Objetivo completado al 100% (${item.total}/${item.total})!` : 'Mínimo alcanzado (0)');
+      return;
+    }
+    item.done = newDone;
+    renderStudentProgress(studentId);
+    triggerToast(`${item.name}: ${item.done}/${item.total} (${Math.round((item.done / item.total) * 100)}%)`);
+  }
+
+  // Delete an area
+  function deleteArea(studentId, areaId) {
+    const list = studentAreasState[studentId];
+    if (!list || list.length <= 1) {
+      triggerToast('Debe haber al menos 1 área activa');
+      return;
+    }
+    const idx = list.findIndex(a => a.id === areaId);
+    if (idx > -1) {
+      const removedName = list[idx].name;
+      list.splice(idx, 1);
+      renderStudentProgress(studentId);
+      triggerToast(`Área "${removedName}" eliminada`);
+    }
+  }
+
+  // Modal: Add Custom Area
+  const addAreaModal = document.getElementById('addAreaModal');
+  function openAddAreaModal(studentId, studentName) {
+    activeAddAreaStudentId = studentId;
+    document.getElementById('addAreaTargetStudentName').textContent = studentName;
+    document.getElementById('newAreaNameInput').value = '';
+    document.getElementById('newAreaDoneInput').value = '7';
+    document.getElementById('newAreaTotalInput').value = '10';
+    addAreaModal.classList.remove('hidden');
+  }
+
+  function closeAddAreaModal() {
+    addAreaModal.classList.add('hidden');
+  }
+
+  function applyAreaPreset(name, color, done, total) {
+    document.getElementById('newAreaNameInput').value = name;
+    document.getElementById('newAreaDoneInput').value = done;
+    document.getElementById('newAreaTotalInput').value = total;
+
+    // Check color radio
+    const radios = document.querySelectorAll('input[name="areaColor"]');
+    radios.forEach(r => {
+      r.checked = (r.value.toLowerCase() === color.toLowerCase());
+    });
+  }
+
+  function handleSaveCustomArea(e) {
+    e.preventDefault();
+    const name = document.getElementById('newAreaNameInput').value.trim();
+    const done = parseInt(document.getElementById('newAreaDoneInput').value, 10) || 0;
+    const total = parseInt(document.getElementById('newAreaTotalInput').value, 10) || 10;
+    
+    const colorRadio = document.querySelector('input[name="areaColor"]:checked');
+    const color = colorRadio ? colorRadio.value : '#76a8d8';
+
+    let badgeClass = 'bg-pastel-blue text-primary';
+    if (color === '#6db19b') badgeClass = 'bg-pastel-mint text-tertiary';
+    else if (color === '#ffaa81') badgeClass = 'bg-pastel-peach text-secondary';
+    else if (color === '#a78bfa') badgeClass = 'bg-pastel-lavender text-primary';
+    else if (color === '#f59e0b') badgeClass = 'bg-pastel-yellow text-secondary';
+
+    const newId = 'area_' + Date.now();
+    if (!studentAreasState[activeAddAreaStudentId]) {
+      studentAreasState[activeAddAreaStudentId] = [];
+    }
+
+    studentAreasState[activeAddAreaStudentId].push({
+      id: newId,
+      name: name,
+      done: Math.min(done, total),
+      total: total,
+      color: color,
+      bgBadge: badgeClass
+    });
+
+    renderStudentProgress(activeAddAreaStudentId);
+    closeAddAreaModal();
+    triggerToast(`Área "${name}" incorporada con éxito`);
+  }
+
+  // Initialize initial rings on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    ['mateo', 'sofia', 'lucas'].forEach(id => renderStudentProgress(id));
+  });
+</script>
+<!-- Client-side Interactive Behaviors -->
+<script>
+  // State
+  let currentEvaluationScore = null;
+  let currentDeleteCallback = null;
+  let selectedAvatarIcon = 'pets';
+  let selectedAvatarName = 'Leoncito Cálido';
+
+  // Search Filtering
+  const searchInput = document.getElementById('studentSearchInput');
+  const clearBtn = document.getElementById('clearSearchBtn');
+  const studentCards = document.querySelectorAll('.student-card');
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      clearBtn.classList.toggle('hidden', query.length === 0);
+      
+      studentCards.forEach(card => {
+        const name = card.getAttribute('data-name') || '';
+        const level = card.getAttribute('data-level') || '';
+        const matches = name.includes(query) || (`nivel ${level}`).includes(query);
+        card.style.display = matches ? 'block' : 'none';
+      });
+    });
+
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      clearBtn.classList.add('hidden');
+      studentCards.forEach(card => card.style.display = 'block');
+      searchInput.focus();
+    });
+  }
+
+  // Filter Pills Toggle
+  document.querySelectorAll('.filter-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-pill').forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary', 'active');
+        b.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+        const icon = b.querySelector('.material-symbols-outlined');
+        if (icon) icon.remove();
+      });
+
+      btn.classList.add('bg-primary', 'text-on-primary', 'active');
+      btn.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+      
+      const check = document.createElement('span');
+      check.className = 'material-symbols-outlined text-[18px]';
+      check.textContent = 'done';
+      btn.prepend(check);
+
+      const filterText = btn.textContent.toLowerCase();
+      studentCards.forEach(card => {
+        if (filterText.includes('todos')) {
+          card.style.display = 'block';
+        } else if (filterText.includes('nivel 1')) {
+          card.style.display = card.getAttribute('data-level') === '1' ? 'block' : 'none';
+        } else if (filterText.includes('nivel 2')) {
+          card.style.display = card.getAttribute('data-level') === '2' ? 'block' : 'none';
+        }
+      });
+    });
+  });
+
+  // Context Menu Toggle
+  function toggleMenu(menuId) {
+    document.querySelectorAll('[id^="menu-"]').forEach(m => {
+      if (m.id !== menuId) m.classList.add('hidden');
+    });
+    const menu = document.getElementById(menuId);
+    if (menu) menu.classList.toggle('hidden');
+  }
+
+  // Click outside menus
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('[aria-label="Opciones de alumno"]') && !e.target.closest('[id^="menu-"]')) {
+      document.querySelectorAll('[id^="menu-"]').forEach(m => m.classList.add('hidden'));
+    }
+  });
+
+  // Modal: Register Student
+  const registerModal = document.getElementById('registerModal');
+  document.getElementById('openRegisterModalBtn').addEventListener('click', () => {
+    registerModal.classList.remove('hidden');
+  });
+
+  function closeRegisterModal() {
+    registerModal.classList.add('hidden');
+  }
+
+  function selectAvatar(icon, name, buttonEl) {
+    selectedAvatarIcon = icon;
+    selectedAvatarName = name;
+    
+    const preview = document.getElementById('avatarSelectedPreview');
+    const label = document.getElementById('avatarLabel');
+    if (preview) preview.innerHTML = `<span class="material-symbols-outlined text-[44px]">${icon}</span>`;
+    if (label) label.textContent = name;
+
+    document.querySelectorAll('.avatar-option').forEach(opt => {
+      opt.classList.remove('shadow-sm', 'scale-105');
+    });
+    buttonEl.classList.add('shadow-sm', 'scale-105');
+  }
+
+  function handleCreateStudent(event) {
+    event.preventDefault();
+    const name = document.getElementById('newStudentName').value;
+    const level = document.getElementById('newStudentLevel').value;
+    const rawId = 'custom_' + Date.now();
+
+    studentAreasState[rawId] = [
+      { id: rawId + '_1', name: 'Autonomía & Vida Diaria', done: 5, total: 10, color: '#76a8d8', bgBadge: 'bg-pastel-blue text-primary' },
+      { id: rawId + '_2', name: 'Regulación Sensorial', done: 6, total: 10, color: '#6db19b', bgBadge: 'bg-pastel-mint text-tertiary' },
+      { id: rawId + '_3', name: 'Comunicación', done: 7, total: 10, color: '#ffaa81', bgBadge: 'bg-pastel-peach text-secondary' }
+    ];
+    
+    const list = document.getElementById('studentsList');
+    const newCard = document.createElement('article');
+    newCard.className = 'student-card relative bg-surface-container-lowest border border-surface-container-high/60 rounded-lg p-space-md shadow-sm transition-all duration-300';
+    newCard.setAttribute('data-name', name.toLowerCase());
+    newCard.setAttribute('data-level', level);
+    newCard.setAttribute('data-student-id', rawId);
+
+    const safeId = 'menu-' + Date.now();
+
+    newCard.innerHTML = `
+      <div class="flex items-start justify-between gap-space-sm">
+        <div class="flex items-center gap-space-md">
+          <div class="relative w-16 h-16 rounded-full bg-pastel-blue flex items-center justify-center shrink-0 border border-primary-container/40 overflow-hidden text-primary">
+            <span class="material-symbols-outlined text-[36px]">${selectedAvatarIcon}</span>
+            <span class="absolute bottom-0 right-0 w-5 h-5 rounded-full bg-tertiary flex items-center justify-center text-on-tertiary">
+              <span class="material-symbols-outlined text-[13px]">check</span>
+            </span>
+          </div>
+          <div class="flex flex-col">
+            <h2 class="font-headline-sm text-headline-sm text-on-surface">${name}</h2>
+            <div class="flex items-center gap-1.5 mt-0.5">
+              <span class="font-label-sm text-label-sm text-tertiary bg-pastel-mint border border-tertiary-fixed-dim px-2.5 py-0.5 rounded-full font-semibold">Nivel ${level} · Recién Registrado</span>
+            </div>
+            <p class="font-body-sm text-body-sm text-outline mt-1 flex items-center gap-1">
+              <span class="material-symbols-outlined text-[15px]">event</span>
+              <span>Hoy, ahora</span>
+            </p>
+          </div>
+        </div>
+        <div class="relative">
+          <button onclick="toggleMenu('${safeId}')" class="w-10 h-10 rounded-full flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-all">
+            <span class="material-symbols-outlined text-[22px]">more_vert</span>
+          </button>
+          <div id="${safeId}" class="hidden absolute right-0 top-12 z-30 w-48 bg-surface-container-lowest border border-surface-container-high rounded-DEFAULT shadow-lg py-1 flex flex-col">
+            <button onclick="confirmDeleteStudent('${name}', this)" class="w-full px-4 py-2.5 text-left font-label-md text-label-md text-error hover:bg-error-container/30 flex items-center gap-2">
+              <span class="material-symbols-outlined text-[18px]">delete</span> Eliminar Alumno
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="mt-space-md p-3.5 bg-surface-container-low rounded-DEFAULT border border-surface-container space-y-3" id="progress-section-${rawId}">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-1.5 min-w-0">
+            <span class="material-symbols-outlined text-[18px] text-primary">donut_large</span>
+            <span class="font-label-md text-label-md text-on-surface font-bold truncate">Anillos de Progreso por Áreas</span>
+          </div>
+          <span class="font-label-sm text-label-sm bg-pastel-blue text-primary border border-primary-container/40 px-2 py-0.5 rounded-full font-semibold" id="global-badge-${rawId}">60% Global</span>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center gap-3.5">
+          <div class="relative w-28 h-28 shrink-0 flex items-center justify-center">
+            <svg class="w-full h-full -rotate-90 transform" id="rings-svg-${rawId}" viewbox="0 0 120 120"></svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+              <span class="font-headline-sm text-[16px] text-on-surface font-extrabold leading-none" id="global-percent-${rawId}">60%</span>
+              <span class="font-label-sm text-[9px] text-outline uppercase tracking-wider font-semibold mt-0.5">Logro</span>
+            </div>
+          </div>
+          <div class="flex-1 w-full flex flex-col gap-1.5" id="areas-container-${rawId}"></div>
+        </div>
+        <button onclick="openAddAreaModal('${rawId}', '${name}')" class="w-full py-2 px-3 rounded-full bg-surface-container-lowest hover:bg-surface-container border border-dashed border-primary-container/70 text-primary font-label-sm text-label-sm flex items-center justify-center gap-1.5 transition-all active:scale-[0.99] shadow-sm">
+          <span class="material-symbols-outlined text-[18px]">add_circle</span>
+          <span class="font-bold">+ Añadir Área de Trabajo</span>
+        </button>
+      </div>
+      <div class="mt-space-md grid grid-cols-1 gap-2.5">
+        <div class="flex items-center justify-between p-3 bg-pastel-blue/40 border border-pastel-blue rounded-DEFAULT">
+          <span class="font-label-md text-label-md text-on-surface font-semibold">1. Informe Principal</span>
+          <span class="font-label-sm text-label-sm bg-primary text-on-primary px-2.5 py-0.5 rounded-full font-semibold">0 PDFs</span>
+        </div>
+        <div class="flex items-center justify-between p-3 bg-pastel-peach/40 border border-pastel-peach rounded-DEFAULT">
+          <span class="font-label-md text-label-md text-on-surface font-semibold">2. Programación</span>
+          <span class="font-label-sm text-label-sm bg-secondary text-on-secondary px-2.5 py-0.5 rounded-full font-semibold">0 PDFs</span>
+        </div>
+        <div class="flex items-center justify-between p-3 bg-pastel-mint/40 border border-pastel-mint rounded-DEFAULT">
+          <span class="font-label-md text-label-md text-tertiary font-semibold">3. Informe Final IA</span>
+          <button onclick="generateAiReport(this)" class="h-8 px-3 rounded-full bg-surface-container-lowest text-tertiary border border-tertiary-fixed-dim font-label-sm text-label-sm shadow-sm">Generar con IA</button>
+        </div>
+      </div>
+      <div class="mt-space-md pt-2">
+        <button onclick="openEvaluationModal('${name}', '${selectedAvatarName}')" class="w-full h-12 bg-primary text-on-primary rounded-full font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-[0_3px_0_0_#074a75] active:translate-y-0.5">
+          <span class="material-symbols-outlined text-[20px] text-pastel-yellow">star</span>
+          <span>⭐ Realizar Evaluación</span>
+        </button>
+      </div>
+    `;
+
+    list.prepend(newCard);
+    renderStudentProgress(rawId);
+    closeRegisterModal();
+    triggerToast(`Alumno ${name} registrado con éxito`);
+    document.getElementById('newStudentForm').reset();
+  }
+
+  // Delete Confirmation Modal
+  const deleteModal = document.getElementById('deleteConfirmModal');
+  function confirmDeleteStudent(studentName, btnElement) {
+    document.querySelectorAll('[id^="menu-"]').forEach(m => m.classList.add('hidden'));
+    document.getElementById('deleteTargetName').textContent = studentName;
+    deleteModal.classList.remove('hidden');
+
+    const card = btnElement.closest('.student-card');
+    currentDeleteCallback = () => {
+      if (card) {
+        card.style.opacity = '0';
+        card.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          card.remove();
+          triggerToast(`Alumno ${studentName} eliminado.`);
+        }, 250);
+      }
+      closeDeleteConfirmModal();
+    };
+  }
+
+  document.getElementById('confirmDeleteExecuteBtn').addEventListener('click', () => {
+    if (currentDeleteCallback) currentDeleteCallback();
+  });
+
+  function closeDeleteConfirmModal() {
+    deleteModal.classList.add('hidden');
+    currentDeleteCallback = null;
+  }
+
+  // Modal: Evaluación & Medallas Animation
+  const evalModal = document.getElementById('evaluationModal');
+  const evalStudentName = document.getElementById('evalStudentName');
+  const rewardBox = document.getElementById('rewardBox');
+  const saveEvaluationBtn = document.getElementById('saveEvaluationBtn');
+  const confettiCanvas = document.getElementById('confettiCanvas');
+
+  function openEvaluationModal(name, avatar) {
+    evalStudentName.textContent = name;
+    currentEvaluationScore = null;
+    saveEvaluationBtn.disabled = true;
+    saveEvaluationBtn.className = 'w-full h-12 bg-surface-container text-outline rounded-full font-label-lg text-label-lg flex items-center justify-center gap-2 transition-all cursor-not-allowed';
+    rewardBox.innerHTML = `
+      <span class="material-symbols-outlined text-[36px] text-outline opacity-40">hotel_class</span>
+      <span class="font-body-sm text-body-sm text-outline mt-1">Selecciona una puntuación para registrar</span>
+    `;
+    document.querySelectorAll('.score-btn').forEach(b => {
+      b.classList.remove('bg-primary', 'text-on-primary', 'bg-tertiary', 'text-on-tertiary', 'bg-secondary', 'text-on-secondary');
+      b.classList.add('bg-surface-container-low', 'text-on-surface');
+    });
+    evalModal.classList.remove('hidden');
+  }
+
+  function closeEvaluationModal() {
+    evalModal.classList.add('hidden');
+    stopConfetti();
+  }
+
+  function selectScore(score) {
+    currentEvaluationScore = score;
+    saveEvaluationBtn.disabled = false;
+    saveEvaluationBtn.className = 'w-full h-12 bg-primary text-on-primary rounded-full font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-[0_3px_0_0_#074a75] active:translate-y-0.5 transition-all';
+
+    // Highlight selected button
+    const buttons = document.querySelectorAll('.score-btn');
+    buttons.forEach((b, idx) => {
+      b.classList.remove('bg-primary', 'text-on-primary', 'bg-tertiary', 'text-on-tertiary', 'bg-secondary', 'text-on-secondary');
+      b.classList.add('bg-surface-container-low', 'text-on-surface');
+      if (idx + 1 === score) {
+        b.classList.remove('bg-surface-container-low', 'text-on-surface');
+        b.classList.add('bg-primary', 'text-on-primary');
+      }
+    });
+
+    // Medals Presentation Logic
+    if (score === 5) {
+      // Oro con confeti
+      rewardBox.innerHTML = `
+        <div class="flex flex-col items-center animate-bounce">
+          <div class="w-16 h-16 rounded-full bg-pastel-yellow border border-secondary-container flex items-center justify-center text-[38px] shadow-lg">
+            🥇
+          </div>
+          <span class="font-headline-sm text-headline-sm text-primary font-extrabold mt-1">¡Medalla de Oro!</span>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">¡Excelente autorregulación y superación!</span>
+        </div>
+      `;
+      launchConfetti();
+    } else if (score === 4) {
+      // Plata
+      stopConfetti();
+      rewardBox.innerHTML = `
+        <div class="flex flex-col items-center">
+          <div class="w-14 h-14 rounded-full bg-pastel-blue border border-primary-container flex items-center justify-center text-[34px] shadow-md transition-transform scale-110">
+            🥈
+          </div>
+          <span class="font-headline-sm text-headline-sm text-primary font-bold mt-1">Medalla de Plata</span>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">¡Gran concentración en los ejercicios!</span>
+        </div>
+      `;
+    } else if (score === 3) {
+      // Bronce
+      stopConfetti();
+      rewardBox.innerHTML = `
+        <div class="flex flex-col items-center">
+          <div class="w-12 h-12 rounded-full bg-pastel-peach border border-secondary-container flex items-center justify-center text-[30px] shadow-sm">
+            🥉
+          </div>
+          <span class="font-headline-sm text-headline-sm text-secondary font-bold mt-1">Medalla de Bronce</span>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">Buen esfuerzo continuo en la sesión.</span>
+        </div>
+      `;
+    } else {
+      stopConfetti();
+      rewardBox.innerHTML = `
+        <div class="flex flex-col items-center">
+          <span class="material-symbols-outlined text-[36px] text-tertiary">trending_up</span>
+          <span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">Nivel ${score} Registrado</span>
+          <span class="font-label-sm text-label-sm text-outline">Acompañando el ritmo individual de aprendizaje.</span>
+        </div>
+      `;
+    }
+  }
+
+  function finishEvaluation() {
+    closeEvaluationModal();
+    triggerToast(`Evaluación guardada con éxito (Calificación: ${currentEvaluationScore}/5)`);
+  }
+
+  // Sensory-Safe Gentle Confetti Animation
+  let confettiAnimationId = null;
+  let confettiParticles = [];
+
+  function launchConfetti() {
+    confettiCanvas.classList.remove('hidden');
+    const ctx = confettiCanvas.getContext('2d');
+    confettiCanvas.width = confettiCanvas.offsetWidth;
+    confettiCanvas.height = confettiCanvas.offsetHeight;
+    
+    confettiParticles = [];
+    const colors = ['#76a8d8', '#ffaa81', '#fef3c7', '#6db19b', '#ede9fe'];
+    for (let i = 0; i < 40; i++) {
+      confettiParticles.push({
+        x: confettiCanvas.width / 2,
+        y: confettiCanvas.height / 2,
+        r: Math.random() * 5 + 3,
+        dx: (Math.random() - 0.5) * 6,
+        dy: (Math.random() - 0.5) * 6 - 2,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        tilt: Math.random() * 10
+      });
+    }
+
+    function render() {
+      ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+      confettiParticles.forEach(p => {
+        ctx.beginPath();
+        ctx.fillStyle = p.color;
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+        p.x += p.dx;
+        p.y += p.dy;
+        p.dy += 0.15; // gentle gravity
+      });
+      confettiParticles = confettiParticles.filter(p => p.y < confettiCanvas.height);
+      if (confettiParticles.length > 0) {
+        confettiAnimationId = requestAnimationFrame(render);
+      } else {
+        stopConfetti();
+      }
+    }
+    cancelAnimationFrame(confettiAnimationId);
+    render();
+  }
+
+  function stopConfetti() {
+    if (confettiAnimationId) cancelAnimationFrame(confettiAnimationId);
+    if (confettiCanvas) {
+      confettiCanvas.classList.add('hidden');
+      const ctx = confettiCanvas.getContext('2d');
+      ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+    }
+  }
+
+  // AI Viewer & Generation
+  const aiModal = document.getElementById('aiViewerModal');
+  function openAiViewer(studentName, summaryText) {
+    document.getElementById('aiViewerStudent').textContent = studentName;
+    document.getElementById('aiViewerBodyText').textContent = summaryText;
+    aiModal.classList.remove('hidden');
+  }
+
+  function closeAiViewer() {
+    aiModal.classList.add('hidden');
+  }
+
+  function generateAiReport(btn) {
+    const originalText = btn.innerHTML;
+    btn.innerHTML = `<span class="material-symbols-outlined text-[15px] animate-spin">sync</span> Procesando...`;
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+      triggerToast('¡Informe IA actualizado con las últimas observaciones!');
+    }, 1200);
+  }
+
+  // Simple Toast Helper
+  let toastTimeout;
+  function triggerToast(message) {
+    const toast = document.getElementById('toastNotification');
+    const msg = document.getElementById('toastMessage');
+    if (!toast || !msg) return;
+    
+    msg.textContent = message;
+    toast.classList.remove('hidden');
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+      toast.classList.add('hidden');
+    }, 3000);
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl border-t border-surface-container" data-active-classes="text-primary font-bold"><div class="h-20 px-space-xs grid grid-cols-4 items-center"><a class="flex flex-col items-center justify-center gap-1 min-h-[48px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-[24px]">home</span><span class="font-label-sm text-label-sm">Inicio</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-1 min-h-[48px] py-1 transition-colors text-primary font-bold" data-path="clase" href="#"><span class="material-symbols-outlined text-[24px]">group</span><span class="font-label-sm text-label-sm">Clase</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[48px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-path="diario" href="#"><span class="material-symbols-outlined text-[24px]">calendar_month</span><span class="font-label-sm text-label-sm">Diario</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[48px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-path="recursos" href="#"><span class="material-symbols-outlined text-[24px]">local_library</span><span class="font-label-sm text-label-sm">Recursos</span></a></div></nav>
+</body></html>

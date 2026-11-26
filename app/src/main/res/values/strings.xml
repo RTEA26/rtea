@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">R-TEA</string>
+    <string name="brand_name">R-TEA</string>
+    <string name="nav_inicio">Inicio</string>
+    <string name="nav_clase">Clase</string>
+    <string name="nav_diario">Diario</string>
+    <string name="nav_recursos">Recursos</string>
+    <string name="screen_registro">Registro de alumnos</string>
+    <string name="screen_evaluacion">Evaluación</string>
+    <string name="screen_biblioteca">Biblioteca R-TEA</string>
+    <string name="screen_chatbot">Chatbot Gemini</string>
+    <string name="auth_title">Bienvenido a R-TEA</string>
+    <string name="auth_subtitle">Plataforma neuroinclusiva para el aula TEA. Accede con un clic para sincronizar tus expedientes, diarios y recursos en tiempo real.</string>
+    <string name="auth_google_button">Continuar con Google</string>
+    <string name="auth_sync_badge">Sincronización en tiempo real • Modo Tranquilidad</string>
+    <string name="sync_active">Sincronizado</string>
+    <string name="cd_rtea_logo">Logotipo de R-TEA</string>
+    <string name="cd_notifications">Notificaciones</string>
+    <string name="cd_user_profile">Perfil docente</string>
+    <string name="cd_back">Volver</string>
+</resources>

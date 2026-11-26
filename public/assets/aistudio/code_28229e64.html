@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;font-family:'Nunito Sans',sans-serif;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "secondary-fixed": "#ffdbcc",
+          "secondary": "#8e4d2b",
+          "surface-dim": "#dcdad5",
+          "on-surface": "#1c1c19",
+          "surface-bright": "#fcf9f4",
+          "tertiary-container": "#6db19b",
+          "on-surface-variant": "#41474e",
+          "on-primary-container": "#003d62",
+          "secondary-container": "#ffaa81",
+          "on-tertiary-fixed": "#002018",
+          "tertiary-fixed-dim": "#8fd4bd",
+          "inverse-surface": "#31302d",
+          "on-tertiary-fixed-variant": "#005140",
+          "tertiary-fixed": "#aaf1d9",
+          "on-primary": "#ffffff",
+          "outline-variant": "#c1c7d0",
+          "secondary-fixed-dim": "#ffb693",
+          "tertiary": "#226a57",
+          "surface-container-lowest": "#ffffff",
+          "primary": "#2c628e",
+          "surface-container": "#f0ede9",
+          "error-container": "#ffdad6",
+          "on-secondary-container": "#793c1b",
+          "on-primary-fixed-variant": "#074a75",
+          "background": "#fcf9f4",
+          "surface": "#fcf9f4",
+          "on-secondary-fixed-variant": "#713616",
+          "on-error": "#ffffff",
+          "primary-fixed-dim": "#99cbfd",
+          "surface-container-high": "#ebe8e3",
+          "on-secondary": "#ffffff",
+          "error": "#ba1a1a",
+          "outline": "#72787f",
+          "inverse-primary": "#99cbfd",
+          "surface-container-highest": "#e5e2dd",
+          "on-error-container": "#93000a",
+          "on-primary-fixed": "#001d33",
+          "surface-variant": "#e5e2dd",
+          "primary-container": "#76a8d8",
+          "on-tertiary-container": "#004334",
+          "primary-fixed": "#cee5ff",
+          "surface-tint": "#2c628e",
+          "inverse-on-surface": "#f3f0eb",
+          "on-tertiary": "#ffffff",
+          "on-background": "#1c1c19",
+          "on-secondary-fixed": "#351000",
+          "surface-container-low": "#f6f3ee"
+        },
+        "borderRadius": {
+          "DEFAULT": "1rem",
+          "lg": "2rem",
+          "xl": "3rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xl": "2.5rem",
+          "space-md": "1rem",
+          "margin-md": "2rem",
+          "space-xs": "0.25rem",
+          "margin": "1.25rem",
+          "gutter-lg": "1.5rem",
+          "gutter": "1rem",
+          "space-sm": "0.5rem",
+          "space-lg": "1.5rem",
+          "margin-lg": "3rem"
+        },
+        "fontFamily": {
+          "headline-md": ["Nunito Sans"],
+          "label-lg": ["Nunito Sans"],
+          "headline-lg": ["Nunito Sans"],
+          "body-md": ["Nunito Sans"],
+          "label-sm": ["Nunito Sans"],
+          "headline-sm": ["Nunito Sans"],
+          "body-lg": ["Nunito Sans"],
+          "display-lg-mobile": ["Nunito Sans"],
+          "body-sm": ["Nunito Sans"],
+          "display-lg": ["Nunito Sans"],
+          "label-md": ["Nunito Sans"]
+        },
+        "fontSize": {
+          "headline-md": ["22px", { "lineHeight": "30px", "fontWeight": "600" }],
+          "label-lg": ["15px", { "lineHeight": "22px", "fontWeight": "600" }],
+          "headline-lg": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+          "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+          "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+          "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+          "body-lg": ["17px", { "lineHeight": "28px", "fontWeight": "400" }],
+          "display-lg-mobile": ["30px", { "lineHeight": "40px", "fontWeight": "700" }],
+          "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+          "display-lg": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+          "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "600" }]
+        }
+      }
+    }
+  }
+</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-background text-on-surface flex flex-col min-h-screen selection:bg-secondary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl border-b border-surface-container"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center p-1.5 shadow-[0_2px_8px_-2px_rgba(142,77,43,0.12)]"><img alt="R-TEA Logo" class="w-full h-full object-contain rounded-full" src="https://lh3.googleusercontent.com/aida/ALJJyrD1mYNH6b6XJgxZS7grgH15ivU6TN5KnX25V88gMmM3CJIglUFikemrzejeUy8ozCBBzcpbOgGuCk_fwh2WH6_Z4F7L3QpZX-TbIPUe3dOF1ggpd_wCUcPDGlFNz6TMrHab5lvu645CZMRCqFoub_TpUw4oibxbx9X-qe1irMohRLPc4LLIF_PlXi88KaZkFYKEjuUTGiv2IbThEVJdOGBxjYR-cTMVuSLjN30X2TD0yBRM4g1_XoGVg80"/></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-secondary font-bold tracking-wide uppercase">R-TEA</span><span class="font-headline-sm text-headline-sm text-on-surface">Clase</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notificaciones" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all"><span class="material-symbols-outlined text-[24px]">notifications</span></button><div class="p-0.5 rounded-full bg-primary-fixed ring-1 ring-primary-container/30"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/ALJJyrD1mYNH6b6XJgxZS7grgH15ivU6TN5KnX25V88gMmM3CJIglUFikemrzejeUy8ozCBBzcpbOgGuCk_fwh2WH6_Z4F7L3QpZX-TbIPUe3dOF1ggpd_wCUcPDGlFNz6TMrHab5lvu645CZMRCqFoub_TpUw4oibxbx9X-qe1irMohRLPc4LLIF_PlXi88KaZkFYKEjuUTGiv2IbThEVJdOGBxjYR-cTMVuSLjN30X2TD0yBRM4g1_XoGVg80"/></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-24"><div class="flex flex-col w-full pb-10">
+<!-- Sub-header de Navegación Contextual (accesible y táctil) -->
+<div class="px-margin pt-space-sm pb-space-md flex items-center justify-between">
+<button class="inline-flex items-center gap-1.5 py-2 px-3.5 rounded-full bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md active:scale-95 transition-all shadow-xs" id="btn-back" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">arrow_back</span>
+<span>Volver a Clase</span>
+</button>
+<div class="flex items-center gap-1.5 bg-tertiary-fixed px-3 py-1 rounded-full text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Ficha Inclusiva</span>
+</div>
+</div>
+<div class="px-margin mb-space-md">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-on-surface">Nuevo Alumno</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Configura su entorno visual, intereses y nivel de soporte para una experiencia acogedora.</p>
+</div>
+<!-- SECCIÓN DESTACADA: SELECTOR DE AVATAR (Serene Spectrum) -->
+<section class="mx-margin bg-surface-container-lowest rounded-lg p-space-md shadow-sm border border-surface-container mb-space-lg flex flex-col items-center"><div class="w-full flex items-center justify-between mb-space-sm"><div class="flex flex-col"><span class="font-label-lg text-label-lg text-on-surface">Avatar del Alumno</span><span class="font-body-sm text-body-sm text-on-surface-variant">Avatares Oficiales R-TEA (14 disponibles)</span></div><span class="font-label-sm text-label-sm text-secondary font-bold px-2.5 py-0.5 rounded-full bg-secondary-fixed">Seleccionado</span></div><div class="relative my-space-sm"><div class="w-28 h-28 rounded-full p-1 bg-gradient-to-tr from-secondary-container via-primary-container to-tertiary-container shadow-sm transition-all duration-300" id="active-avatar-halo"><div class="w-full h-full rounded-full overflow-hidden bg-surface-container-low flex items-center justify-center"><img alt="Avatar Seleccionado - Personaje 1" class="w-full h-full object-cover" id="main-avatar-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3k030x9plUCAKEieJS0l9lu5wcFGx0vOS-1CfRd8Ty0h5SyueuDZdvYTbt_E2XXI8LkL_FfZHcN57DElNKBeomq_VQLtRGGmWXe_7a8AfLoqBhhEhKSryKeQIMb7AfFewzTYiq2gi35P5Y7ittbEthW7zWIqV2jjwP-AC04cZ2sxSvpIa0PvpjFY38ZhCfdzAKmKlyZKwVlbjjJ_ztnvtLG_nss3f8lB-3trnrIJMOoJtlel93WWi"/></div></div><button aria-label="Cambiar avatar" class="absolute bottom-0 right-0 w-9 h-9 rounded-full bg-secondary text-on-secondary shadow-md flex items-center justify-center hover:scale-105 active:scale-95 transition-transform" type="button"><span class="material-symbols-outlined text-[18px]">photo_camera</span></button></div><div class="text-center mb-space-md"><p class="font-headline-sm text-headline-sm text-on-surface" id="main-avatar-name">Avatar 1 · Estilo 3D Amigable</p><span class="font-body-sm text-body-sm text-on-surface-variant">Toca cualquier avatar para seleccionarlo para el alumno</span></div><div class="w-full grid grid-cols-3 gap-1 p-1 bg-surface-container rounded-full mb-space-md text-center"><button class="tab-pill py-1.5 px-2 rounded-full font-label-sm text-label-sm font-bold bg-surface-container-lowest text-secondary shadow-xs transition-all" type="button">Colección 3D (14)</button><button class="tab-pill py-1.5 px-2 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" type="button">Mis Diseños</button><button class="tab-pill py-1.5 px-2 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" type="button">Pictogramas</button></div><div class="w-full flex items-start gap-space-sm overflow-x-auto pb-2 scroll-smooth"><button class="avatar-option flex flex-col items-center flex-shrink-0 group focus:outline-none" data-name="Avatar 1 · Estilo 3D Amigable" type="button"><div class="avatar-thumb w-14 h-14 rounded-full p-0.5 bg-secondary ring-2 ring-secondary/20 shadow-sm flex items-center justify-center transition-all group-active:scale-95"><div class="w-full h-full rounded-full overflow-hidden bg-surface-container-low"><img alt="Avatar 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3k030x9plUCAKEieJS0l9lu5wcFGx0vOS-1CfRd8Ty0h5SyueuDZdvYTbt_E2XXI8LkL_FfZHcN57DElNKBeomq_VQLtRGGmWXe_7a8AfLoqBhhEhKSryKeQIMb7AfFewzTYiq2gi35P5Y7ittbEthW7zWIqV2jjwP-AC04cZ2sxSvpIa0PvpjFY38ZhCfdzAKmKlyZKwVlbjjJ_ztnvtLG_nss3f8lB-3trnrIJMOoJtlel93WWi"/></div></div><span class="font-label-sm text-label-sm text-secondary font-bold mt-1.5 max-w-[68px] text-center truncate">Avatar 1</span></button><button class="avatar-option flex flex-col items-center flex-shrink-0 group focus:outline-none" data-name="Avatar 2 · Estilo 3D Amigable" type="button"><div class="avatar-thumb w-14 h-14 rounded-full p-0.5 bg-surface-container-high hover:bg-primary-fixed-dim flex items-center justify-center transition-all group-active:scale-95"><div class="w-full h-full rounded-full overflow-hidden bg-surface-container-low"><img alt="Avatar 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvMyROU93KvaWzBFPNWK2RD1YusqWbMBKiabB2TZyAvndACgFGzs4Xjttw_R2rOKydiMgmfkiRyKK7KJHUa9THLQ4IooYeSB_HBSQvTsDdP50Cx_o_ByiYgnZgGSQUqkQezakBDnVLeckbQAJVQWrCv0CgtZxvYxYM3XSG0QiKbTQzpI1rbCtg1gmWnxecaDY195f2fNiM58a9Li3vsjiIE8kwFQwudhEjLwlogtj-a9C1rRbNIbNC"/></div></div><span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 max-w-[68px] text-center truncate">Avatar 2</span></button><button class="avatar-option flex flex-col items-center flex-shrink-0 group focus:outline-none" data-name="Avatar 3 · Estilo 3D Amigable" type="button"><div class="avatar-thumb w-14 h-14 rounded-full p-0.5 bg-surface-container-high hover:bg-primary-fixed-dim flex items-center justify-center transition-all group-active:scale-95"><div class="w-full h-full rounded-full overflow-hidden bg-surface-container-low"><img alt="Avatar 3" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcrFhsCKm-gnMzpfMfV9s9UybKxyr-MNcz3IgnkOT3ZtYxv96BOcLmdR57aBhO33uqJuJhrMZH67T9OY4gCBUEiBLQnxdf5gWrbgf_KepEn0_sfWiJPAk7OtFpabEotxokcfruXFHP4W42w3hYFgV8hOYnl-LKlh8eNHkwnvnLOUPucErdL4sJ9uhz3XYZgWzTmXxGxOmEK-Cc1ObfA-roxSd5dFjYMCH93gW-jCOP7ZX8GuGndCAu"/></div></div><span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 max-w-[68px] text-center truncate">Avatar 3</span></button><button class="avatar-option flex flex-col items-center flex-shrink-0 group focus:outline-none" data-name="Avatar 4 · Estilo 3D Amigable" type="button"><div class="avatar-thumb w-14 h-14 rounded-full p-0.5 bg-surface-container-high hover:bg-primary-fixed-dim flex items-center justify-center transition-all group-active:scale-95"><div class="w-full h-full rounded-full overflow-hidden bg-surface-container-low"><img alt="Avatar 4" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPZ5zwaPj0MH_5Xcn2wx4mzB6pEEyUSa61v5D99QEkHm-TQkcipBmoR4NQ2ssAc_bALCR0a-TdN5VVLTPJlVS9xWRWc53-QUeFs8wl3uDOIixkmKUQB-Pg24usFJiiz8SJ4WbbZSZl1guwCeaRz6odmf4UYWxCqwQnbsxoRQLROBa-2WKfzaE5155QUpMAk2JYdXTN2uN8DSx2cxWhIYKxxj5w7UMIFfGj8ysWKge-2YcSkVEfp_87"/></div></div><span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 max-w-[68px] text-center truncate">Avatar 4</span></button><button class="avatar-option flex flex-col items-center flex-shrink-0 group focus:outline-none" data-name="Avatar 5 · Estilo 3D Amigable" type="button"><div class="avatar-thumb w-14 h-14 rounded-full p-0.5 bg-surface-container-high hover:bg-primary-fixed-dim flex items-center justify-center transition-all group-active:scale-95"><div class="w-full h-full rounded-full overflow-hidden bg-surface-container-low"><img alt="Avatar 5" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-FDj0SN1UsuWtKK0MXKtz8PFgnvqvHomx50KahzETB7Tq6vs78iUeyWn7YCmvFdrhwCiKHMOEd9K_p_7C0u2mnuyVyDUHrtpSxD0gEtSg2RT1UVot-ZiXGT1C0SiH0R3MWb5DaPgisxIfMqMZzbWW-Bf0Nig1O3U0SGv5nFowZ2DOOciVDJG0ODpUbkw2QnwQ7ZrCFG9eYozb48PepZpGxGzAYo81kslIsuQajgq5U_VigE03C8cB"/></div></div><span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 max-w-[68px] text-center truncate">Avatar 5</span></button><button class="avatar-option flex flex-col items-center flex-shrink-0 group focus:outline-none" data-name="Avatar 6 · Estilo 3D Amigable" type="button"><div class="avatar-thumb w-14 h-14 rounded-full p-0.5 bg-surface-container-high hover:bg-primary-fixed-dim flex items-center justify-center transition-all group-active:scale-95"><div class="w-full h-full rounded-full overflow-hidden bg-surface-container-low"><img alt="Avatar 6" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQGczcyxiF8sLK_WcExqoC_UOVF1pg2g2OUx63f24y44KyUbTvilYRWZSlkIhLmDa58QdWOoZOrGnl2F2w06SeOUVzBTIcR4EWikmV8fmejebMTznS4C043pKiY81M6GS4vevETglRwiQuQwx8XNJCfB0lCTRCY_4pbmtvWc23x8pBwro1eRSZsoA5hjMSZTHzmXpsNcbkls_bcXLCakIrkwY_HHJdnBPyrTnDR1ZjJ9cnc0mY2eC-"/></div></div><span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 max-w-[68px] text-center truncate">Avatar 6</span></button><button class="avatar-option flex flex-col items-center flex-shrink-0 group focus:outline-none" data-name="Avatar 7 · Estilo 3D Amigable" type="button"><div class="avatar-thumb w-14 h-14 rounded-full p-0.5 bg-surface-container-high hover:bg-primary-fixed-dim flex items-center justify-center transition-all group-active:scale-95"><div class="w-full h-full rounded-full overflow-hidden bg-surface-container-low"><img alt="Avatar 7" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBaubSxV23Oit9MnSWMokbVTD5cDFi6vdlSqhEYMY46XAQ5U3Di2ZVo1RU16kCHSfbTff8xgDyT09mZJBt3S8pPIvZTzxpptkONVD04e0bx0tdzHCDQpVL5dMYxNeniYn_khfWaqilz5Gq6x5uQ1XwS2fqeSS0E561dLGr5eX1easW_zlF8_usYwpndUBz-t09VaoTDmhy3D9zCeDTVpcAQljRZhGE7hRTolExI4AqRcQGKJlqfEdS"/></div></div><span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 max-w-[68px] text-center truncate">Avatar 7</span></button><button class="avatar-option flex flex-col items-center flex-shrink-0 group focus:outline-none" data-name="Avatar 8 · Estilo 3D Amigable" type="button"><div class="avatar-thumb w-14 h-14 rounded-full p-0.5 bg-surface-container-high hover:bg-primary-fixed-dim flex items-center justify-center transition-all group-active:scale-95"><div class="w-full h-full rounded-full overflow-hidden bg-surface-container-low"><img alt="Avatar 8" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiquTRra8nz45OokOwkX2ZmonUB3ta_oHmAtgFPF1CGuMZJYERPj84wRKetC8qTZggEww9Aw-y9toPiW72_RpWNAR7tsmkjnc5pxvkU27GuYhq6YvWJ05IXs-bjb9bpx34XXijVArQo0_5oOKoHLtxkvi73ntTpXgi3S9VZsmM7tiQzyAwurkPbWPmD4NYwa9NgWWbrSaD39JCpNZEF7GpUC8jB_-BZxDromntn8Lt9e9BdRqrYimc"/></div></div><span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 max-w-[68px] text-center truncate">Avatar 8</span></button><button class="avatar-option flex flex-col items-center flex-shrink-0 group focus:outline-none" data-name="Avatar 9 · Estilo 3D Amigable" type="button"><div class="avatar-thumb w-14 h-14 rounded-full p-0.5 bg-surface-container-high hover:bg-primary-fixed-dim flex items-center justify-center transition-all group-active:scale-95"><div class="w-full h-full rounded-full overflow-hidden bg-surface-container-low"><img alt="Avatar 9" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHTfgH1mM1g5yUfnPfg4FMc1R2pFCvPCX3Fp607XtmDdGcVEtRYzuNxutlIoI8WI8CXZlFuuPFZ5flYOk6OHXn0BQ48ltL1R7kRG2GcUh7ORCh3_05dsd0aF0_ixHZ2J6i474WgDoaVsfjd2jVUGzo2Uzb9hiCMWg-J2HqGBNU5ta9Cr37JWCpDIrjVzM8UvBuhWfwfdltHxcZqliAdj0bHGSTFNHNVsT06JAQ30rH1_c9M89DDNXO"/></div></div><span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 max-w-[68px] text-center truncate">Avatar 9</span></button><button class="avatar-option flex flex-col items-center flex-shrink-0 group focus:outline-none" data-name="Avatar 10 · Estilo 3D Amigable" type="button"><div class="avatar-thumb w-14 h-14 rounded-full p-0.5 bg-surface-container-high hover:bg-primary-fixed-dim flex items-center justify-center transition-all group-active:scale-95"><div class="w-full h-full rounded-full overflow-hidden bg-surface-container-low"><img alt="Avatar 10" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW6nhlXGvXCfFh9_G-rI3C4UDtzvuYB3fFciVq2J-vYSyUk_d_6LXpcfNv7Hwo6gh3N84WPSRr7CTKkukA8Fc8IirtWJNSLzoADvTrZFABsZK7Qah34Hh4hSvL9r_8fuW7Bvpj0rX5vdDPgeKh3WrzWIZ83ADqy7pIcBNKl8gFeBjBjAXIFwwHxng3WIm5Xcp-IgBX3kIqi674ezV6VhN25vMgj1hN5slegtXqkSwYZdPS7aaFx2eG"/></div></div><span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 max-w-[68px] text-center truncate">Avatar 10</span></button><button class="avatar-option flex flex-col items-center flex-shrink-0 group focus:outline-none" data-name="Avatar 11 · Estilo 3D Amigable" type="button"><div class="avatar-thumb w-14 h-14 rounded-full p-0.5 bg-surface-container-high hover:bg-primary-fixed-dim flex items-center justify-center transition-all group-active:scale-95"><div class="w-full h-full rounded-full overflow-hidden bg-surface-container-low"><img alt="Avatar 11" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABXRVgsWv_onIn2qOgOgHvNJVOKtbk8MMg0PpZhPMUEvavIms4w2vRbmePnXgAI86QB7DUiSJmb6YqhZT0ELsjFTah8DApBZq557uIgNCWjFb4kJWqzuk7tUvm1F8tZXi7fySF9HrslFQvybKt9GAnUYmnbmjadv6DhUVrNJ-S_vPDNWy-FY7csSmBCnxwSzH9N32ETI-hEtPoSx8M_yfnq0FqfPIDZMOUiarL3EOdG-9knIuzD3ed"/></div></div><span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 max-w-[68px] text-center truncate">Avatar 11</span></button><button class="avatar-option flex flex-col items-center flex-shrink-0 group focus:outline-none" data-name="Avatar 12 · Estilo 3D Amigable" type="button"><div class="avatar-thumb w-14 h-14 rounded-full p-0.5 bg-surface-container-high hover:bg-primary-fixed-dim flex items-center justify-center transition-all group-active:scale-95"><div class="w-full h-full rounded-full overflow-hidden bg-surface-container-low"><img alt="Avatar 12" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwnLquGf7miadFBSNVpmT0tUsG82kJEN6M-IXtoqUf5_L8RwcZO3vb_EkSvfJIwvp1TGWLx3S5_nYQBkFbPwql8juZmwgZkJOIrm2vVpgf1b0balRv0Z5qPDwEblw0lHbozIJjSOMBveyuvEfmQb9TvuF6Ve9_RWgDuk14dTDdhYMIpATDzb5jLOnky6ukokNYYsI-OWbEW2dhzs4xAVKTrRtBnFQ9B73B-0ZoyIpPlMjt3DHi-5W5"/></div></div><span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 max-w-[68px] text-center truncate">Avatar 12</span></button><button class="avatar-option flex flex-col items-center flex-shrink-0 group focus:outline-none" data-name="Avatar 13 · Estilo 3D Amigable" type="button"><div class="avatar-thumb w-14 h-14 rounded-full p-0.5 bg-surface-container-high hover:bg-primary-fixed-dim flex items-center justify-center transition-all group-active:scale-95"><div class="w-full h-full rounded-full overflow-hidden bg-surface-container-low"><img alt="Avatar 13" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6xiyah16So_DsFUqde8oih3Vmr2mUijiGgRSF1XCLtQj46ibsmN2W2iCV4ZWhjyRgl9kfewPBDHB2JoEObCuigQXQBfyWC6hWRh_tdd9yoVAZGidYmv1uFng3D1MuDA23uhhvSxjt18H0R2IGaKbiNTav8UFfMZ1EnSgffKjqagH5WSTKHKne0iRq4EZkX2j9bF3pk2jrVh3BDj__zAo_raMx8ipYZ-2qIUnWlT0Vgnrzp4yeavCL"/></div></div><span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 max-w-[68px] text-center truncate">Avatar 13</span></button><button class="avatar-option flex flex-col items-center flex-shrink-0 group focus:outline-none" data-name="Avatar 14 · Estilo 3D Amigable" type="button"><div class="avatar-thumb w-14 h-14 rounded-full p-0.5 bg-surface-container-high hover:bg-primary-fixed-dim flex items-center justify-center transition-all group-active:scale-95"><div class="w-full h-full rounded-full overflow-hidden bg-surface-container-low"><img alt="Avatar 14" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR-ZPgwohqu5Yts1aKskat99huysZZL5YT0Qnxaguod2cJFvmBLpSEZmWBhoOt8N8oA-CIEWGE5XKOaALa829i_8OhyORN2ErmTHynESd_ncuq8d_8pCg6kvkVKVOCS--FmMoaWhQHswtZ0-37TED6YVSCCJztKd8VDrbLZiYX5j1mNK1fod4gT0Et-Eni0XbuDo459wlQnDK6-bPHLP9puisAEYi1_WNNzooZ4YOo93Paozg7wYxd"/></div></div><span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 max-w-[68px] text-center truncate">Avatar 14</span></button></div></section>
+<!-- FORMULARIO DE PERSONALIZACIÓN -->
+<form class="flex flex-col gap-space-lg px-margin" id="form-register-student" onsubmit="event.preventDefault();">
+<!-- Bloque 1: Identificación y Afecto -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm border border-surface-container flex flex-col gap-space-md">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Datos Personales</h2>
+</div>
+<!-- Nombre Completo -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface flex items-center justify-between" for="student-fullname">
+<span>Nombre completo del alumno <span class="text-secondary">*</span></span>
+<span class="material-symbols-outlined text-[16px] text-outline" title="Nombre oficial para registros escolares">help_outline</span>
+</label>
+<div class="relative">
+<input class="w-full h-12 px-4 rounded-DEFAULT bg-surface-container-low text-on-surface placeholder:text-outline border border-surface-container font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary transition-all" id="student-fullname" placeholder="Ej. Mateo García López" required="" type="text" value="Mateo García"/>
+</div>
+</div>
+<!-- Nombre Preferido / Apodo -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface flex items-center justify-between" for="student-nickname">
+<span>Nombre preferido / Apodo cariñoso</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Para pictogramas y voz</span>
+</label>
+<div class="relative">
+<input class="w-full h-12 px-4 rounded-DEFAULT bg-surface-container-low text-on-surface placeholder:text-outline border border-surface-container font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary transition-all" id="student-nickname" placeholder="Ej. Mate / Teo" type="text" value="Mate"/>
+</div>
+</div>
+<!-- Aula / Grupo -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface" for="student-classroom">Aula o Grupo de Referencia</label>
+<div class="relative">
+<select class="w-full h-12 px-4 appearance-none rounded-DEFAULT bg-surface-container-low text-on-surface border border-surface-container font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary transition-all" id="student-classroom">
+<option value="3b">Aula 3-B · Primaria Integrada</option>
+<option value="aula-apoyo">Aula de Apoyo Sensorial 'Arcoíris'</option>
+<option value="2a">Aula 2-A · Primer Ciclo</option>
+<option value="infantil">Infantil 5 Años · Grupo Amarillo</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-outline text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Bloque 2: Nivel de Apoyo TEA (Selección Inclusiva con Pills Suaves) -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm border border-surface-container flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">all_inclusive</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Nivel de Apoyo TEA</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-full">Guía DSM-5</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Define la densidad visual de las agendas y el acompañamiento en transiciones.</p>
+<div class="flex flex-col gap-2.5" id="tea-level-group">
+<!-- Nivel 1 -->
+<button class="tea-pill w-full text-left p-3.5 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container border border-surface-container flex items-center justify-between transition-all" data-level="1" type="button">
+<div class="flex items-center gap-3">
+<div class="pill-check w-6 h-6 rounded-full bg-surface-container-lowest flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Nivel 1 · Apoyo Leve</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Necesita ayuda puntual en organización y cambios de tarea.</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold bg-tertiary-fixed px-2.5 py-0.5 rounded-full">Independiente</span>
+</button>
+<!-- Nivel 2 (Seleccionado Activo - Serene Melocotón Cálido) -->
+<button class="tea-pill w-full text-left p-3.5 rounded-DEFAULT bg-secondary-fixed/50 text-on-surface flex items-center justify-between shadow-xs transition-all ring-2 ring-secondary/50 border border-secondary/30" data-level="2" type="button">
+<div class="flex items-center gap-3">
+<div class="pill-check w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-secondary font-bold">Nivel 2 · Apoyo Sustancial</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Requiere anticipación estructurada y pictogramas claros.</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold bg-surface-container-lowest px-2.5 py-0.5 rounded-full shadow-xs">Frecuente</span>
+</button>
+<!-- Nivel 3 -->
+<button class="tea-pill w-full text-left p-3.5 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container border border-surface-container flex items-center justify-between transition-all" data-level="3" type="button">
+<div class="flex items-center gap-3">
+<div class="pill-check w-6 h-6 rounded-full bg-surface-container-lowest flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Nivel 3 · Apoyo Muy Sustancial</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Acompañamiento 1 a 1 constante y comunicación aumentativa.</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold bg-primary-fixed px-2.5 py-0.5 rounded-full">Continuo</span>
+</button>
+</div>
+</div>
+<!-- Bloque 3: Intereses Especiales y Motivadores (Herramientas de Conexión) -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm border border-surface-container flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Intereses y Motivadores</h2>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold bg-tertiary-fixed/60 px-2.5 py-0.5 rounded-full">Claves de Éxito</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Se usarán como reforzadores positivos en sus rutinas y recompensas visuales.</p>
+<div class="flex flex-wrap gap-2" id="interest-container">
+<!-- Interés 1 (Activo - Melocotón Serene Spectrum) -->
+<button class="interest-tag active px-3.5 py-1.5 rounded-full bg-secondary text-on-secondary font-label-md text-label-md flex items-center gap-1.5 shadow-xs transition-all hover:opacity-90" type="button">
+<span class="material-symbols-outlined text-[16px]">eco</span>
+<span>Dinosaurios</span>
+<span class="material-symbols-outlined text-[14px] ml-0.5">close</span>
+</button>
+<!-- Interés 2 (Activo - Celeste Calmante) -->
+<button class="interest-tag active px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1.5 shadow-xs transition-all hover:opacity-90" type="button">
+<span class="material-symbols-outlined text-[16px]">extension</span>
+<span>Puzzles</span>
+<span class="material-symbols-outlined text-[14px] ml-0.5">close</span>
+</button>
+<!-- Interés 3 (Inactivo sugerido) -->
+<button class="interest-tag px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md flex items-center gap-1.5 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">music_note</span>
+<span>Música</span>
+<span class="material-symbols-outlined text-[14px] ml-0.5">add</span>
+</button>
+<!-- Interés 4 (Inactivo sugerido) -->
+<button class="interest-tag px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md flex items-center gap-1.5 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">rocket_launch</span>
+<span>Astronomía</span>
+<span class="material-symbols-outlined text-[14px] ml-0.5">add</span>
+</button>
+<!-- Botón Añadir Interés Propio -->
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high text-secondary hover:bg-secondary-fixed font-label-md text-label-md flex items-center gap-1 transition-all border border-secondary/20" id="btn-add-interest" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Añadir interés</span>
+</button>
+</div>
+</div>
+<!-- Bloque 4: Comunicación y Regulación Sensorial -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm border border-surface-container flex flex-col gap-space-md">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">record_voice_over</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Comunicación y Sensorial</h2>
+</div>
+<!-- Sistema de Comunicación -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface" for="comm-system">Sistema de comunicación preferido</label>
+<div class="relative">
+<select class="w-full h-12 px-4 appearance-none rounded-DEFAULT bg-surface-container-low text-on-surface border border-surface-container font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary transition-all" id="comm-system">
+<option selected="" value="pecs">PECS / Cuaderno de Pictogramas Digital</option>
+<option value="verbal">Lenguaje Verbal con apoyo de pictogramas</option>
+<option value="bimodal">Comunicación Bimodal / Signos</option>
+<option value="ca">Dispositivo SAAC de alta tecnología</option>
+<option value="gestual">Gestual natural y corporal</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-outline text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Notas Sensoriales y Regulación -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface flex items-center justify-between" for="sensory-notes">
+<span>Claves de regulación sensorial</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">Espacio seguro</span>
+</label>
+<textarea class="w-full p-3.5 rounded-DEFAULT bg-surface-container-low text-on-surface placeholder:text-outline border border-surface-container font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary transition-all resize-none" id="sensory-notes" placeholder="Ej. Sensibilidad a timbres fuertes (usa auriculares de cancelación). Prefiere descanso táctil con plastilina tras 20 min de trabajo." rows="3"></textarea>
+</div>
+<!-- Recordatorio de Calma Neuroinclusivo -->
+<div class="p-3.5 rounded-DEFAULT bg-tertiary-fixed/30 border border-tertiary-fixed-dim/40 flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-[20px] mt-0.5">sentiment_satisfied</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-tertiary-fixed font-bold">Acompañamiento Sin Juicios</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Este perfil es flexible. Podrás adaptar los pasos, descansos y pictogramas en cualquier momento desde el aula.</span>
+</div>
+</div>
+</div>
+<!-- ACCIONES FINALES TÁCTILES Y DESTACADAS -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<!-- Botón Principal Serene Melocotón Cálido -->
+<button class="w-full min-h-[52px] rounded-full bg-secondary hover:bg-secondary/90 text-on-secondary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-[0_3px_0_0_#713616] active:translate-y-0.5 active:shadow-none transition-all" id="btn-save-student" type="submit">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Guardar y Crear Perfil</span>
+</button>
+<!-- Botón Secundario Cancelar -->
+<button class="w-full min-h-[46px] rounded-full bg-transparent hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg flex items-center justify-center transition-all" id="btn-cancel" type="button">
+<span>Cancelar y Descartar</span>
+</button>
+</div>
+</form>
+</div>
+<script>
+  (function() {
+    // Interacción interactiva con la galería de avatares
+    const avatarButtons = document.querySelectorAll('.avatar-option');
+    const mainAvatarImg = document.getElementById('main-avatar-img');
+    const mainAvatarName = document.getElementById('main-avatar-name');
+    const halo = document.getElementById('active-avatar-halo');
+
+    avatarButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Desactivar estado activo visual de otros
+        avatarButtons.forEach(b => {
+          const thumb = b.querySelector('.avatar-thumb');
+          const txt = b.querySelector('span');
+          if (thumb) {
+            thumb.classList.remove('bg-secondary', 'ring-2', 'ring-secondary/20');
+            thumb.classList.add('bg-surface-container-high');
+          }
+          if (txt) {
+            txt.classList.remove('text-secondary', 'font-bold');
+            txt.classList.add('text-on-surface-variant');
+          }
+        });
+
+        // Activar el seleccionado
+        const activeThumb = btn.querySelector('.avatar-thumb');
+        const activeTxt = btn.querySelector('span');
+        if (activeThumb) {
+          activeThumb.classList.remove('bg-surface-container-high');
+          activeThumb.classList.add('bg-secondary', 'ring-2', 'ring-secondary/20');
+        }
+        if (activeTxt) {
+          activeTxt.classList.remove('text-on-surface-variant');
+          activeTxt.classList.add('text-secondary', 'font-bold');
+        }
+
+        // Actualizar avatar principal
+        const newName = btn.dataset.name;
+        if (mainAvatarName) mainAvatarName.textContent = newName;
+        const clickedImg = btn.querySelector('img');
+        if (mainAvatarImg && clickedImg) {
+          mainAvatarImg.src = clickedImg.src;
+          if (halo) {
+            halo.classList.add('scale-105');
+            setTimeout(() => halo.classList.remove('scale-105'), 200);
+          }
+        }
+      });
+    });
+
+    // Toggle de nivel TEA
+    const teaPills = document.querySelectorAll('.tea-pill');
+    teaPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        teaPills.forEach(p => {
+          p.classList.remove('bg-secondary-fixed/50', 'text-on-surface', 'ring-2', 'ring-secondary/50', 'border-secondary/30');
+          p.classList.add('bg-surface-container-low', 'border-surface-container');
+          
+          const title = p.querySelector('p.font-label-lg');
+          if (title) {
+            title.classList.remove('text-secondary', 'font-bold');
+            title.classList.add('text-on-surface');
+          }
+
+          const iconBox = p.querySelector('.pill-check');
+          if (iconBox) {
+            iconBox.classList.remove('bg-secondary', 'text-on-secondary');
+            iconBox.classList.add('bg-surface-container-lowest', 'text-outline');
+          }
+        });
+
+        pill.classList.remove('bg-surface-container-low', 'border-surface-container');
+        pill.classList.add('bg-secondary-fixed/50', 'text-on-surface', 'ring-2', 'ring-secondary/50', 'border-secondary/30');
+        
+        const activeTitle = pill.querySelector('p.font-label-lg');
+        if (activeTitle) {
+          activeTitle.classList.remove('text-on-surface');
+          activeTitle.classList.add('text-secondary', 'font-bold');
+        }
+
+        const activeIconBox = pill.querySelector('.pill-check');
+        if (activeIconBox) {
+          activeIconBox.classList.remove('bg-surface-container-lowest', 'text-outline');
+          activeIconBox.classList.add('bg-secondary', 'text-on-secondary');
+        }
+      });
+    });
+
+    // Pestañas decorativas de avatares
+    const tabPills = document.querySelectorAll('.tab-pill');
+    tabPills.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabPills.forEach(t => {
+          t.classList.remove('bg-surface-container-lowest', 'text-secondary', 'shadow-xs', 'font-bold');
+          t.classList.add('text-on-surface-variant');
+        });
+        tab.classList.remove('text-on-surface-variant');
+        tab.classList.add('bg-surface-container-lowest', 'text-secondary', 'shadow-xs', 'font-bold');
+      });
+    });
+
+    // Micro interacción al guardar
+    const saveBtn = document.getElementById('btn-save-student');
+    if (saveBtn) {
+      saveBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        saveBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">sync</span><span>Guardando perfil...</span>';
+        setTimeout(() => {
+          saveBtn.classList.remove('bg-secondary', 'shadow-[0_3px_0_0_#713616]');
+          saveBtn.classList.add('bg-tertiary', 'shadow-[0_3px_0_0_#005140]');
+          saveBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span><span>¡Alumno Registrado!</span>';
+        }, 800);
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl border-t border-surface-container" data-active-classes="text-secondary font-bold"><div class="h-20 px-space-xs grid grid-cols-4 items-center"><a class="flex flex-col items-center justify-center gap-1 min-h-[48px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined text-[24px]">home</span><span class="font-label-sm text-label-sm">Inicio</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[48px] py-1 text-secondary font-bold transition-colors" data-path="clase" href="#"><span class="material-symbols-outlined text-[24px]">group</span><span class="font-label-sm text-label-sm">Clase</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[48px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="diario" href="#"><span class="material-symbols-outlined text-[24px]">calendar_month</span><span class="font-label-sm text-label-sm">Diario</span></a><a class="flex flex-col items-center justify-center gap-1 min-h-[48px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="recursos" href="#"><span class="material-symbols-outlined text-[24px]">local_library</span><span class="font-label-sm text-label-sm">Recursos</span></a></div></nav>
+</body></html>

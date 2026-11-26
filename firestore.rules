@@ -1,0 +1,269 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function validStr(val, minLen, maxLen) {
+      return val is string && val.size() >= minLen && val.size() <= maxLen;
+    }
+
+    function hasValidTimestamps(data) {
+      return data.createdAt is timestamp
+        && data.updatedAt is timestamp
+        && data.createdAt <= request.time
+        && data.updatedAt <= request.time;
+    }
+
+    function isValidStudent(data) {
+      return data.keys().hasAll([
+          'fullName', 'preferredName', 'classroom', 'avatarIndex', 'customAvatarUri',
+          'supportLevel', 'interests', 'commSystem', 'sensoryNotes', 'lastSessionLabel',
+          'progressAreas', 'mainReportDocsCount', 'programDocsCount', 'aiReportSummary',
+          'activeResourceIds', 'createdAt', 'updatedAt'
+        ])
+        && data.keys().hasOnly([
+          'fullName', 'preferredName', 'classroom', 'avatarIndex', 'customAvatarUri',
+          'supportLevel', 'interests', 'commSystem', 'sensoryNotes', 'lastSessionLabel',
+          'progressAreas', 'mainReportDocsCount', 'programDocsCount',
+          'mainReportDocs', 'programDocs', 'aiReportSummary',
+          'activeResourceIds',
+          'evalTemplate', 'evalReinforcement', 'evalMedal', 'evalScore',
+          'evalDimensions', 'evalNotes', 'evalShareFamily', 'evalRecordHistory',
+          'createdAt', 'updatedAt'
+        ])
+        && validStr(data.fullName, 1, 120)
+        && validStr(data.preferredName, 0, 60)
+        && validStr(data.classroom, 1, 80)
+        && data.avatarIndex is int && data.avatarIndex >= 1 && data.avatarIndex <= 14
+        && validStr(data.customAvatarUri, 0, 500)
+        && data.supportLevel is int && data.supportLevel >= 1 && data.supportLevel <= 3
+        && data.interests is list && data.interests.size() <= 15
+        && validStr(data.commSystem, 0, 140)
+        && validStr(data.sensoryNotes, 0, 1200)
+        && validStr(data.lastSessionLabel, 0, 80)
+        && data.progressAreas is list && data.progressAreas.size() <= 12
+        && data.mainReportDocsCount is int && data.mainReportDocsCount >= 0 && data.mainReportDocsCount <= 99
+        && data.programDocsCount is int && data.programDocsCount >= 0 && data.programDocsCount <= 99
+        && (!('mainReportDocs' in data) || (data.mainReportDocs is list && data.mainReportDocs.size() <= 20))
+        && (!('programDocs' in data) || (data.programDocs is list && data.programDocs.size() <= 20))
+        && validStr(data.aiReportSummary, 0, 8000)
+        && data.activeResourceIds is list && data.activeResourceIds.size() <= 30
+        && (!('evalTemplate' in data) || validStr(data.evalTemplate, 0, 60))
+        && (!('evalReinforcement' in data) || validStr(data.evalReinforcement, 0, 300))
+        && (!('evalMedal' in data) || data.evalMedal in ['BRONZE', 'SILVER', 'GOLD'])
+        && (!('evalScore' in data) || (data.evalScore is int && data.evalScore >= 1 && data.evalScore <= 5))
+        && (!('evalDimensions' in data) || (data.evalDimensions is list && data.evalDimensions.size() <= 12))
+        && (!('evalNotes' in data) || validStr(data.evalNotes, 0, 1200))
+        && (!('evalShareFamily' in data) || data.evalShareFamily is bool)
+        && (!('evalRecordHistory' in data) || data.evalRecordHistory is bool)
+        && hasValidTimestamps(data);
+    }
+
+    function isValidNote(data) {
+      return data.keys().hasAll([
+          'category', 'tagLabel', 'timeLabel', 'content', 'studentName',
+          'contextLabel', 'completed', 'replyText', 'createdAt', 'updatedAt'
+        ])
+        && data.keys().hasOnly([
+          'category', 'tagLabel', 'timeLabel', 'content', 'studentName',
+          'contextLabel', 'completed', 'replyText', 'createdAt', 'updatedAt'
+        ])
+        && data.category in ['ANTICIPACION', 'MATERIALES', 'SENSORIAL']
+        && validStr(data.tagLabel, 1, 50)
+        && validStr(data.timeLabel, 0, 50)
+        && validStr(data.content, 1, 1000)
+        && validStr(data.studentName, 0, 100)
+        && validStr(data.contextLabel, 0, 100)
+        && data.completed is bool
+        && validStr(data.replyText, 0, 500)
+        && hasValidTimestamps(data);
+    }
+
+    function isValidEvaluation(data) {
+      return data.keys().hasAll([
+          'studentId', 'studentName', 'medalType', 'overallScore', 'dimensionScores',
+          'templateCategory', 'notes', 'shareWithFamily', 'recordInHistory', 'draft',
+          'dateLabel', 'createdAt', 'updatedAt'
+        ])
+        && data.keys().hasOnly([
+          'studentId', 'studentName', 'medalType', 'overallScore', 'dimensionScores',
+          'templateCategory', 'notes', 'shareWithFamily', 'recordInHistory', 'draft',
+          'dateLabel', 'createdAt', 'updatedAt'
+        ])
+        && validStr(data.studentId, 1, 128)
+        && validStr(data.studentName, 1, 120)
+        && data.medalType in ['BRONZE', 'SILVER', 'GOLD']
+        && data.overallScore is int && data.overallScore >= 1 && data.overallScore <= 5
+        && data.dimensionScores is list && data.dimensionScores.size() <= 12
+        && validStr(data.templateCategory, 0, 60)
+        && validStr(data.notes, 0, 2000)
+        && data.shareWithFamily is bool
+        && data.recordInHistory is bool
+        && data.draft is bool
+        && validStr(data.dateLabel, 1, 80)
+        && hasValidTimestamps(data);
+    }
+
+    function isValidDiaryEntry(data) {
+      return data.keys().hasAll([
+          'studentId', 'studentName', 'dateKey', 'dayLabel', 'emotionalState',
+          'emotionalSubtitle', 'medalLabel', 'dayIndicator', 'anticipationTitle',
+          'anticipationTime', 'anticipationText', 'areas', 'internalNotes',
+          'afternoonRoutine', 'syncedLabel', 'createdAt', 'updatedAt'
+        ])
+        && data.keys().hasOnly([
+          'studentId', 'studentName', 'dateKey', 'dayLabel', 'emotionalState',
+          'emotionalSubtitle', 'medalLabel', 'dayIndicator', 'anticipationTitle',
+          'anticipationTime', 'anticipationText', 'areas', 'internalNotes',
+          'afternoonRoutine', 'syncedLabel', 'createdAt', 'updatedAt'
+        ])
+        && validStr(data.studentId, 1, 128)
+        && validStr(data.studentName, 1, 120)
+        && validStr(data.dateKey, 1, 30)
+        && validStr(data.dayLabel, 1, 40)
+        && validStr(data.emotionalState, 1, 80)
+        && validStr(data.emotionalSubtitle, 0, 200)
+        && validStr(data.medalLabel, 0, 60)
+        && data.dayIndicator in ['calma', 'sensorial', 'evento']
+        && validStr(data.anticipationTitle, 0, 120)
+        && validStr(data.anticipationTime, 0, 40)
+        && validStr(data.anticipationText, 0, 600)
+        && data.areas is list && data.areas.size() <= 12
+        && data.internalNotes is list && data.internalNotes.size() <= 30
+        && data.afternoonRoutine is list && data.afternoonRoutine.size() <= 12
+        && validStr(data.syncedLabel, 0, 40)
+        && hasValidTimestamps(data);
+    }
+
+    function isValidResourceFolder(data) {
+      return data.keys().hasAll(['name', 'subtitle', 'accentKey', 'iconKey', 'createdAt', 'updatedAt'])
+        && data.keys().hasOnly(['name', 'subtitle', 'accentKey', 'iconKey', 'createdAt', 'updatedAt'])
+        && validStr(data.name, 1, 80)
+        && validStr(data.subtitle, 0, 120)
+        && validStr(data.accentKey, 1, 30)
+        && validStr(data.iconKey, 1, 30)
+        && hasValidTimestamps(data);
+    }
+
+    function isValidResource(data) {
+      return data.keys().hasAll([
+          'folderId', 'title', 'description', 'fileType', 'sizeLabel', 'dateLabel',
+          'statusBadge', 'locationBadge', 'assignedStudentIds', 'localUri',
+          'previewSummary', 'createdAt', 'updatedAt'
+        ])
+        && data.keys().hasOnly([
+          'folderId', 'title', 'description', 'fileType', 'sizeLabel', 'dateLabel',
+          'statusBadge', 'locationBadge', 'assignedStudentIds', 'localUri', 'mimeType',
+          'previewSummary', 'createdAt', 'updatedAt'
+        ])
+        && validStr(data.folderId, 1, 128)
+        && validStr(data.title, 1, 140)
+        && validStr(data.description, 0, 600)
+        && data.fileType in ['PDF', 'PNG', 'MP3', 'DOC']
+        && validStr(data.sizeLabel, 0, 30)
+        && validStr(data.dateLabel, 0, 40)
+        && validStr(data.statusBadge, 0, 40)
+        && validStr(data.locationBadge, 0, 40)
+        && data.assignedStudentIds is list && data.assignedStudentIds.size() <= 100
+        && validStr(data.localUri, 0, 500)
+        && (!('mimeType' in data) || validStr(data.mimeType, 0, 120))
+        && validStr(data.previewSummary, 0, 2000)
+        && hasValidTimestamps(data);
+    }
+
+    function isValidLibraryItem(data) {
+      return data.keys().hasAll([
+          'title', 'author', 'materialType', 'tags', 'metaInfo', 'pedagogicalTitle',
+          'reviewNote', 'assignedStudentIds', 'usageMoments', 'accentKey',
+          'createdAt', 'updatedAt'
+        ])
+        && data.keys().hasOnly([
+          'title', 'author', 'materialType', 'tags', 'metaInfo', 'pedagogicalTitle',
+          'reviewNote', 'assignedStudentIds', 'usageMoments', 'accentKey',
+          'createdAt', 'updatedAt'
+        ])
+        && validStr(data.title, 1, 160)
+        && validStr(data.author, 1, 120)
+        && data.materialType in ['cuento', 'libro', 'paper']
+        && data.tags is list && data.tags.size() <= 10
+        && validStr(data.metaInfo, 0, 120)
+        && validStr(data.pedagogicalTitle, 0, 60)
+        && validStr(data.reviewNote, 0, 2000)
+        && data.assignedStudentIds is list && data.assignedStudentIds.size() <= 100
+        && data.usageMoments is list && data.usageMoments.size() <= 10
+        && validStr(data.accentKey, 0, 30)
+        && hasValidTimestamps(data);
+    }
+
+    match /users/{userId}/students/{studentId} {
+      allow read: if isOwner(userId);
+      allow create: if isOwner(userId) && isValidId(studentId) && isValidStudent(request.resource.data);
+      allow update: if isOwner(userId) && isValidId(studentId) && isValidStudent(request.resource.data)
+        && request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if isOwner(userId) && isValidId(studentId);
+    }
+
+    match /users/{userId}/notes/{noteId} {
+      allow read: if isOwner(userId);
+      allow create: if isOwner(userId) && isValidId(noteId) && isValidNote(request.resource.data);
+      allow update: if isOwner(userId) && isValidId(noteId) && isValidNote(request.resource.data)
+        && request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if isOwner(userId) && isValidId(noteId);
+    }
+
+    match /users/{userId}/evaluations/{evaluationId} {
+      allow read: if isOwner(userId);
+      allow create: if isOwner(userId) && isValidId(evaluationId) && isValidEvaluation(request.resource.data);
+      allow update: if isOwner(userId) && isValidId(evaluationId) && isValidEvaluation(request.resource.data)
+        && request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if isOwner(userId) && isValidId(evaluationId);
+    }
+
+    match /users/{userId}/diaryEntries/{entryId} {
+      allow read: if isOwner(userId);
+      allow create: if isOwner(userId) && isValidId(entryId) && isValidDiaryEntry(request.resource.data);
+      allow update: if isOwner(userId) && isValidId(entryId) && isValidDiaryEntry(request.resource.data)
+        && request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if isOwner(userId) && isValidId(entryId);
+    }
+
+    match /users/{userId}/resourceFolders/{folderId} {
+      allow read: if isOwner(userId);
+      allow create: if isOwner(userId) && isValidId(folderId) && isValidResourceFolder(request.resource.data);
+      allow update: if isOwner(userId) && isValidId(folderId) && isValidResourceFolder(request.resource.data)
+        && request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if isOwner(userId) && isValidId(folderId);
+    }
+
+    match /users/{userId}/resources/{resourceId} {
+      allow read: if isOwner(userId);
+      allow create: if isOwner(userId) && isValidId(resourceId) && isValidResource(request.resource.data);
+      allow update: if isOwner(userId) && isValidId(resourceId) && isValidResource(request.resource.data)
+        && request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if isOwner(userId) && isValidId(resourceId);
+    }
+
+    match /users/{userId}/libraryItems/{itemId} {
+      allow read: if isOwner(userId);
+      allow create: if isOwner(userId) && isValidId(itemId) && isValidLibraryItem(request.resource.data);
+      allow update: if isOwner(userId) && isValidId(itemId) && isValidLibraryItem(request.resource.data)
+        && request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if isOwner(userId) && isValidId(itemId);
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
